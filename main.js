@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const tabs = document.querySelectorAll('.tab-link');
 
         tabs.forEach(tab => {
+            // Check if the listener has already been attached
+            if (tab.dataset.listenerAttached) {
+                return;
+            }
+            tab.dataset.listenerAttached = 'true';
+
             tab.addEventListener('click', () => {
                 const parentCard = tab.closest('.card'); // Find the parent card
                 if (!parentCard) return;
@@ -53,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
 
     const loadSeoulContent = () => {
         mainElement.innerHTML = `
@@ -110,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </section>
             </div>
         `;
+        initializeCommonListeners(); // Re-initialize listeners after loading content
     };
 
     const loadMatchContent = () => {
@@ -171,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         `;
+        initializeCommonListeners(); // Re-initialize listeners after loading content
     };
 
     // Route content based on path
@@ -180,6 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
         loadMatchContent();
     }
     
-    // Initialize listeners for all pages, as content might be dynamically loaded
+    // Initialize listeners for the initial page load (e.g., for index.html)
     initializeCommonListeners();
 });
