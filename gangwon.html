@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - K리그 소식 및 분석</title>
+    <title>K-BALLOG - 강원</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -24,11 +25,11 @@
                         <select id="location-select">
                             <option>전국</option>
                             <option value="seoul.html">서울</option>
-                            <option>수원</option>
-                            <option>울산</option>
-                            <option>전주</option>
-                            <option>포항</option>
-                            <option>강원</option>
+                            <option value="suwon.html">수원</option>
+                            <option value="ulsan.html">울산</option>
+                            <option value="jeonju.html">전주</option>
+                            <option value="pohang.html">포항</option>
+                            <option value="gangwon.html" selected>강원</option>
                         </select>
                     </div>
                 </div>
@@ -51,59 +52,41 @@
 
     <main class="container">
         <div class="main-content">
-            <!-- Featured Article -->
             <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=K-BALLOG" alt="대표 기사 이미지">
+                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Gangwon" alt="대표 기사 이미지">
                 <div class="article-content">
-                    <span class="category">K리그</span>
-                    <h2>K-BALLOG에 오신 것을 환영합니다!</h2>
-                    <p>국내 K리그의 모든 소식을 K-BALLOG에서 확인하세요.</p>
+                    <span class="category">강원</span>
+                    <h2>강원 지역 축구 소식</h2>
+                    <p>강원 지역의 최신 축구 소식을 확인하세요.</p>
                 </div>
             </div>
 
-            <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Match Center -->
                 <div class="card match-center">
                     <div class="card-header">
-                        <h3>매치 센터</h3>
+                        <h3>강원 지역 매치 센터</h3>
                         <div class="tabs">
                             <button class="tab-link active" data-tab="results">최근 결과</button>
                             <button class="tab-link" data-tab="fixtures">예정된 경기</button>
                         </div>
                     </div>
                     <div id="results" class="tab-content active">
-                        <div class="match-item"><span>성북구30대상비단</span> <span class="score">3 - 1</span> <span>FC Corea</span></div>
-                        <div class="match-item"><span>양지</span> <span class="score">2 - 2</span> <span>석관</span></div>
-                        <div class="match-item"><span>Fc Dream</span> <span class="score">4 - 0</span> <span>서초구 Dice</span></div>
+                        <div class="match-item"><span>강원FC</span> <span class="score">2 - 1</span> <span>인천 유나이티드</span></div>
                     </div>
                     <div id="fixtures" class="tab-content">
-                        <div class="match-item"><span>FC Corea</span> <span class="time">18:00</span> <span>양지</span></div>
-                        <div class="match-item"><span>석관</span> <span class="time">20:00</span> <span>성북구30대상비단</span></div>
-                        <div class="match-item"><span>서초구 Dice</span> <span class="time">19:00</span> <span>Fc Dream</span></div>
+                        <div class="match-item"><span>인천 유나이티드</span> <span class="time">19:00</span> <span>강원FC</span></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Latest Articles Section -->
         <section class="latest-articles-section">
-            <h2>최신 뉴스</h2>
+            <h2>강원 지역 최신 뉴스</h2>
             <div class="articles-grid">
                 <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=News+1" alt="기사 썸네일">
-                    <h3>'파리생제르맹 합류' 이강인, 프리시즌 경기 소화</h3>
-                    <span class="article-date">2024-07-20</span>
-                </div>
-                <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=News+2" alt="기사 썸네일">
-                    <h3>손흥민, 토트넘 주장으로 새 시즌 시작</h3>
-                    <span class="article-date">2024-07-19</span>
-                </div>
-                <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=News+3" alt="기사 썸네일">
-                    <h3>K리그 2, 승격 플레이오프 경쟁 치열</h3>
-                    <span class="article-date">2024-07-18</span>
+                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Gangwon+News+1" alt="기사 썸네일">
+                    <h3>강원FC, 짜릿한 역전승</h3>
+                    <span class="article-date">2024-07-22</span>
                 </div>
             </div>
         </section>
@@ -122,5 +105,12 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        document.getElementById('location-select').addEventListener('change', function() {
+            if (this.value) {
+                window.location.href = this.value;
+            }
+        });
+    </script>
 </body>
 </html>
