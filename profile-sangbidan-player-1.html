@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박공격 프로필 - K-BALLOG</title>
+    <title>박공격 - K-BALLOG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="main-header">
         <div class="header-container">
-            <div class="logo"><a href="index.html">K-BALLOG</a></div>
+            <div class="logo">
+                <a href="index.html">K-BALLOG</a>
+            </div>
             <nav class="main-nav">
                 <ul class="nav-links">
                     <li><a href="seoul.html">서울</a></li>
@@ -19,22 +21,68 @@
                     <li><a href="incheon.html">인천</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="검색...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="profile-card card">
+        <div class="profile-container card">
             <header class="profile-header">
                 <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=FW" alt="박공격" class="profile-picture">
-                <div class="profile-info">
+                <div>
                     <h1 class="profile-name">박공격</h1>
-                    <p class="profile-meta">공격수</p>
+                    <p class="profile-meta">성북구30대상비단 / 공격수</p>
                 </div>
             </header>
+
             <div class="profile-body">
-                <h3>프로필</h3>
-                <p>성북구30대상비단의 공격수입니다.</p>
+                <div class="profile-section">
+                    <h3><i class="fas fa-user"></i> 기본 정보</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>생년월일</span>
+                            <p>1990년 1월 1일</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>국적</span>
+                            <p>대한민국</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>키</span>
+                            <p>180 cm</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>포지션</span>
+                            <p>공격수</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3><i class="fas fa-chart-bar"></i> 시즌 기록</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>출전</span>
+                            <p>25</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>득점</span>
+                            <p>15</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>도움</span>
+                            <p>5</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="profile-navigation">
                 <a href="team-sangbidan.html" class="back-link"><i class="fas fa-arrow-left"></i> 팀 페이지로 돌아가기</a>
             </div>
@@ -43,8 +91,16 @@
 
     <footer class="main-footer">
         <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사소개</a>
+                <a href="#">서비스소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
             <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
