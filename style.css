@@ -456,6 +456,42 @@ ul {
     box-shadow: 0 8px 20px rgba(228, 0, 43, 0.4);
 }
 
+/* Division Links Section */
+.division-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.division-link-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.division-link-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-accent);
+    box-shadow: 0 10px 25px rgba(228, 0, 43, 0.5);
+    background: linear-gradient(145deg, #2a2d35, var(--card-bg));
+}
+
+.division-link-card h3 {
+    font-size: 1.75rem;
+    color: var(--primary-accent);
+    margin-bottom: 0.5rem;
+}
+
+.division-link-card p {
+    font-size: 1rem;
+    color: var(--text-medium);
+}
+
 
 /* Footer */
 .main-footer {
@@ -509,5 +545,8 @@ ul {
     }
     .category-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .division-links {
+        grid-template-columns: 1fr;
     }
 }
