@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K7리그(성북) - K-BALLOG</title>
+    <title>서울 K7리그 성북권역 - K-BALLOG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -32,63 +32,81 @@
     </header>
 
     <main class="container">
-        <div class="league-title">
-            <h2>K7리그 (성북)</h2>
+        <div class="league-header">
+            <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=K7" alt="K7 League" class="league-logo">
+            <div>
+                <h1>K7리그 서울 성북권역</h1>
+                <p>대한민국 아마추어 축구의 시작</p>
+            </div>
         </div>
 
         <div class="tabs">
-            <button class="tab-link active" onclick="openTab(event, 'ranking')">순위</button>
+            <button class="tab-link active" onclick="openTab(event, 'teams')">참가팀</button>
+            <button class="tab-link" onclick="openTab(event, 'ranking')">순위</button>
             <button class="tab-link" onclick="openTab(event, 'schedule')">경기 일정</button>
         </div>
 
-        <div id="ranking" class="tab-content" style="display: block;">
-            <table class="ranking-table card">
-                <thead>
-                    <tr>
-                        <th>순위</th>
-                        <th>팀</th>
-                        <th>경기</th>
-                        <th>승점</th>
-                        <th>승</th>
-                        <th>무</th>
-                        <th>패</th>
-                        <th>득실차</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>성북구30대상비단</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>양지</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                     <tr>
-                        <td>3</td>
-                        <td>드림팀</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="teams" class="tab-content active">
+            <div class="card-grid">
+                <a href="team-sangbidan.html" class="card-link">
+                    <div class="card team-card">
+                        <img src="https://via.placeholder.com/80/1a1c23/f0f0f0?text=SB" alt="성북구30대상비단" class="team-logo-small">
+                        <div class="team-info">
+                            <h3>성북구30대상비단</h3>
+                            <p>서울특별시 성북구</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-creo.html" class="card-link">
+                    <div class="card team-card">
+                        <img src="https://via.placeholder.com/80/1a1c23/f0f0f0?text=CREO" alt="Fc Creo" class="team-logo-small">
+                        <div class="team-info">
+                            <h3>Fc Creo</h3>
+                            <p>서울특별시 성북구</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-yangji.html" class="card-link">
+                    <div class="card team-card">
+                        <img src="https://via.placeholder.com/80/1a1c23/f0f0f0?text=YJ" alt="양지" class="team-logo-small">
+                        <div class="team-info">
+                            <h3>양지</h3>
+                            <p>서울특별시 성북구</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-dream.html" class="card-link">
+                    <div class="card team-card">
+                        <img src="https://via.placeholder.com/80/1a1c23/f0f0f0?text=DREAM" alt="Fc Dream" class="team-logo-small">
+                        <div class="team-info">
+                            <h3>Fc Dream</h3>
+                            <p>서울특별시 성북구</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-corea.html" class="card-link">
+                    <div class="card team-card">
+                        <img src="https://via.placeholder.com/80/1a1c23/f0f0f0?text=COREA" alt="Fc 꼬레아" class="team-logo-small">
+                        <div class="team-info">
+                            <h3>Fc 꼬레아</h3>
+                            <p>서울특별시 성북구</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-dice.html" class="card-link">
+                    <div class="card team-card">
+                        <img src="https://via.placeholder.com/80/1a1c23/f0f0f0?text=DICE" alt="Fc 서초구 Dice" class="team-logo-small">
+                        <div class="team-info">
+                            <h3>Fc 서초구 Dice</h3>
+                            <p>서울특별시 서초구</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
+
+        <div id="ranking" class="tab-content">
+            </div>
 
         <div id="schedule" class="tab-content">
             </div>
