@@ -4,18 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fc Creo - K-BALLOG</title>
+    <title>FC Creo - K-BALLOG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="profileModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -39,102 +32,88 @@
     </header>
 
     <main class="container">
-        <div class="team-profile-container">
-            <header class="team-header card">
-                <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=CR" alt="Fc Creo 로고" class="team-logo">
-                <div class="team-info">
-                    <h1>Fc Creo</h1>
-                    <p>서울특별시 성북구</p>
+        <div class="team-header-container">
+            <div class="team-header-info">
+                <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=CREO" alt="FC Creo" class="team-page-logo">
+                <div>
+                    <h1 class="team-page-name">FC Creo</h1>
+                    <p class="team-page-meta">서울특별시 성북구 | 창단 2010년</p>
                 </div>
-            </header>
+            </div>
+        </div>
 
-            <div class="team-main-content card">
-                <div class="tabs">
-                    <button class="tab-link active" data-tab="squad">선수단</button>
-                    <button class="tab-link" data-tab="info">팀 정보</button>
-                    <button class="tab-link" data-tab="results">경기 결과</button>
-                </div>
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'players')">선수</button>
+            <button class="tab-link" onclick="openTab(event, 'staff')">코칭 스탭</button>
+            <button class="tab-link" onclick="openTab(event, 'info')">팀 정보</button>
+        </div>
 
-                <div id="squad" class="tab-content active">
-                    <div class="team-section">
-                        <h2>선수단</h2>
-                        <div class="position-group">
-                            <h3><i class="fas fa-user-shield"></i> 감독</h3>
-                            <div class="profile-grid">
-                                <div class="profile-card" onclick="openModal('coach1')">
-                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=Coach" alt="감독">
-                                    <p>김감독</p>
-                                    <span>감독</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-group">
-                            <h3><i class="fas fa-running"></i> 공격수</h3>
-                            <div class="profile-grid">
-                                <div class="profile-card" onclick="openModal('player1')">
-                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=FW" alt="공격수">
-                                    <p>박공격</p>
-                                    <span>FW</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-group">
-                            <h3><i class="fas fa-users"></i> 미드필더</h3>
-                            <div class="profile-grid">
-                                <div class="profile-card" onclick="openModal('player2')">
-                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=MF" alt="미드필더">
-                                    <p>김미들</p>
-                                    <span>MF</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-group">
-                            <h3><i class="fas fa-shield-alt"></i> 수비수</h3>
-                            <div class="profile-grid">
-                                <div class="profile-card" onclick="openModal('player3')">
-                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=DF" alt="수비수">
-                                    <p>이수비</p>
-                                    <span>DF</span>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="position-group">
-                            <h3><i class="fas fa-hand-paper"></i> 골키퍼</h3>
-                            <div class="profile-grid">
-                                <div class="profile-card" onclick="openModal('player4')">
-                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=GK" alt="골키퍼">
-                                    <p>최골키</p>
-                                    <span>GK</span>
-                                </div>
-                            </div>
+        <div id="players" class="tab-content active">
+            <div class="card-grid">
+                <!-- Players -->
+                <a href="#" class="card-link">
+                    <div class="card player-card">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=FW" alt="공격수" class="player-photo">
+                        <div class="player-info">
+                            <h3 class="player-name">공격수1</h3>
+                            <p class="player-position">공격수</p>
                         </div>
                     </div>
-                </div>
-
-                <div id="info" class="tab-content">
-                    <div class="team-section">
-                        <h2>팀 정보</h2>
-                        <p>팀 창단: 2022년</p>
-                        <p>연고지: 서울특별시 성북구</p>
-                        <p>홈 구장: 성북구립축구장</p>
-                    </div>
-                </div>
-
-                <div id="results" class="tab-content">
-                    <div class="team-section">
-                        <h2>최근 경기 결과</h2>
-                        <div class="match-item">
-                            <span>VS Fc 꼬레아</span>
-                            <span class="score">1 : 0</span>
-                            <span>승</span>
-                        </div>
-                        <div class="match-item">
-                            <span>VS 서초구 Dice</span>
-                            <span class="score">2 : 2</span>
-                            <span>무</span>
+                </a>
+                <a href="#" class="card-link">
+                    <div class="card player-card">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=MF" alt="미드필더" class="player-photo">
+                        <div class="player-info">
+                            <h3 class="player-name">미드필더1</h3>
+                            <p class="player-position">미드필더</p>
                         </div>
                     </div>
-                </div>
+                </a>
+                <a href="#" class="card-link">
+                    <div class="card player-card">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=DF" alt="수비수" class="player-photo">
+                        <div class="player-info">
+                            <h3 class="player-name">수비수1</h3>
+                            <p class="player-position">수비수</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card-link">
+                    <div class="card player-card">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=GK" alt="골키퍼" class="player-photo">
+                        <div class="player-info">
+                            <h3 class="player-name">골키퍼1</h3>
+                            <p class="player-position">골키퍼</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="staff" class="tab-content">
+            <div class="card-grid">
+                <!-- Coaching Staff -->
+                <a href="#" class="card-link">
+                    <div class="card player-card">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=Coach" alt="감독" class="player-photo">
+                        <div class="player-info">
+                            <h3 class="player-name">감독1</h3>
+                            <p class="player-position">감독</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="info" class="tab-content">
+            <div class="card">
+                <h3>팀 소개</h3>
+                <p>FC Creo는 2010년에 창단된 팀으로, K7리그 서울 성북권역에서 활동하고 있습니다.</p>
+                <h3>주요 연혁</h3>
+                <ul>
+                    <li>2010년: 팀 창단</li>
+                    <li>2023년: K7리그 성북권역 우승</li>
+                </ul>
             </div>
         </div>
     </main>
