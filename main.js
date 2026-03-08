@@ -2,101 +2,77 @@
 document.addEventListener('DOMContentLoaded', function () {
     const path = window.location.pathname;
 
-    // Data for all districts, will act as a mini-database
+    // Helper function to create placeholder data for a district
+    const createDistrictData = (region, districtName) => {
+        const regionEng = {
+            seoul: 'Seoul',
+            suwon: 'Suwon',
+            incheon: 'Incheon'
+        }[region] || region;
+
+        const districtEng = districtName.replace(/구$/, ''); // e.g., 성동구 -> Seongdong
+
+        return {
+            description: `${districtName}의 최신 아마추어 축구 리그 소식과 경기 정보를 확인하세요.`,
+            image: `https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=${regionEng}+${districtEng}`,
+            results: [
+                { teamA: `${districtName} FC`, score: '1 - 0', teamB: `${districtName} 유나이티드` },
+            ],
+            fixtures: [
+                { teamA: `${districtName} 시티`, time: '19:00', teamB: `FC ${districtName}` },
+            ],
+            news: [
+                { title: `${districtName}, 2024 하반기 리그 개막`, image: `https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=${districtEng}+News` },
+            ]
+        };
+    };
+
+    // Data for all districts, acting as a mini-database
     const districtData = {
         seoul: {
-            '성동구': {
-                description: '성동구의 최신 아마추어 축구 리그 소식과 경기 정보를 확인하세요.',
-                image: 'https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seongdong',
-                results: [
-                    { teamA: '성동 FC', score: '3 - 1', teamB: '왕십리 유나이티드' },
-                    { teamA: '금호 알레', score: '2 - 2', teamB: '옥수 이글스' }
-                ],
-                fixtures: [
-                    { teamA: '응봉 타이거즈', time: '18:00', teamB: '마장 FC' },
-                    { teamA: '성수 위너스', time: '20:00', teamB: '송정 팰컨스' }
-                ],
-                news: [
-                    { title: '성동구, 2024 하반기 리그 개막', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Seongdong+News+1' },
-                    { title: '왕십리 유나이티드, 새로운 유니폼 공개', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Seongdong+News+2' }
-                ]
-            },
-            '강남구': {
-                description: '강남구의 최신 아마추어 축구 리그 소식과 경기 정보를 확인하세요.',
-                image: 'https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Gangnam',
-                results: [
-                    { teamA: '테헤란 FC', score: '1 - 0', teamB: '압구정 로데오' },
-                ],
-                fixtures: [
-                    { teamA: '청담 FC', time: '19:00', teamB: '논현 유나이티드' },
-                ],
-                news: [
-                    { title: '강남구 리그, 역대급 명경기 펼쳐져', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Gangnam+News+1' },
-                ]
-            }
-            // Add other Seoul districts here...
+            '성동구': createDistrictData('seoul', '성동구'),
+            '강남구': createDistrictData('seoul', '강남구'),
+            '강북구': createDistrictData('seoul', '강북구'),
+            '도봉구': createDistrictData('seoul', '도봉구'),
+            '노원구': createDistrictData('seoul', '노원구'),
+            '은평구': createDistrictData('seoul', '은평구'),
+            '서대문구': createDistrictData('seoul', '서대문구'),
+            '마포구': createDistrictData('seoul', '마포구'),
+            '강서구': createDistrictData('seoul', '강서구'),
+            '구로구': createDistrictData('seoul', '구로구'),
+            '금천구': createDistrictData('seoul', '금천구'),
+            '영등포구': createDistrictData('seoul', '영등포구'),
+            '동작구': createDistrictData('seoul', '동작구'),
+            '관악구': createDistrictData('seoul', '관악구'),
+            '서초구': createDistrictData('seoul', '서초구'),
+            '송파구': createDistrictData('seoul', '송파구'),
+            '강동구': createDistrictData('seoul', '강동구'),
+            '종로구': createDistrictData('seoul', '종로구'),
+            '중구': createDistrictData('seoul', '중구'),
+            '용산구': createDistrictData('seoul', '용산구'),
+            '광진구': createDistrictData('seoul', '광진구'),
+            '중랑구': createDistrictData('seoul', '중랑구'),
+            '동대문구': createDistrictData('seoul', '동대문구')
         },
         suwon: {
-            '팔달구': {
-                description: '수원시 팔달구의 생생한 축구 현장 소식을 전해드립니다.',
-                image: 'https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Paldal',
-                results: [
-                    { teamA: '행궁 FC', score: '5 - 2', teamB: '화서 블루윙즈' },
-                ],
-                fixtures: [
-                    { teamA: '매교 이글스', time: '18:00', teamB: '인계 FC' },
-                ],
-                news: [
-                    { title: '팔달구 리그, 득점왕 경쟁 치열', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Paldal+News+1' },
-                ]
-            },
-            '영통구': {
-                description: '수원시 영통구의 생생한 축구 현장 소식을 전해드립니다.',
-                image: 'https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Yeongtong',
-                results: [
-                    { teamA: '광교 FC', score: '2 - 0', teamB: '매탄 유나이티드' },
-                ],
-                fixtures: [
-                    { teamA: '원천 FC', time: '20:00', teamB: '영통 워리어스' },
-                ],
-                news: [
-                    { title: '영통구, 새로운 잔디 구장 개장', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Yeongtong+News+1' },
-                ]
-            }
-            // Add other Suwon districts here...
+            '팔달구': createDistrictData('suwon', '팔달구'),
+            '영통구': createDistrictData('suwon', '영통구'),
+            '장안구': createDistrictData('suwon', '장안구'),
+            '권선구': createDistrictData('suwon', '권선구')
         },
         incheon: {
-            '연수구': {
-                description: '인천 연수구의 아마추어 축구 열기를 느껴보세요.',
-                image: 'https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Yeonsu',
-                results: [
-                    { teamA: '송도 국제도시 FC', score: '4 - 1', teamB: '동춘 유나이티드' },
-                ],
-                fixtures: [
-                    { teamA: '선학 FC', time: '19:30', teamB: '옥련 타이거즈' },
-                ],
-                news: [
-                    { title: '연수구, 유소년 축구 클리닉 개최', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Yeonsu+News+1' },
-                ]
-            },
-            '남동구': {
-                description: '인천 남동구의 아마추어 축구 열기를 느껴보세요.',
-                image: 'https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Namdong',
-                results: [
-                    { teamA: '구월 FC', score: '1 - 1', teamB: '논현 고잔 유나이티드' },
-                ],
-                fixtures: [
-                    { teamA: '만수 FC', time: '21:00', teamB: '서창 어벤져스' },
-                ],
-                news: [
-                    { title: '남동구 리그, 야간 경기로 전환', image: 'https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Namdong+News+1' },
-                ]
-            }
-            // Add other Incheon districts here...
+            '연수구': createDistrictData('incheon', '연수구'),
+            '남동구': createDistrictData('incheon', '남동구'),
+            '부평구': createDistrictData('incheon', '부평구'),
+            '서구': createDistrictData('incheon', '서구'),
+            '계양구': createDistrictData('incheon', '계양구'),
+            '미추홀구': createDistrictData('incheon', '미추홀구'),
+            '중구': createDistrictData('incheon', '중구'),
+            '동구': createDistrictData('incheon', '동구')
         }
     };
 
-    // Function to initialize common event listeners (like tabs and hamburger)
+    // Function to initialize common event listeners
     const initializeCommonListeners = () => {
         const tabs = document.querySelectorAll('.tab-link');
         tabs.forEach(tab => {
@@ -125,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     };
-    
+
     // Function to load dynamic content for district.html
     const loadDistrictContent = () => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -141,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const data = districtData[region][districtName];
 
-        // Populate the template with data
+        document.title = `K-BALLOG - ${region} ${districtName}`;
         document.getElementById('district-image').src = data.image;
         document.getElementById('district-image').alt = `${districtName} 대표 이미지`;
         document.getElementById('district-category').textContent = region;
@@ -151,26 +127,22 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('news-section-title').textContent = `${districtName} 최신 뉴스`;
 
         const resultsContainer = document.getElementById('results');
-        resultsContainer.innerHTML = '';
-        data.results.forEach(match => {
-            resultsContainer.innerHTML += `<div class="match-item"><span>${match.teamA}</span> <span class="score">${match.score}</span> <span>${match.teamB}</span></div>`;
-        });
+        resultsContainer.innerHTML = data.results.map(match => 
+            `<div class="match-item"><span>${match.teamA}</span> <span class="score">${match.score}</span> <span>${match.teamB}</span></div>`
+        ).join('');
 
         const fixturesContainer = document.getElementById('fixtures');
-        fixturesContainer.innerHTML = '';
-        data.fixtures.forEach(match => {
-            fixturesContainer.innerHTML += `<div class="match-item"><span>${match.teamA}</span> <span class="time">${match.time}</span> <span>${match.teamB}</span></div>`;
-        });
+        fixturesContainer.innerHTML = data.fixtures.map(match => 
+            `<div class="match-item"><span>${match.teamA}</span> <span class="time">${match.time}</span> <span>${match.teamB}</span></div>`
+        ).join('');
         
         const newsGrid = document.getElementById('news-grid');
-        newsGrid.innerHTML = '';
-        data.news.forEach(article => {
-            newsGrid.innerHTML += `
-                <div class="news-card">
-                    <img src="${article.image}" alt="기사 썸네일">
-                    <h3>${article.title}</h3>
-                </div>`;
-        });
+        newsGrid.innerHTML = data.news.map(article => `
+            <div class="news-card">
+                <img src="${article.image}" alt="기사 썸네일">
+                <h3>${article.title}</h3>
+            </div>`
+        ).join('');
         
         initializeCommonListeners();
     };
@@ -184,11 +156,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- Routing ---
-    // Route to the correct content loading function based on the HTML file name
     if (path.includes('district.html')) {
         loadDistrictContent();
     } else {
-        // For all other pages (index, seoul, suwon, incheon, match), just initialize the listeners
         initializeCommonListeners();
     }
 });
