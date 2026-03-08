@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서초구 Dice - K-BALLOG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">K-BALLOG</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="seoul.html">서울</a></li>
+                    <li><a href="suwon.html">수원</a></li>
+                    <li><a href="incheon.html">인천</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="검색...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="team-profile-container">
+            <header class="team-header card">
+                <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=DICE" alt="서초구 Dice 로고" class="team-logo">
+                <div class="team-info">
+                    <h1>서초구 Dice</h1>
+                    <p>서울특별시 서초구</p>
+                </div>
+            </header>
+
+            <div class="team-main-content card">
+                <div class="tabs">
+                    <button class="tab-link active" data-tab="squad">선수단</button>
+                    <button class="tab-link" data-tab="info">팀 정보</button>
+                    <button class="tab-link" data-tab="results">경기 결과</button>
+                </div>
+
+                <div id="squad" class="tab-content active">
+                    <div class="team-section">
+                        <h2>선수단</h2>
+                        <div class="position-group">
+                            <h3><i class="fas fa-user-shield"></i> 감독</h3>
+                            <div class="profile-grid">
+                                <div class="profile-card" onclick="openModal('coach1')">
+                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=Coach" alt="감독">
+                                    <p>김감독</p>
+                                    <span>감독</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-group">
+                            <h3><i class="fas fa-running"></i> 공격수</h3>
+                            <div class="profile-grid">
+                                <div class="profile-card" onclick="openModal('player1')">
+                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=FW" alt="공격수">
+                                    <p>박공격</p>
+                                    <span>FW</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-group">
+                            <h3><i class="fas fa-users"></i> 미드필더</h3>
+                            <div class="profile-grid">
+                                <div class="profile-card" onclick="openModal('player2')">
+                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=MF" alt="미드필더">
+                                    <p>김미들</p>
+                                    <span>MF</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-group">
+                            <h3><i class="fas fa-shield-alt"></i> 수비수</h3>
+                            <div class="profile-grid">
+                                <div class="profile-card" onclick="openModal('player3')">
+                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=DF" alt="수비수">
+                                    <p>이수비</p>
+                                    <span>DF</span>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="position-group">
+                            <h3><i class="fas fa-hand-paper"></i> 골키퍼</h3>
+                            <div class="profile-grid">
+                                <div class="profile-card" onclick="openModal('player4')">
+                                    <img src="https://via.placeholder.com/120/1a1c23/f0f0f0?text=GK" alt="골키퍼">
+                                    <p>최골키</p>
+                                    <span>GK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="info" class="tab-content">
+                    <div class="team-section">
+                        <h2>팀 정보</h2>
+                        <p>팀 창단: 2023년</p>
+                        <p>연고지: 서울특별시 서초구</p>
+                        <p>홈 구장: 서초구립축구장</p>
+                    </div>
+                </div>
+
+                <div id="results" class="tab-content">
+                    <div class="team-section">
+                        <h2>최근 경기 결과</h2>
+                        <div class="match-item">
+                            <span>VS Fc Creo</span>
+                            <span class="score">2 : 2</span>
+                            <span>무</span>
+                        </div>
+                        <div class="match-item">
+                            <span>VS Fc 꼬레아</span>
+                            <span class="score">1 : 4</span>
+                            <span>패</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사소개</a>
+                <a href="#">서비스소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
