@@ -842,6 +842,23 @@ ul {
      border: 1px solid var(--border-color);
 }
 
+/* Coach Profile in Team Page */
+#coach .profile-container {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+#coach .profile-header {
+    background-color: var(--dark-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+#coach .profile-body {
+    padding: 0;
+}
 
 
 /* Responsive */
