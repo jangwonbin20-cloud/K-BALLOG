@@ -756,6 +756,91 @@ ul {
     color: var(--text-medium);
 }
 
+/* Division Page Layout */
+.division-page-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.division-header {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.division-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-accent);
+}
+
+.league-table-section, .team-list-section {
+    padding: 1.5rem;
+}
+
+.league-table-section h3, .team-list-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+}
+
+
+/* Enhanced League Table */
+.league-table table {
+    font-size: 1rem;
+}
+
+.league-table th, .league-table td {
+    padding: 0.8rem 0.6rem;
+    vertical-align: middle;
+}
+
+.league-table thead {
+    background-color: #2c2f38;
+}
+.league-table th {
+    font-weight: 600;
+}
+
+.league-table tbody tr:nth-child(odd) {
+    background-color: #2a2d35;
+}
+
+.league-table tbody tr:hover {
+    background-color: #31343d;
+}
+
+.league-table td:nth-child(1),
+.league-table td:nth-child(3),
+.league-table td:nth-child(4),
+.league-table td:nth-child(5),
+.league-table td:nth-child(6),
+.league-table td:nth-child(7) {
+    text-align: center;
+}
+.league-table td:nth-child(2) {
+    font-weight: 500;
+}
+.league-table td:last-child {
+    font-weight: 700;
+    color: var(--primary-accent);
+}
+
+.team-list-section .team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.team-list-section .team-list-item {
+     box-shadow: none;
+     border: 1px solid var(--border-color);
+}
 
 
 
