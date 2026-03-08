@@ -570,6 +570,195 @@ ul {
     font-size: 0.9rem;
 }
 
+
+/* Player Profile Page */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-accent);
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.profile-meta {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+}
+
+.profile-body {
+    padding: 0 1rem;
+}
+
+.profile-section {
+    margin-bottom: 2rem;
+}
+
+.profile-section h3 {
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    background-color: var(--dark-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.stat-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.career-list {
+    list-style-position: inside;
+}
+
+.career-list li {
+    background-color: var(--dark-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--primary-accent);
+}
+
+
+.profile-navigation {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-accent);
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
+/* Team Profile Page Specifics */
+.team-profile-container .team-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-profile-container .team-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.team-profile-container .team-info h1 {
+    font-size: 2.5rem;
+}
+
+.team-main-content .tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.team-main-content .tabs .tab-link {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+}
+
+.team-section h2 {
+    font-size: 1.8rem;
+    color: var(--primary-accent);
+    margin-bottom: 1rem;
+}
+
+.position-group {
+    margin-bottom: 2rem;
+}
+
+.position-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+.profile-card {
+    background-color: var(--dark-bg);
+    border-radius: 8px;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+.profile-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-accent);
+    box-shadow: 0 6px 15px rgba(228, 0, 43, 0.4);
+}
+
+.profile-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.75rem;
+}
+
+.profile-card p {
+    font-weight: 600;
+}
+
+.profile-card span {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+
+
+
+
 /* Responsive */
 @media (max-width: 992px) {
     .main-content {
