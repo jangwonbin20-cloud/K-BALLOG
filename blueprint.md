@@ -1,69 +1,75 @@
-# K-BALLOG Blueprint
 
-## Overview
+# K-BALLOG: K7리그 선수 정보 플랫폼
 
-K-BALLOG is a web application dedicated to providing news and information about the K5, K6, and K7 amateur football leagues in South Korea. This platform aims to be a central hub for fans, players, and anyone interested in local football, offering league tables, match results, news articles, and more.
+## 프로젝트 개요
 
-## Project Structure & Design
+K-BALLOG는 대한민국 K7리그의 선수 및 팀 정보를 제공하는 웹 플랫폼입니다. 사용자는 지역별 리그(현재 서울, 수원, 인천) 정보를 탐색하고, 각 팀의 상세 정보와 소속 선수 및 코칭스태프의 프로필을 확인할 수 있습니다.
 
-The application is built with a modern, framework-less approach, leveraging standard HTML, CSS, and JavaScript. The design is clean, responsive, and user-friendly, with a focus on providing a great experience on both mobile and desktop devices.
+## 프로젝트 구조 및 디자인
 
-### Key Design Elements:
+### 1. **핵심 페이지 구성**
 
-*   **Typography:** Roboto font is used for its readability and modern feel.
-*   **Color Palette:** A dark theme with contrasting colors for better readability and a premium look.
-*   **Layout:** A responsive grid system is used for the main layout and article sections.
-*   **Iconography:** Font Awesome is used for icons throughout the application.
+*   **메인 페이지 (`index.html`):** 사이트의 진입점으로, 주요 리그(서울, 수원, 인천)로 안내하는 링크를 제공합니다.
+*   **지역별 리그 페이지 (예: `seoul.html`):** 해당 지역의 K7리그 팀 목록을 보여줍니다. 각 팀은 로고, 이름, 창단 연도, 연고지와 함께 카드로 표시됩니다.
+*   **팀 상세 페이지 (예: `team-creo.html`):** 특정 팀의 상세 정보를 제공합니다. 탭 인터페이스를 통해 "선수", "코칭스태프", "팀 정보"를 구분하여 보여줍니다.
+*   **선수/감독 프로필 페이지 (예: `player-creo-fw1.html`):** 선수 또는 감독의 개인 프로필, 경력, 시즌 기록 등의 상세 정보를 제공합니다.
 
-## Implemented Features (Current Version)
+### 2. **디자인 및 스타일 (`style.css`)**
 
-### Core:
+*   **색상 팔레트:** 전체적으로 어두운 테마(#1a1c23, #2a2d35)를 사용하여 세련되고 현대적인 느낌을 주며, 흰색(#f0f0f0)과 회색(#ccc) 텍스트로 가독성을 확보했습니다. 주요 인터랙션 요소에는 파란색(#007bff)을 사용하여 포인트를 주었습니다.
+*   **타이포그래피:** 가독성이 좋은 `sans-serif` 글꼴을 기본으로 사용합니다.
+*   **레이아웃:** Flexbox와 CSS Grid를 사용하여 반응형 레이아웃을 구현했습니다. `max-width`와 `margin: auto`를 적용하여 콘텐츠가 중앙에 정렬되도록 했습니다.
+*   **컴포넌트:** 카드(card), 탭(tabs), 버튼 등 재사용 가능한 UI 컴포넌트를 정의하여 일관된 디자인을 유지합니다.
 
-*   **Homepage (`index.html`):**
-    *   Features a hero section with a call-to-action.
-    *   Displays featured articles and latest news.
-    *   Includes a "Match Center" section with league information.
-*   **Region Pages (`seoul.html`, `suwon.html`, `incheon.html`):**
-    *   Dedicated pages for each of the three initial regions.
-    *   Each page provides links to the respective K5 and K6 league pages.
-*   **League Pages (`seoul-k5.html`, `seoul-k6.html`, etc.):**
-    *   Specific pages for each league in each region.
-    *   Placeholder content for league tables, match results, and news articles has been added.
-*   **Styling (`style.css`):**
-    *   Centralized stylesheet for a consistent look and feel.
-    *   Includes styles for header, footer, cards, articles, and more.
-*   **JavaScript (`main.js`):**
-    *   Currently empty, but will be used for interactive features.
+### 3. **인터랙션 및 기능 (`main.js`)**
 
-### Current State of Regional League Pages:
+*   **탭 기능:** 팀 상세 페이지와 선수 프로필 페이지에서 탭을 클릭하면 해당 콘텐츠가 동적으로 표시됩니다. `openTab` 함수를 통해 구현되었습니다.
+*   **반응형 햄버거 메뉴:** 모바일 화면에서 네비게이션 메뉴가 햄버거 아이콘으로 축소되며, 클릭 시 메뉴가 나타납니다.
 
-*   **Seoul:** `seoul-k5.html` and `seoul-k6.html` have been created and populated with placeholder content, including league standings and news.
-*   **Suwon:** `suwon-k5.html` and `suwon-k6.html` have been created and populated with placeholder content.
-*   **Incheon:** `incheon-k5.html` and `incheon-k6.html` have been created and populated with placeholder content.
+## 구현된 기능 (버전 1.0)
 
-## Plan for the Next Steps
+*   **지역별 리그 정보:** 서울, 수원, 인천 지역 리그 페이지 구현.
+*   **팀 정보:** 각 지역 리그에 소속된 팀(FC Creo, 양지, FC Dream)의 목록 및 기본 정보 제공.
+*   **팀 상세 정보:**
+    *   팀 로고, 이름, 창단 연도, 연고지 등 기본 정보 표시.
+    *   소속 선수 및 코칭스태프 목록을 사진과 함께 카드로 표시.
+    *   팀 소개 및 주요 연혁 제공.
+*   **선수 및 감독 프로필:**
+    *   개인 사진, 이름, 포지션, 등번호, 생년월일, 신체 정보 등 상세 프로필 제공.
+    *   선수 및 지도자 경력 표시.
+    *   시즌 기록(현재는 플레이스홀더) 표시.
+*   **페이지 간 네비게이션:** 로고, 네비게이션 링크, 카드 클릭 등을 통해 모든 페이지가 유기적으로 연결됩니다.
 
-The following steps outline the plan for the initial development phase of the K-BALLOG project:
+## 현재 요청 작업 계획
 
-1.  **Initial Setup:**
-    *   [x] Create the basic HTML structure for the main pages (`index.html`, `seoul.html`, `suwon.html`, `incheon.html`).
-    *   [x] Set up the `style.css` and `main.js` files.
-    *   [x] Initialize a git repository and make the initial commit.
+**요청:** K7리그 서울 성북권역 `FC Creo`, `양지`, `FC Dream` 팀의 선수 및 감독 상세 프로필 페이지 생성 및 팀 페이지와의 연동.
 
-2.  **Homepage Development:**
-    *   [x] Add a header and footer.
-    *   [x] Create a hero section.
-    *   [x] Add sections for featured articles and latest news with placeholder content.
-    *   [x] Implement a "Match Center" section.
+**진행 단계:**
 
-3.  **Regional and League Page Creation:**
-    *   [x] Create K5 and K6 league pages for Seoul, Suwon, and Incheon.
-    *   [x] Add placeholder content (league tables, news) to all league pages.
-    *   [x] Link the regional pages to their respective league pages.
+1.  **FC Creo 프로필 페이지 생성 (완료):**
+    *   `player-creo-fw1.html` (공격수1)
+    *   `player-creo-mf1.html` (미드필더1)
+    *   `player-creo-df1.html` (수비수1)
+    *   `player-creo-gk1.html` (골키퍼1)
+    *   `staff-creo-coach1.html` (감독1)
+    *   `team-creo.html`에 위 페이지로의 링크 추가.
 
-4.  **Final Touches & Future Work:**
-    *   [ ] Enhance interactivity with JavaScript (e.g., dynamic content loading).
-    *   [ ] Implement a backend or use a CMS to manage content dynamically.
-    *   [ ] Add a search functionality.
-    *   [ ] Expand to include K7 leagues and more regions.
+2.  **양지 프로필 페이지 생성 (완료):**
+    *   `player-yangji-fw1.html` (공격수1)
+    *   `player-yangji-mf1.html` (미드필더1)
+    *   `player-yangji-df1.html` (수비수1)
+    *   `player-yangji-gk1.html` (골키퍼1)
+    *   `staff-yangji-coach1.html` (감독1)
+    *   `team-yangji.html`에 위 페이지로의 링크 추가.
 
+3.  **FC Dream 프로필 페이지 생성 (완료):**
+    *   `player-dream-fw1.html` (공격수1)
+    *   `player-dream-mf1.html` (미드필더1)
+    *   `player-dream-df1.html` (수비수1)
+    *   `player-dream-gk1.html` (골키퍼1)
+    *   `staff-dream-coach1.html` (감독1)
+    *   `team-dream.html`에 위 페이지로의 링크 추가.
+
+4.  **최종 검토 및 문서화 (완료):**
+    *   모든 링크가 정상적으로 작동하는지 확인.
+    *   `blueprint.md` 파일을 작성하여 프로젝트 구조 및 현재까지의 작업 내용 정리.

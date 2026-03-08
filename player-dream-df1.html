@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수비수1 - K-BALLOG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">K-BALLOG</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="seoul.html">서울</a></li>
+                    <li><a href="suwon.html">수원</a></li>
+                    <li><a href="incheon.html">인천</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="검색...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=DF" alt="수비수1" class="profile-photo">
+            <div class="profile-info">
+                <h1>수비수1</h1>
+                <p class="profile-meta"><strong>포지션:</strong> 수비수 | <strong>등번호:</strong> 3</p>
+                <p class="profile-meta"><strong>생년월일:</strong> 1996-01-13 | <strong>신체:</strong> 183cm / 79kg</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'career')">선수 경력</button>
+            <button class="tab-link" onclick="openTab(event, 'stats')">시즌 기록</button>
+        </div>
+
+        <div id="career" class="tab-content active">
+            <div class="card">
+                <h3>선수 경력</h3>
+                <ul>
+                    <li>2022-현재: FC Dream</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="stats" class="tab-content">
+            <div class="card">
+                <h3>2024시즌 K7리그 기록</h3>
+                <p>경기: 0 | 득점: 0 | 도움: 0</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사소개</a>
+                <a href="#">서비스소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
