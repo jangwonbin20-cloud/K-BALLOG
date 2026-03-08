@@ -19,40 +19,51 @@ The application is built with a modern, framework-less approach, leveraging stan
 
 ### Core:
 
-*   **Homepage (`index.html`):** Features a hero section, featured articles, latest news, and a "Match Center".
-*   **Region Pages (`seoul.html`, `suwon.html`, `incheon.html`):** Dedicated pages for each region with links to respective leagues.
-*   **Styling (`style.css`):** A centralized stylesheet for a consistent and modern look and feel.
-*   **JavaScript (`main.js`):** Base file for future interactive features.
+*   **Homepage (`index.html`):**
+    *   Features a hero section with a call-to-action.
+    *   Displays featured articles and latest news.
+    *   Includes a "Match Center" section with league information.
+*   **Region Pages (`seoul.html`, `suwon.html`, `incheon.html`):**
+    *   Dedicated pages for each of the three initial regions.
+    *   Each page provides links to the respective K5 and K6 league pages.
+*   **League Pages (`seoul-k5.html`, `seoul-k6.html`, etc.):**
+    *   Specific pages for each league in each region.
+    *   Placeholder content for league tables, match results, and news articles has been added.
+*   **Styling (`style.css`):**
+    *   Centralized stylesheet for a consistent look and feel.
+    *   Includes styles for header, footer, cards, articles, and more.
+*   **JavaScript (`main.js`):**
+    *   Currently empty, but will be used for interactive features.
 
-### K5 & K6 League Pages:
+### Current State of Regional League Pages:
 
-*   Pages for K5 and K6 leagues in Seoul, Suwon, and Incheon have been created with placeholder content.
+*   **Seoul:** `seoul-k5.html` and `seoul-k6.html` have been created and populated with placeholder content, including league standings and news.
+*   **Suwon:** `suwon-k5.html` and `suwon-k6.html` have been created and populated with placeholder content.
+*   **Incheon:** `incheon-k5.html` and `incheon-k6.html` have been created and populated with placeholder content.
 
-### K7 League Pages:
+## Plan for the Next Steps
 
-*   **Seoul K7 Page (`seoul-k7.html`):** Provides links to different K7 league divisions in Seoul.
-*   **Seoul K7 Seongbuk Division (`seoul-k7-seongbuk.html`):**
-    *   Lists all participating teams with an improved, modern design.
-    *   Links to individual team pages.
-*   **Team Pages:** Created initial pages for teams in the Seongbuk division (`team-sangbidan.html`, `team-creo.html`, `team-yangji.html`, `team-dream.html`, `team-corea.html`, `team-dice.html`).
+The following steps outline the plan for the initial development phase of the K-BALLOG project:
 
-## Plan for Current Request
+1.  **Initial Setup:**
+    *   [x] Create the basic HTML structure for the main pages (`index.html`, `seoul.html`, `suwon.html`, `incheon.html`).
+    *   [x] Set up the `style.css` and `main.js` files.
+    *   [x] Initialize a git repository and make the initial commit.
 
-### 5. Team and Player Profile Pages
+2.  **Homepage Development:**
+    *   [x] Add a header and footer.
+    *   [x] Create a hero section.
+    *   [x] Add sections for featured articles and latest news with placeholder content.
+    *   [x] Implement a "Match Center" section.
 
-The current task is to create detailed profile pages for all coaching staff and players for the teams listed on the `seoul-k7-seongbuk` page.
+3.  **Regional and League Page Creation:**
+    *   [x] Create K5 and K6 league pages for Seoul, Suwon, and Incheon.
+    *   [x] Add placeholder content (league tables, news) to all league pages.
+    *   [x] Link the regional pages to their respective league pages.
 
-1.  **Create Roster Pages:**
-    *   [ ] For each team, create a dedicated "Roster" page (e.g., `team-creo-roster.html`). This page will list all coaching staff and players.
-2.  **Create Individual Profile Pages:**
-    *   [ ] Create individual HTML pages for each coach and player using a standardized template. Placeholder data will be used for now.
-    *   Example: `profile-coach-jane-doe.html`, `profile-player-john-doe.html`.
-3.  **Link Everything Together:**
-    *   [ ] Update the main team pages (e.g., `team-creo.html`) to link to their new roster page.
-    *   [ ] On the roster page, link each person's name to their individual profile page.
-4.  **Styling:**
-    *   [ ] Add new styles to `style.css` for the roster lists and the individual profile pages to ensure they match the site's aesthetic.
-5.  **Commit and Push:**
-    *   [ ] Add all new files to git.
-    *   [ ] Commit the changes with a descriptive message.
-    *   [ ] Push the new feature to the `main` branch on GitHub.
+4.  **Final Touches & Future Work:**
+    *   [ ] Enhance interactivity with JavaScript (e.g., dynamic content loading).
+    *   [ ] Implement a backend or use a CMS to manage content dynamically.
+    *   [ ] Add a search functionality.
+    *   [ ] Expand to include K7 leagues and more regions.
+
