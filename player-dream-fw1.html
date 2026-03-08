@@ -32,33 +32,62 @@
     </header>
 
     <main class="container">
-        <div class="profile-header">
-            <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=FW" alt="공격수1" class="profile-photo">
-            <div class="profile-info">
-                <h1>공격수1</h1>
-                <p class="profile-meta"><strong>포지션:</strong> 공격수 | <strong>등번호:</strong> 7</p>
-                <p class="profile-meta"><strong>생년월일:</strong> 1997-11-11 | <strong>신체:</strong> 181cm / 76kg</p>
-            </div>
-        </div>
+        <div class="profile-container card">
+            <header class="profile-header">
+                <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=FW" alt="공격수1" class="profile-picture">
+                <div>
+                    <h1 class="profile-name">공격수1</h1>
+                    <p class="profile-meta">드림팀 / 공격수</p>
+                </div>
+            </header>
 
-        <div class="tabs">
-            <button class="tab-link active" onclick="openTab(event, 'career')">선수 경력</button>
-            <button class="tab-link" onclick="openTab(event, 'stats')">시즌 기록</button>
-        </div>
+            <div class="profile-body">
+                <div class="profile-section">
+                    <h3><i class="fas fa-user-tie"></i> 기본 정보</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>생년월일</span>
+                            <p>1992-09-09</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>국적</span>
+                            <p>대한민국</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>키</span>
+                            <p>181 cm</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>몸무게</span>
+                            <p>76 kg</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div id="career" class="tab-content active">
-            <div class="card">
-                <h3>선수 경력</h3>
-                <ul>
-                    <li>2022-현재: FC Dream</li>
-                </ul>
-            </div>
-        </div>
+                <div class="profile-section">
+                    <h3><i class="fas fa-trophy"></i> 선수 경력</h3>
+                    <ul class="career-list">
+                        <li>2020-현재: 드림팀</li>
+                    </ul>
+                </div>
 
-        <div id="stats" class="tab-content">
-            <div class="card">
-                <h3>2024시즌 K7리그 기록</h3>
-                <p>경기: 0 | 득점: 0 | 도움: 0</p>
+                <div class="profile-section">
+                    <h3><i class="fas fa-chart-line"></i> 리그 기록</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>총 경기</span>
+                            <p>0</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>득점</span>
+                            <p>0</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>도움</span>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
