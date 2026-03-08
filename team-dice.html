@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-BALLOG - 서초구 Dice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">K-BALLOG</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="seoul.html">서울</a></li>
+                    <li><a href="match.html">경기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container team-profile-container">
+        <div class="team-header card">
+            <img src="https://via.placeholder.com/150/24262e/f0f0f0?text=DI" alt="서초구 Dice 로고" class="team-logo">
+            <div class="team-info">
+                <h1>서초구 Dice</h1>
+                <p>서울 K7리그 성북구 권역</p>
+            </div>
+        </div>
+
+        <section class="team-section card">
+            <h2>코칭 스태프</h2>
+            <div class="profile-grid">
+                <div class="profile-card" onclick="openModal('coach1')">
+                    <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=Coach" alt="감독">
+                    <p>김감독</p>
+                    <span>감독</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section card">
+            <h2>선수단</h2>
+            <div class="position-group">
+                <h3>공격수 (FW)</h3>
+                <div class="profile-grid">
+                    <div class="profile-card" onclick="openModal('player1')">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=FW" alt="선수">
+                        <p>박공격</p>
+                        <span>FW</span>
+                    </div>
+                </div>
+            </div>
+             <div class="position-group">
+                <h3>미드필더 (MF)</h3>
+                <div class="profile-grid">
+                    <div class="profile-card" onclick="openModal('player2')">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=MF" alt="선수">
+                        <p>김미들</p>
+                        <span>MF</span>
+                    </div>
+                </div>
+            </div>
+             <div class="position-group">
+                <h3>수비수 (DF)</h3>
+                <div class="profile-grid">
+                    <div class="profile-card" onclick="openModal('player3')">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=DF" alt="선수">
+                        <p>이수비</p>
+                        <span>DF</span>
+                    </div>
+                </div>
+            </div>
+            <div class="position-group">
+                <h3>골키퍼 (GK)</h3>
+                <div class="profile-grid">
+                    <div class="profile-card" onclick="openModal('player4')">
+                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=GK" alt="선수">
+                        <p>최골키</p>
+                        <span>GK</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">문의하기</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

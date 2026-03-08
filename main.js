@@ -2,77 +2,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const path = window.location.pathname;
 
-    // Helper function to create placeholder data for a district
-    const createDistrictData = (region, districtName) => {
-        const regionEng = {
-            seoul: 'Seoul',
-            suwon: 'Suwon',
-            incheon: 'Incheon'
-        }[region] || region;
-
-        const districtEng = districtName.replace(/구$/, ''); // e.g., 성동구 -> Seongdong
-
-        return {
-            description: `${districtName}의 최신 아마추어 축구 리그 소식과 경기 정보를 확인하세요.`,
-            image: `https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=${regionEng}+${districtEng}`,
-            results: [
-                { teamA: `${districtName} FC`, score: '1 - 0', teamB: `${districtName} 유나이티드` },
-            ],
-            fixtures: [
-                { teamA: `${districtName} 시티`, time: '19:00', teamB: `FC ${districtName}` },
-            ],
-            news: [
-                { title: `${districtName}, 2024 하반기 리그 개막`, image: `https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=${districtEng}+News` },
-            ]
-        };
-    };
-
-    // Data for all districts, acting as a mini-database
-    const districtData = {
-        seoul: {
-            '성동구': createDistrictData('seoul', '성동구'),
-            '강남구': createDistrictData('seoul', '강남구'),
-            '강북구': createDistrictData('seoul', '강북구'),
-            '도봉구': createDistrictData('seoul', '도봉구'),
-            '노원구': createDistrictData('seoul', '노원구'),
-            '은평구': createDistrictData('seoul', '은평구'),
-            '서대문구': createDistrictData('seoul', '서대문구'),
-            '마포구': createDistrictData('seoul', '마포구'),
-            '강서구': createDistrictData('seoul', '강서구'),
-            '구로구': createDistrictData('seoul', '구로구'),
-            '금천구': createDistrictData('seoul', '금천구'),
-            '영등포구': createDistrictData('seoul', '영등포구'),
-            '동작구': createDistrictData('seoul', '동작구'),
-            '관악구': createDistrictData('seoul', '관악구'),
-            '서초구': createDistrictData('seoul', '서초구'),
-            '송파구': createDistrictData('seoul', '송파구'),
-            '강동구': createDistrictData('seoul', '강동구'),
-            '종로구': createDistrictData('seoul', '종로구'),
-            '중구': createDistrictData('seoul', '중구'),
-            '용산구': createDistrictData('seoul', '용산구'),
-            '광진구': createDistrictData('seoul', '광진구'),
-            '중랑구': createDistrictData('seoul', '중랑구'),
-            '동대문구': createDistrictData('seoul', '동대문구')
-        },
-        suwon: {
-            '팔달구': createDistrictData('suwon', '팔달구'),
-            '영통구': createDistrictData('suwon', '영통구'),
-            '장안구': createDistrictData('suwon', '장안구'),
-            '권선구': createDistrictData('suwon', '권선구')
-        },
-        incheon: {
-            '연수구': createDistrictData('incheon', '연수구'),
-            '남동구': createDistrictData('incheon', '남동구'),
-            '부평구': createDistrictData('incheon', '부평구'),
-            '서구': createDistrictData('incheon', '서구'),
-            '계양구': createDistrictData('incheon', '계양구'),
-            '미추홀구': createDistrictData('incheon', '미추홀구'),
-            '중구': createDistrictData('incheon', '중구'),
-            '동구': createDistrictData('incheon', '동구')
-        }
-    };
-
-    // Function to initialize common event listeners
     const initializeCommonListeners = () => {
         const tabs = document.querySelectorAll('.tab-link');
         tabs.forEach(tab => {
@@ -102,52 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Function to load dynamic content for district.html
-    const loadDistrictContent = () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const region = urlParams.get('region');
-        const districtName = urlParams.get('name');
-
-        const mainContainer = document.querySelector('main.container');
-
-        if (!region || !districtName || !districtData[region] || !districtData[region][districtName]) {
-            mainContainer.innerHTML = '<h2 style="text-align: center; color: white;">요청하신 권역 정보를 찾을 수 없습니다.</h2>';
-            return;
-        }
-
-        const data = districtData[region][districtName];
-
-        document.title = `K-BALLOG - ${region} ${districtName}`;
-        document.getElementById('district-image').src = data.image;
-        document.getElementById('district-image').alt = `${districtName} 대표 이미지`;
-        document.getElementById('district-category').textContent = region;
-        document.getElementById('district-title').textContent = `${districtName} 축구 소식`;
-        document.getElementById('district-description').textContent = data.description;
-        document.getElementById('match-center-title').textContent = `${districtName} 매치 센터`;
-        document.getElementById('news-section-title').textContent = `${districtName} 최신 뉴스`;
-
-        const resultsContainer = document.getElementById('results');
-        resultsContainer.innerHTML = data.results.map(match => 
-            `<div class="match-item"><span>${match.teamA}</span> <span class="score">${match.score}</span> <span>${match.teamB}</span></div>`
-        ).join('');
-
-        const fixturesContainer = document.getElementById('fixtures');
-        fixturesContainer.innerHTML = data.fixtures.map(match => 
-            `<div class="match-item"><span>${match.teamA}</span> <span class="time">${match.time}</span> <span>${match.teamB}</span></div>`
-        ).join('');
-        
-        const newsGrid = document.getElementById('news-grid');
-        newsGrid.innerHTML = data.news.map(article => `
-            <div class="news-card">
-                <img src="${article.image}" alt="기사 썸네일">
-                <h3>${article.title}</h3>
-            </div>`
-        ).join('');
-        
-        initializeCommonListeners();
-    };
-
-    // Location selector logic
     const locationSelect = document.getElementById('location-select');
     if (locationSelect) {
         locationSelect.addEventListener('change', function() {
@@ -155,10 +38,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Routing ---
-    if (path.includes('district.html')) {
-        loadDistrictContent();
-    } else {
-        initializeCommonListeners();
-    }
+    initializeCommonListeners();
 });
+
+// Dummy data for profiles
+const profileData = {
+    coach1: { name: '김감독', position: '감독', image: 'https://via.placeholder.com/120/1a1c23/f0f0f0?text=Coach', details: '팀을 이끄는 베테랑 감독' },
+    player1: { name: '박공격', position: 'FW', image: 'https://via.placeholder.com/120/1a1c23/f0f0f0?text=FW', details: '빠른 발과 결정력을 갖춘 공격수' },
+    player2: { name: '김미들', position: 'MF', image: 'https://via.placeholder.com/120/1a1c23/f0f0f0?text=MF', details: '넓은 시야와 패스 능력이 뛰어난 미드필더' },
+    player3: { name: '이수비', position: 'DF', image: 'https://via.placeholder.com/120/1a1c23/f0f0f0?text=DF', details: '강력한 대인 방어 능력을 자랑하는 수비수' },
+    player4: { name: '최골키', position: 'GK', image: 'https://via.placeholder.com/120/1a1c23/f0f0f0?text=GK', details: '놀라운 반사신경을 가진 골키퍼' },
+};
+
+function openModal(profileId) {
+    const modal = document.getElementById('profileModal');
+    const modalBody = document.getElementById('modal-body');
+    const data = profileData[profileId];
+
+    if (data) {
+        modalBody.innerHTML = `
+            <img src="${data.image}" alt="${data.name}">
+            <h2>${data.name}</h2>
+            <p>${data.position}</p>
+            <p>${data.details}</p>
+        `;
+        modal.style.display = "block";
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('profileModal');
+    modal.style.display = "none";
+}
+
+// Close modal if user clicks outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('profileModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
