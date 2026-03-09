@@ -1008,6 +1008,44 @@ ul {
     box-shadow: 0 4px 10px rgba(228, 0, 43, 0.4);
 }
 
+/* Simple Info Cards for seoul-k7-seongbuk.html */
+.simple-info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.simple-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 1.2rem;
+    border-radius: 8px;
+    min-width: 120px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.simple-info-card i {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-accent);
+}
+
+.simple-info-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-accent);
+    box-shadow: 0 6px 15px rgba(228, 0, 43, 0.4);
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
