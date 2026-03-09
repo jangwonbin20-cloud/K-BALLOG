@@ -329,6 +329,7 @@ ul {
 
 .tab-content {
     display: none;
+    padding-top: 1rem;
 }
 
 .tab-content.active {
@@ -1120,5 +1121,9 @@ ul {
 
     .minimal-team-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .profile-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
 }
