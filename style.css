@@ -1046,6 +1046,32 @@ ul {
     box-shadow: 0 6px 15px rgba(228, 0, 43, 0.4);
 }
 
+/* Minimal Team Grid */
+.minimal-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.minimal-team-item {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-medium);
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.minimal-team-item:hover {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: var(--text-light);
+    transform: scale(1.05);
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -1090,5 +1116,9 @@ ul {
 
     .team-pair .vs {
         margin: 0.25rem 0;
+    }
+
+    .minimal-team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 }
