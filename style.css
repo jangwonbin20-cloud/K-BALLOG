@@ -1179,6 +1179,36 @@ ul {
     background-color: #c00024;
 }
 
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-medium);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #31343d;
+    color: var(--text-light);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: var(--text-light);
+    box-shadow: 0 4px 10px rgba(228, 0, 43, 0.4);
+}
+
 #resultsContainer {
     padding-top: 1rem;
 }

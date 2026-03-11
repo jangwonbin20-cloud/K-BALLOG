@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const searchButton = document.getElementById('searchButton');
     const searchInput = document.getElementById('searchInput');
     const resultsContainer = document.getElementById('resultsContainer');
+    const filterContainer = document.getElementById('filterContainer');
 
-    // List of pages to fetch content from
     const pagesToFetch = [
         'index.html',
         'match.html',
@@ -48,29 +48,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     ];
 
     let searchableData = [];
+    let currentFilter = 'all';
 
-    // Fetch and process content from each page
+    const getCategory = (page) => {
+        if (page.includes('-k5')) return 'k5';
+        if (page.includes('-k6')) return 'k6';
+        if (page.includes('-k7')) return 'k7';
+        return 'general';
+    };
+
     for (const page of pagesToFetch) {
         try {
             const response = await fetch(page);
-            if (!response.ok) {
-                console.error(`Error fetching ${page}: ${response.statusText}`);
-                continue;
-            }
+            if (!response.ok) continue;
             const html = await response.text();
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
             const textContent = doc.body.innerText;
-
-            // Simple sentence-level splitting and cleaning
-            const sentences = textContent.split(/[.?!\n]+/).map(s => s.trim()).filter(s => s.length > 10); // Filter out short/empty strings
-            searchableData.push(...sentences.map(sentence => ({ page, sentence })));
+            const category = getCategory(page);
+            const sentences = textContent.split(/[.?!\n]+/).map(s => s.trim()).filter(s => s.length > 10);
+            searchableData.push(...sentences.map(sentence => ({ page, sentence, category })));
         } catch (error) {
-            console.error(`Error fetching or parsing ${page}:`, error);
+            console.error(`Error processing ${page}:`, error);
         }
     }
 
-    searchButton.addEventListener('click', () => {
+    const filters = { 'all': '전체', 'k5': 'K5', 'k6': 'K6', 'k7': 'K7' };
+    Object.keys(filters).forEach(key => {
+        const button = document.createElement('button');
+        button.className = 'filter-btn';
+        button.dataset.filter = key;
+        button.textContent = filters[key];
+        if (key === 'all') button.classList.add('active');
+        filterContainer.appendChild(button);
+    });
+
+    const displayResults = () => {
         const searchTerm = searchInput.value.toLowerCase().trim();
         resultsContainer.innerHTML = '';
 
@@ -79,30 +92,42 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        const filteredResults = searchableData.filter(item => 
-            item.sentence.toLowerCase().includes(searchTerm)
-        );
+        const searchResults = searchableData.filter(item => item.sentence.toLowerCase().includes(searchTerm));
+        const filteredByCategory = currentFilter === 'all'
+            ? searchResults
+            : searchResults.filter(item => item.category === currentFilter);
 
-        if (filteredResults.length > 0) {
-            const uniqueResults = [...new Set(filteredResults.map(item => JSON.stringify(item)))].map(item => JSON.parse(item));
+        if (filteredByCategory.length > 0) {
+            const uniqueResults = [...new Set(filteredByCategory.map(item => JSON.stringify(item)))].map(item => JSON.parse(item));
             uniqueResults.forEach(item => {
                 const resultElement = document.createElement('div');
                 resultElement.className = 'search-result-item';
-
                 const link = document.createElement('a');
                 link.href = item.page;
-                const title = item.page.replace('.html', '').replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+                const title = item.page.replace('.html', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
                 link.textContent = title;
-
                 const sentencePara = document.createElement('p');
                 sentencePara.innerHTML = item.sentence.replace(new RegExp(searchTerm, 'gi'), `<b>${searchTerm}</b>`);
-
                 resultElement.appendChild(link);
                 resultElement.appendChild(sentencePara);
                 resultsContainer.appendChild(resultElement);
             });
         } else {
             resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+        }
+    };
+
+    searchButton.addEventListener('click', displayResults);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') displayResults();
+    });
+
+    filterContainer.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            filterContainer.querySelector('.active').classList.remove('active');
+            e.target.classList.add('active');
+            currentFilter = e.target.dataset.filter;
+            displayResults();
         }
     });
 });
