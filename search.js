@@ -1,46 +1,68 @@
-const articles = [
-    {
-        title: "'파리생제르맹 합류' 이강인, 프리시즌 경기 소화",
-        date: "2024-07-20",
-        thumbnail: "https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=News+1",
-        category: "K리그"
-    },
-    {
-        title: "손흥민, 토트넘 주장으로 새 시즌 시작",
-        date: "2024-07-19",
-        thumbnail: "https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=News+2",
-        category: "해외축구"
-    },
-    {
-        title: "K리그 2, 승격 플레이오프 경쟁 치열",
-        date: "2024-07-18",
-        thumbnail: "https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=News+3",
-        category: "K리그"
-    }
-];
-
-document.getElementById('searchButton').addEventListener('click', () => {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+document.addEventListener('DOMContentLoaded', async () => {
+    const searchButton = document.getElementById('searchButton');
+    const searchInput = document.getElementById('searchInput');
     const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.innerHTML = '';
 
-    const filteredArticles = articles.filter(article => 
-        article.title.toLowerCase().includes(searchTerm) || 
-        article.category.toLowerCase().includes(searchTerm)
-    );
+    // List of pages to fetch content from
+    const pagesToFetch = [
+        'index.html',
+        'match.html',
+        'seoul.html',
+        'suwon.html',
+        'incheon.html'
+    ];
 
-    if (filteredArticles.length > 0) {
-        filteredArticles.forEach(article => {
-            const articleElement = document.createElement('div');
-            articleElement.className = 'news-card';
-            articleElement.innerHTML = `
-                <img src="${article.thumbnail}" alt="기사 썸네일">
-                <h3>${article.title}</h3>
-                <span class="article-date">${article.date}</span>
-            `;
-            resultsContainer.appendChild(articleElement);
-        });
-    } else {
-        resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+    let searchableData = [];
+
+    // Fetch and process content from each page
+    for (const page of pagesToFetch) {
+        try {
+            const response = await fetch(page);
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const textContent = doc.body.innerText;
+
+            // Simple sentence-level splitting
+            const sentences = textContent.split(/[.?!\n]+/).map(s => s.trim()).filter(s => s.length > 10);
+            searchableData.push(...sentences.map(sentence => ({ page, sentence })));
+        } catch (error) {
+            console.error(`Error fetching or parsing ${page}:`, error);
+        }
     }
+
+    searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        resultsContainer.innerHTML = '';
+
+        if (!searchTerm) {
+            resultsContainer.innerHTML = '<p>검색어를 입력해주세요.</p>';
+            return;
+        }
+
+        const filteredResults = searchableData.filter(item => 
+            item.sentence.toLowerCase().includes(searchTerm)
+        );
+
+        if (filteredResults.length > 0) {
+            const uniqueResults = [...new Set(filteredResults.map(item => JSON.stringify(item)))].map(item => JSON.parse(item));
+            uniqueResults.forEach(item => {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'search-result-item';
+
+                const link = document.createElement('a');
+                link.href = item.page;
+                link.textContent = item.page.replace('.html', '').toUpperCase();
+
+                const sentencePara = document.createElement('p');
+                sentencePara.innerHTML = item.sentence.replace(new RegExp(searchTerm, 'gi'), `<b>${searchTerm}</b>`);
+
+                resultElement.appendChild(link);
+                resultElement.appendChild(sentencePara);
+                resultsContainer.appendChild(resultElement);
+            });
+        } else {
+            resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+        }
+    });
 });
