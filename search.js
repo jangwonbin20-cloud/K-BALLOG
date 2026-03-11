@@ -51,9 +51,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     let currentFilter = 'all';
 
     const getCategory = (page) => {
-        if (page.includes('-k5')) return 'k5';
-        if (page.includes('-k6')) return 'k6';
-        if (page.includes('-k7')) return 'k7';
+        if (page.startsWith('player-') || page.startsWith('profile-')) return 'player';
+        if (page.startsWith('team-')) return 'team';
+        if (page.includes('-k5') || page.includes('-k6') || page.includes('-k7')) return 'league';
+        if (page.startsWith('seoul') || page.startsWith('suwon') || page.startsWith('incheon')) return 'region';
+        if (page.startsWith('staff-')) return 'staff';
+        if (page === 'index.html' || page === 'match.html') return 'news';
         return 'general';
     };
 
@@ -73,7 +76,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    const filters = { 'all': '전체', 'k5': 'K5', 'k6': 'K6', 'k7': 'K7' };
+    const filters = {
+        'all': '전체',
+        'player': '선수',
+        'team': '팀',
+        'league': '리그/토너먼트',
+        'region': '지역',
+        'staff': '심판',
+        'news': '뉴스'
+    };
+    
     Object.keys(filters).forEach(key => {
         const button = document.createElement('button');
         button.className = 'filter-btn';
