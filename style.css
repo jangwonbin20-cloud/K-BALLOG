@@ -207,6 +207,16 @@ ul {
     gap: 1rem;
 }
 
+.header-actions .search-icon {
+    color: var(--text-medium);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.header-actions .search-icon:hover {
+    color: var(--primary-accent);
+}
+
 .search-bar {
     display: flex;
 }
@@ -1211,6 +1221,10 @@ ul {
 
 #resultsContainer {
     padding-top: 1rem;
+}
+
+#resultsContainer:empty {
+    display: none;
 }
 
 .search-result-item {

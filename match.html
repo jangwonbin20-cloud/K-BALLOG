@@ -41,16 +41,23 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="search-bar">
-                    <input type="text" placeholder="검색...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
+                 <a href="search.html" class="search-icon"><i class="fas fa-search"></i></a>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <main class="container">
+        <div class="search-container">
+            <h1>검색</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="검색어를 입력하세요...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="filterContainer" class="filter-container"></div>
+            <div id="resultsContainer" class="articles-grid"></div>
+        </div>
+
         <section class="match-list-section">
             <h2>경기</h2>
     
@@ -116,6 +123,7 @@
     </main>
 
     <script src="main.js"></script>
+    <script src="search.js"></script>
     <script>
         document.getElementById('location-select').addEventListener('change', function() {
             if (this.value) {
