@@ -4,11 +4,11 @@
 **Style Update:** Adjust Location Selector Position
 
 **Plan:**
-1.  **Modify CSS:** Increase the `margin-left` property of the `.location-selector` class in `style.css` to move the location dropdown menu slightly to the right for better visual balance.
+1.  **Modify CSS:** Increase the `margin-left` property of the `.location-selector` class in `style.css` to move the location dropdown menu to the right for better visual balance.
 2.  **Document Changes:** Update this `blueprint.md` file to reflect the style adjustment.
 
 **Changes Implemented:**
-*   **Modified `style.css`:** Changed `margin-left` for `.location-selector` from `1rem` to `2.5rem`.
+*   **Modified `style.css`:** Changed `margin-left` for `.location-selector` from `2.5rem` to `5rem`.
 
 ---
 
