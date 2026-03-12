@@ -51,5 +51,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    const handleMatchSearch = () => {
+        const searchButton = document.getElementById('search-button');
+        if (!searchButton) return;
+
+        searchButton.addEventListener('click', () => {
+            const teamSearchValue = document.getElementById('team-search').value.toLowerCase();
+            const dateSearchValue = document.getElementById('date-search').value;
+            const leagueSearchValue = document.getElementById('league-search').value;
+
+            document.querySelectorAll('.match-date-group').forEach(group => {
+                let groupVisible = false;
+                group.querySelectorAll('.match-list-item').forEach(item => {
+                    const teamData = item.dataset.team.toLowerCase();
+                    const leagueData = item.dataset.league;
+                    const itemDate = group.dataset.date;
+
+                    const teamMatch = !teamSearchValue || teamData.includes(teamSearchValue);
+                    const dateMatch = !dateSearchValue || itemDate === dateSearchValue;
+                    const leagueMatch = !leagueSearchValue || leagueData === leagueSearchValue;
+
+                    if (teamMatch && dateMatch && leagueMatch) {
+                        item.style.display = 'flex';
+                        groupVisible = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                group.style.display = groupVisible ? 'block' : 'none';
+            });
+        });
+    };
+
+    if (path.includes('match.html')) {
+        handleMatchSearch();
+    }
+
     initializeCommonListeners();
 });
