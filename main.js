@@ -24,13 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const hamburger = document.querySelector('.hamburger');
         const nav = document.querySelector('.main-nav');
-        const locationSelector = document.querySelector('.location-selector');
 
-        if (hamburger && nav && locationSelector) {
+        if (hamburger && nav) {
             hamburger.addEventListener('click', () => {
                 const isNavVisible = nav.style.display === 'block';
                 nav.style.display = isNavVisible ? 'none' : 'block';
-                locationSelector.style.display = isNavVisible ? 'none' : 'block';
             });
         }
     };
@@ -40,6 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
         locationSelect.addEventListener('change', function() {
             if (this.value) window.location.href = this.value;
         });
+
+        const mobileLocationLabel = document.querySelector('.mobile-location-label');
+        if (mobileLocationLabel) {
+            const selectedOption = locationSelect.options[locationSelect.selectedIndex];
+            mobileLocationLabel.textContent = `당신의 지역: ${selectedOption.text}`;
+
+            locationSelect.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                mobileLocationLabel.textContent = `당신의 지역: ${selectedOption.text}`;
+            });
+        }
     }
 
     initializeCommonListeners();
