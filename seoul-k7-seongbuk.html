@@ -12,22 +12,6 @@
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">K-BALLOG</a>
-                <div class="logo-icons">
-                    <i class="fas fa-futbol soccer-ball-icon logo-icon"></i>
-                    <i class="fas fa-chart-line data-icon logo-icon"></i>
-                </div>
-                <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
-                    <div class="location-select-wrapper">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
-                        </select>
-                    </div>
-                </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
@@ -37,125 +21,105 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="main-content">
-            <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seongbuk+K7" alt="성북 K7 리그 대표 이미지">
-                <div class="article-content">
-                    <span class="category">서울: K7 리그 성북</span>
-                    <h2><i class="fas fa-trophy"></i> 성북구 K7 리그 소식</h2>
-                    <p>성북구 K7 리그의 최신 소식을 확인하세요.</p>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                <div class="card match-center">
-                    <div class="card-header">
-                        <h3><i class="fas fa-link"></i> 바로가기</h3>
-                    </div>
-                    <a href="seoul-k7-seongbuk-ranking.html" class="unified-card simple-link-card">
-                        <div class="unified-card-content">
-                            <h3><i class="fas fa-trophy"></i> 순위 보기</h3>
-                        </div>
-                    </a>
-                    <a href="seoul-k7-seongbuk-schedule.html" class="unified-card simple-link-card">
-                        <div class="unified-card-content">
-                            <h3><i class="fas fa-calendar-alt"></i> 경기 일정 보기</h3>
-                        </div>
-                    </a>
-                </div>
+        <div class="league-title-section card">
+            <img src="https://via.placeholder.com/1200x300/1a1c23/f0f0f0?text=K7+League+-+Seongbuk" alt="성북 K7 리그 대표 이미지" class="league-cover-image">
+            <div class="league-title-content">
+                <h1><i class="fas fa-trophy"></i> K7 리그 (성북)</h1>
+                <p>2024 시즌, 성북구 아마추어 축구의 열정을 함께하세요.</p>
             </div>
         </div>
 
-        <section class="category-section">
-            <h2 class="section-heading"><i class="fas fa-users"></i> 참가팀</h2>
-            <div class="unified-grid">
-                <a href="team-sb-30s.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=성북구30대상비단" alt="성북구30대상비단">
-                    <div class="unified-card-content">
-                        <h3>성북구30대상비단</h3>
-                        <p>팀 상세 정보 보기</p>
-                    </div>
-                </a>
-                <a href="team-yangji.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=양지" alt="양지">
-                    <div class="unified-card-content">
-                        <h3>양지</h3>
-                        <p>팀 상세 정보 보기</p>
-                    </div>
-                </a>
-                <a href="team-creo.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=Fc Creo" alt="Fc Creo">
-                    <div class="unified-card-content">
-                        <h3>Fc Creo</h3>
-                        <p>팀 상세 정보 보기</p>
-                    </div>
-                </a>
-                <a href="team-dream.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=Fc Dream" alt="Fc Dream">
-                    <div class="unified-card-content">
-                        <h3>Fc Dream</h3>
-                        <p>팀 상세 정보 보기</p>
-                    </div>
-                </a>
-                <a href="team-corea.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=Fc 꼬레아" alt="Fc 꼬레아">
-                    <div class="unified-card-content">
-                        <h3>Fc 꼬레아</h3>
-                        <p>팀 상세 정보 보기</p>
-                    </div>
-                </a>
-                <a href="team-dice.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=서초구 Dice" alt="서초구 Dice">
-                    <div class="unified-card-content">
-                        <h3>서초구 Dice</h3>
-                        <p>팀 상세 정보 보기</p>
-                    </div>
-                </a>
+        <div class="card league-data-section">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="ranking"><i class="fas fa-trophy"></i> 리그 순위</button>
+                <button class="tab-btn" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 경기 일정/결과</button>
+                <button class="tab-btn" data-tab="stats"><i class="fas fa-chart-bar"></i> 개인 기록</button>
             </div>
-        </section>
 
-        <section class="latest-articles-section">
-            <h2 class="section-heading"><i class="far fa-newspaper"></i> 주요 뉴스</h2>
-            <div class="unified-grid">
-                <a href="#" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=News+1" alt="뉴스 1">
-                    <div class="unified-card-content">
-                        <h3>성북구 K7 리그 개막!</h3>
-                        <p>드디어 성북구 K7 리그가 개막했습니다. 첫 경기부터 치열한 접전이 펼쳐졌습니다.</p>
+            <div id="ranking" class="tab-content active">
+                <div class="league-table-section">
+                    <div class="league-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>순위</th><th>팀</th><th>경기</th><th>승점</th><th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th>득실</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>성북구30대상비단</td><td>5</td><td>15</td><td>5</td><td>0</td><td>0</td><td>15</td><td>2</td><td>+13</td></tr>
+                                <tr><td>2</td><td>양지</td><td>5</td><td>12</td><td>4</td><td>0</td><td>1</td><td>10</td><td>4</td><td>+6</td></tr>
+                                <tr><td>3</td><td>Fc Creo</td><td>5</td><td>9</td><td>3</td><td>0</td><td>2</td><td>8</td><td>7</td><td>+1</td></tr>
+                                <tr><td>4</td><td>Fc Dream</td><td>5</td><td>6</td><td>2</td><td>0</td><td>3</td><td>6</td><td>9</td><td>-3</td></tr>
+                                <tr><td>5</td><td>Fc 꼬레아</td><td>5</td><td>3</td><td>1</td><td>0</td><td>4</td><td>5</td><td>12</td><td>-7</td></tr>
+                                <tr><td>6</td><td>서초구 Dice</td><td>5</td><td>0</td><td>0</td><td>0</td><td>5</td><td>2</td><td>12</td><td>-10</td></tr>
+                            </tbody>
+                        </table>
                     </div>
-                </a>
-                <a href="#" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=News+2" alt="뉴스 2">
-                    <div class="unified-card-content">
-                        <h3>성북구30대상비단, 첫 승 신고</h3>
-                        <p>강력한 우승 후보 성북구30대상비단이 첫 경기에서 승리를 거두며 순조로운 출발을 보였습니다.</p>
-                    </div>
-                </a>
-                <a href="#" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=News+3" alt="뉴스 3">
-                    <div class="unified-card-content">
-                        <h3>양지 FC, 아쉬운 무승부</h3>
-                        <p>양지 FC가 아쉽게 무승부를 기록하며 다음 경기를 기약했습니다.</p>
-                    </div>
-                </a>
+                </div>
             </div>
-        </section>
+
+            <div id="schedule" class="tab-content">
+                <div class="match-list-section">
+                    <div class="match-date-group">
+                        <h3>2024년 10월 26일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info"><span class="team-name">성북구30대상비단</span> <span class="score">3 : 0</span> <span class="team-name">서초구 Dice</span></div>
+                            <div class="match-details"><span>10:00 - 성북종합운동장</span></div>
+                        </div>
+                         <div class="match-list-item card">
+                            <div class="match-info"><span class="team-name">양지</span> <span class="score">2 : 1</span> <span class="team-name">Fc 꼬레아</span></div>
+                            <div class="match-details"><span>12:00 - 성북종합운동장</span></div>
+                        </div>
+                    </div>
+                    <div class="match-date-group">
+                        <h3>2024년 11월 2일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info"><span class="team-name">Fc Creo</span> <span class="time">10:00</span> <span class="team-name">Fc Dream</span></div>
+                            <div class="match-details"><span>성북종합운동장</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="stats" class="tab-content">
+                <div class="stats-table-section">
+                    <h4><i class="fas fa-futbol"></i> 득점 순위</h4>
+                    <div class="league-table">
+                        <table>
+                            <thead><tr><th>순위</th><th>선수</th><th>팀</th><th>득점</th></tr></thead>
+                            <tbody>
+                                <tr><td>1</td><td>김성북</td><td>성북구30대상비단</td><td>7</td></tr>
+                                <tr><td>2</td><td>박양지</td><td>양지</td><td>5</td></tr>
+                                <tr><td>3</td><td>이끄레</td><td>Fc Creo</td><td>4</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4 class="mt-4"><i class="far fa-handshake"></i> 도움 순위</h4>
+                    <div class="league-table">
+                        <table>
+                            <thead><tr><th>순위</th><th>선수</th><th>팀</th><th>도움</th></tr></thead>
+                            <tbody>
+                                <tr><td>1</td><td>최드림</td><td>Fc Dream</td><td>4</td></tr>
+                                <tr><td>2</td><td>정꼬레</td><td>Fc 꼬레아</td><td>3</td></tr>
+                                <tr><td>3</td><td>강다이</td><td>서초구 Dice</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#">회사소개</a>
-                <a href="#">서비스소개</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
+                <a href="#">회사소개</a> <a href="#">서비스소개</a> <a href="#">이용약관</a> <a href="#">개인정보처리방침</a>
             </div>
             <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>

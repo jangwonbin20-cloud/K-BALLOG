@@ -182,12 +182,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
+    const handleTabs = () => {
+        const tabContainer = document.querySelector('.tab-navigation');
+        if (!tabContainer) return;
+
+        const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabContainer.addEventListener('click', (e) => {
+            const clickedButton = e.target.closest('.tab-btn');
+            if (!clickedButton) return;
+
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            clickedButton.classList.add('active');
+
+            const tabId = clickedButton.dataset.tab;
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    };
+
     if (path.includes('match.html')) {
         handleMatchSearch();
     }
 
     if (path.includes('search.html')) {
         handleGlobalSearch();
+    }
+
+    if (path.includes('seoul-k7-seongbuk.html')) {
+        handleTabs();
     }
 
     initializeCommonListeners();
