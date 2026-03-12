@@ -613,7 +613,7 @@ ul {
     color: var(--primary-accent);
 }
 
-.search-result-item .highlight {
+.search-result-item p .highlight {
     background-color: var(--primary-accent);
     color: var(--text-light);
     padding: 2px 4px;

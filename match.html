@@ -55,50 +55,83 @@
                 <input type="date" id="date-search">
                 <select id="league-search">
                     <option value="">모든 리그</option>
-                    <option value="K5">서울 K5리그</option>
-                    <option value="K6">수원 K6리그</option>
-                    <option value="K7">인천 K7리그</option>
+                    <option value="서울 K5">서울 K5리그</option>
+                    <option value="서울 K6">서울 K6리그</option>
+                    <option value="서울 K7">서울 K7리그</option>
+                    <option value="서울 SSSL">서울 SSSL</option>
+                    <option value="수원 K6">수원 K6리그</option>
+                    <option value="인천 K7">인천 K7리그</option>
                 </select>
                 <button id="search-button"><i class="fas fa-search"></i> 검색</button>
             </div>
 
-            <div class="match-date-group" data-date="2024-07-22">
-                <h3>2024년 7월 22일 (월)</h3>
-                <div class="card match-list-item" data-team="서울 중랑FC 서울 강북FC" data-league="K5">
-                    <div class="match-info">
-                        <span>서울 중랑FC</span>
-                        <span class="score">2 - 1</span>
-                        <span>서울 강북FC</span>
-                    </div>
-                    <div class="match-details">
-                        <span>경기종료</span> | <span>서울 K5리그</span>
+            <div id="match-list-container">
+                <div class="match-date-group" data-date="2024-07-22">
+                    <h3>2024년 7월 22일 (월)</h3>
+                    <div class="card match-list-item" data-team="서울 중랑FC 서울 강북FC" data-league="서울 K5">
+                        <div class="match-info">
+                            <span>서울 중랑FC</span>
+                            <span class="score">2 - 1</span>
+                            <span>서울 강북FC</span>
+                        </div>
+                        <div class="match-details">
+                            <span>경기종료</span> | <span>서울 K5리그</span>
+                        </div>
                     </div>
                 </div>
+
+                <div class="match-date-group" data-date="2024-07-24">
+                    <h3>2024년 7월 24일 (수)</h3>
+                    <div class="card match-list-item" data-team="수원 팔달팀 수원 영통팀" data-league="수원 K6">
+                        <div class="match-info">
+                            <span>수원 팔달팀</span>
+                            <span class="time">19:00</span>
+                            <span>수원 영통팀</span>
+                        </div>
+                        <div class="match-details">
+                            <span>예정</span> | <span>수원 K6리그</span>
+                        </div>
+                    </div>
+                    <div class="card match-list-item" data-team="인천 남동리그 인천 서구리그" data-league="인천 K7">
+                        <div class="match-info">
+                            <span>인천 남동리그</span>
+                            <span class="time">20:00</span>
+                            <span>인천 서구리그</span>
+                        </div>
+                        <div class="match-details">
+                            <span>예정</span> | <span>인천 K7리그</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-date-group" data-date="2024-07-27">
+                    <h3>2024년 7월 27일 (토)</h3>
+                    <div class="card match-list-item" data-team="팀코리아 FC드림" data-league="서울 K6">
+                        <div class="match-info">
+                            <span>팀코리아</span>
+                            <span class="time">14:00</span>
+                            <span>FC드림</span>
+                        </div>
+                        <div class="match-details">
+                            <span>예정</span> | <span>서울 K6리그</span>
+                        </div>
+                    </div>
+                    <div class="card match-list-item" data-team="성북 FC 양지FC" data-league="서울 K7">
+                        <div class="match-info">
+                            <span>성북 FC</span>
+                            <span class="time">16:00</span>
+                            <span>양지FC</span>
+                        </div>
+                        <div class="match-details">
+                            <span>예정</span> | <span>서울 K7리그</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="no-results-message" style="display: none; text-align: center; padding: 2rem; color: var(--text-medium);">
+                <p>검색 결과가 없습니다.</p>
             </div>
 
-            <div class="match-date-group" data-date="2024-07-24">
-                <h3>2024년 7월 24일 (수)</h3>
-                <div class="card match-list-item" data-team="수원 팔달팀 수원 영통팀" data-league="K6">
-                    <div class="match-info">
-                        <span>수원 팔달팀</span>
-                        <span class="time">19:00</span>
-                        <span>수원 영통팀</span>
-                    </div>
-                    <div class="match-details">
-                        <span>예정</span> | <span>수원 K6리그</span>
-                    </div>
-                </div>
-                <div class="card match-list-item" data-team="인천 남동리그 인천 서구리그" data-league="K7">
-                    <div class="match-info">
-                        <span>인천 남동리그</span>
-                        <span class="time">20:00</span>
-                        <span>인천 서구리그</span>
-                    </div>
-                    <div class="match-details">
-                        <span>예정</span> | <span>인천 K7리그</span>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- League Table Section -->

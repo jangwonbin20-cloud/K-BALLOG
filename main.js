@@ -53,12 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const handleMatchSearch = () => {
         const searchButton = document.getElementById('search-button');
+        const teamSearchInput = document.getElementById('team-search');
+        const dateSearchInput = document.getElementById('date-search');
+        const leagueSearchInput = document.getElementById('league-search');
+        const matchListContainer = document.getElementById('match-list-container');
+        const noResultsMessage = document.getElementById('no-results-message');
+
         if (!searchButton) return;
 
-        searchButton.addEventListener('click', () => {
-            const teamSearchValue = document.getElementById('team-search').value.toLowerCase();
-            const dateSearchValue = document.getElementById('date-search').value;
-            const leagueSearchValue = document.getElementById('league-search').value;
+        const filterMatches = () => {
+            const teamSearchValue = teamSearchInput.value.toLowerCase();
+            const dateSearchValue = dateSearchInput.value;
+            const leagueSearchValue = leagueSearchInput.value;
+            let hasResults = false;
 
             document.querySelectorAll('.match-date-group').forEach(group => {
                 let groupVisible = false;
@@ -74,13 +81,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (teamMatch && dateMatch && leagueMatch) {
                         item.style.display = 'flex';
                         groupVisible = true;
+                        hasResults = true;
                     } else {
                         item.style.display = 'none';
                     }
                 });
                 group.style.display = groupVisible ? 'block' : 'none';
             });
-        });
+
+            if (noResultsMessage) {
+                noResultsMessage.style.display = hasResults ? 'none' : 'block';
+            }
+        };
+
+        searchButton.addEventListener('click', filterMatches);
     };
 
     const handleGlobalSearch = () => {
