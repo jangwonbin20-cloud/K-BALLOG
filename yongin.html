@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 당신의 지역 축구 소식</title>
+    <title>K-BALLOG - 용인 지역 축구 소식</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    '
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -41,12 +40,31 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                 <div class="auth-actions">
+                    <button id="login-btn" class="btn-auth">로그인</button>
+                    <button id="signup-btn" class="btn-auth">회원가입</button>
+                    <div id="user-info" class="hidden">
+                        <span id="user-greeting"></span>
+                        <button id="logout-btn" class="btn-auth">로그아웃</button>
+                    </div>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
                 <span class="mobile-location-label">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
-
 
     <main class="container">
         <section class="region-hero">
