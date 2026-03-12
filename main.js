@@ -24,9 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const hamburger = document.querySelector('.hamburger');
         const nav = document.querySelector('.main-nav');
-        if (hamburger && nav) {
+        const locationSelector = document.querySelector('.location-selector');
+
+        if (hamburger && nav && locationSelector) {
             hamburger.addEventListener('click', () => {
-                nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+                const isNavVisible = nav.style.display === 'block';
+                nav.style.display = isNavVisible ? 'none' : 'block';
+                locationSelector.style.display = isNavVisible ? 'none' : 'block';
             });
         }
     };
