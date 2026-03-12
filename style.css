@@ -894,6 +894,94 @@ ul {
 }
 
 
+/* Community Section */
+.community-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.create-post-btn {
+    background-color: var(--primary-accent);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(228, 0, 43, 0.25);
+}
+
+.create-post-btn:hover {
+    background-color: #c00024;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(228, 0, 43, 0.4);
+}
+
+.forum-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.post-item {
+    background-color: var(--card-bg);
+    padding: 1.2rem 1.5rem;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.post-item:hover {
+    border-left-color: var(--primary-accent);
+    background-color: #2a2d35;
+    transform: translateX(4px);
+}
+
+.post-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    grid-column: 1 / 2;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
+    color: var(--primary-accent);
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    grid-column: 1 / 2;
+}
+
+.post-stats {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    text-align: right;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* News Section */
+.news-section .unified-card:hover {
+    border-left-color: var(--icon-green);
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -990,5 +1078,17 @@ ul {
 
     .team-card span {
         font-size: 0.9rem;
+    }
+    
+    .post-item {
+        grid-template-columns: 1fr;
+    }
+
+    .post-stats {
+        grid-column: 1;
+        grid-row: 3;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0.75rem;
     }
 }

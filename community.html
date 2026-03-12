@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 당신의 지역 축구 소식</title>
+    <title>커뮤니티 - K-BALLOG</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    '
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -37,7 +36,7 @@
                     <li><a href="match.html">경기</a></li>
                     <li><a href="search.html">검색</a></li>
                     <li><a href="news.html">뉴스</a></li>
-                    <li><a href="community.html">커뮤니티</a></li>
+                    <li><a href="community.html" class="active">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -47,36 +46,35 @@
         </div>
     </header>
 
-
     <main class="container">
-        <section class="region-hero">
-            <h2 class="section-heading">인천 지역 리그</h2>
-            <p>인천의 아마추어 축구 리그, 클럽, 선수에 대한 모든 정보를 확인하세요.</p>
+        <section class="community-section">
+            <div class="community-header">
+                <h2 class="section-heading"><i class="fas fa-users"></i> 커뮤니티 게시판</h2>
+                <button class="create-post-btn"><i class="fas fa-edit"></i> 새 글 작성</button>
+            </div>
+            <div class="forum-posts">
+                <div class="post-item">
+                    <div class="post-title"><a href="#">K5리그 서울 지역 경기 일정 아시는 분?</a></div>
+                    <div class="post-meta">작성자: 축구팬, 2시간 전</div>
+                    <div class="post-stats">조회수 3, 댓글 5</div>
+                </div>
+                <div class="post-item">
+                    <div class="post-title"><a href="#">수원FC 경기 직관 후기!</a></div>
+                    <div class="post-meta">작성자: 열성팬, 5시간 전</div>
+                    <div class="post-stats">조회수 12, 댓글 8</div>
+                </div>
+                <div class="post-item">
+                    <div class="post-title"><a href="#">인천 아마추어 팀 찾습니다</a></div>
+                    <div class="post-meta">작성자: 축구사랑, 1일 전</div>
+                    <div class="post-stats">조회수 25, 댓글 12</div>
+                </div>
+                 <div class="post-item">
+                    <div class="post-title"><a href="#">용인 주말 풋살 하실 분~</a></div>
+                    <div class="post-meta">작성자: 풋살왕, 3일 전</div>
+                    <div class="post-stats">조회수 50, 댓글 20</div>
+                </div>
+            </div>
         </section>
-
-        <div class="unified-grid">
-            <a href="incheon-k5.html" class="unified-card">
-                <div class="unified-card-content">
-                    <h3 class="card-title">K5 리그</h3>
-                    <p>인천 지역 최상위 아마추어 리그의 순위와 경기 결과를 확인하세요.</p>
-                    <span class="card-meta">10개 팀 참가</span>
-                </div>
-            </a>
-            <a href="incheon-k6.html" class="unified-card">
-                <div class="unified-card-content">
-                    <h3 class="card-title">K6 리그</h3>
-                    <p>치열한 경쟁이 펼쳐지는 K6 리그의 정보를 제공합니다.</p>
-                    <span class="card-meta">1개 디비전</span>
-                </div>
-            </a>
-            <a href="incheon-k7.html" class="unified-card">
-                <div class="unified-card-content">
-                    <h3 class="card-title">K7 리그</h3>
-                    <p>다양한 클럽들이 참가하는 K7 리그의 경기 소식을 전해드립니다.</p>
-                     <span class="card-meta">다수 지역 리그</span>
-                </div>
-            </a>
-        </div>
     </main>
 
     <footer class="main-footer">
