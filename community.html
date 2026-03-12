@@ -40,6 +40,18 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                 <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
                 <span class="mobile-location-label">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
@@ -50,29 +62,10 @@
         <section class="community-section">
             <div class="community-header">
                 <h2 class="section-heading"><i class="fas fa-users"></i> 커뮤니티 게시판</h2>
-                <button class="create-post-btn"><i class="fas fa-edit"></i> 새 글 작성</button>
+                <a href="create-post.html" class="create-post-btn"><i class="fas fa-edit"></i> 새 글 작성</a>
             </div>
             <div class="forum-posts">
-                <div class="post-item">
-                    <div class="post-title"><a href="#">K5리그 서울 지역 경기 일정 아시는 분?</a></div>
-                    <div class="post-meta">작성자: 축구팬, 2시간 전</div>
-                    <div class="post-stats">조회수 3, 댓글 5</div>
-                </div>
-                <div class="post-item">
-                    <div class="post-title"><a href="#">수원FC 경기 직관 후기!</a></div>
-                    <div class="post-meta">작성자: 열성팬, 5시간 전</div>
-                    <div class="post-stats">조회수 12, 댓글 8</div>
-                </div>
-                <div class="post-item">
-                    <div class="post-title"><a href="#">인천 아마추어 팀 찾습니다</a></div>
-                    <div class="post-meta">작성자: 축구사랑, 1일 전</div>
-                    <div class="post-stats">조회수 25, 댓글 12</div>
-                </div>
-                 <div class="post-item">
-                    <div class="post-title"><a href="#">용인 주말 풋살 하실 분~</a></div>
-                    <div class="post-meta">작성자: 풋살왕, 3일 전</div>
-                    <div class="post-stats">조회수 50, 댓글 20</div>
-                </div>
+                <!-- Posts will be dynamically loaded here -->
             </div>
         </section>
     </main>

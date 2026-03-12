@@ -201,4 +201,68 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
         });
     }
+
+    // Community post functionality
+    const createPostForm = document.getElementById('create-post-form');
+    const forumPostsContainer = document.querySelector('.forum-posts');
+
+    // Function to save a new post
+    if (createPostForm) {
+        createPostForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+            
+            const posts = JSON.parse(localStorage.getItem('forumPosts')) || [];
+            
+            const newPost = {
+                title,
+                content,
+                author: "축구팬", // Placeholder author
+                date: new Date().toISOString(),
+                views: 0,
+                comments: 0
+            };
+
+            posts.unshift(newPost); // Add new post to the beginning of the array
+            localStorage.setItem('forumPosts', JSON.stringify(posts));
+            
+            window.location.href = 'community.html';
+        });
+    }
+
+    // Function to load and display posts
+    if (forumPostsContainer) {
+        const posts = JSON.parse(localStorage.getItem('forumPosts')) || [];
+        
+        if (posts.length === 0) {
+            forumPostsContainer.innerHTML = '<p class="no-posts-message">아직 게시글이 없습니다. 첫 번째 글을 작성해보세요!</p>';
+        } else {
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post-item');
+                
+                // Format date to be more readable (e.g., "2시간 전")
+                const timeAgo = (new Date() - new Date(post.date)) / 1000; // in seconds
+                let dateString;
+                if (timeAgo < 60) {
+                    dateString = `${Math.floor(timeAgo)}초 전`;
+                } else if (timeAgo < 3600) {
+                    dateString = `${Math.floor(timeAgo / 60)}분 전`;
+                } else if (timeAgo < 86400) {
+                    dateString = `${Math.floor(timeAgo / 3600)}시간 전`;
+                } else {
+                    dateString = `${Math.floor(timeAgo / 86400)}일 전`;
+                }
+
+                postElement.innerHTML = `
+                    <div class="post-title"><a href="#">${post.title}</a></div>
+                    <div class="post-meta">작성자: ${post.author}, ${dateString}</div>
+                    <div class="post-stats">조회수 ${post.views}, 댓글 ${post.comments}</div>
+                `;
+                forumPostsContainer.appendChild(postElement);
+            });
+        }
+    }
 });
