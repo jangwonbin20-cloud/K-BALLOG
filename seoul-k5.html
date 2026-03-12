@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 서울: K5 리그</title>
+    <title>K-BALLOG - 서울 K5 리그</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -18,18 +17,6 @@
                     <i class="fas fa-futbol soccer-ball-icon logo-icon"></i>
                     <i class="fas fa-chart-line data-icon logo-icon"></i>
                 </div>
-                <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
-                    <div class="location-select-wrapper">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
-                        </select>
-                    </div>
-                </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
@@ -39,81 +26,90 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
+                <div class="location-selector">
+                    <label for="location-select">지역 선택</label>
+                    <div class="location-select-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="location-select">
+                            <option value="seoul.html" selected>서울</option>
+                            <option value="suwon.html">수원</option>
+                            <option value="incheon.html">인천</option>
+                            <option value="yongin.html">용인</option>
+                        </select>
+                    </div>
+                </div>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="main-content">
-            <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seoul+K5" alt="대표 기사 이미지">
-                <div class="article-content">
-                    <span class="category">서울: K5 리그</span>
-                    <h2>서울: K5 리그 소식</h2>
-                    <p>서울의 K5 리그 최신 소식을 확인하세요.</p>
-                </div>
-            </div>
+        <section class="league-detail-section">
+            <h2 class="section-heading"><i class="fas fa-trophy"></i> 서울 K5 리그 정보</h2>
 
-            <div class="sidebar">
-                <div class="card match-center">
-                    <div class="card-header">
-                        <h3><i class="fas fa-trophy"></i> 서울: K5 리그 순위</h3>
-                    </div>
+            <!-- League Ranking Card -->
+            <div class="unified-card">
+                 <div class="unified-card-content">
+                    <h3 class="card-title">리그 순위</h3>
                     <div class="league-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>순위</th>
-                                    <th>팀</th>
-                                    <th>경기</th>
-                                    <th>승점</th>
-                                </tr>
+                                <tr><th>순위</th><th>팀</th><th>경기</th><th>승점</th><th>득실차</th></tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>서울 벽산 플레이어스 FC</td>
-                                    <td>10</td>
-                                    <td>28</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>서울 TNT FC</td>
-                                    <td>10</td>
-                                    <td>25</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>FC 투게더</td>
-                                    <td>10</td>
-                                    <td>20</td>
-                                </tr>
-                                <!-- More teams -->
+                                <tr><td>1</td><td>서울 벽산 플레이어스 FC</td><td>10</td><td>28</td><td>+18</td></tr>
+                                <tr><td>2</td><td>서울 TNT FC</td><td>10</td><td>25</td><td>+15</td></tr>
+                                <tr><td>3</td><td>FC 투게더</td><td>10</td><td>20</td><td>+9</td></tr>
+                                <tr><td>4</td><td>중랑 FC</td><td>10</td><td>18</td><td>+5</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <section class="latest-articles-section">
-            <h2><i class="far fa-newspaper"></i> 서울: K5 리그 최신 뉴스</h2>
-            <div class="articles-grid">
-                <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=K5+News+1" alt="기사 썸네일">
-                    <h3>서울 벽산, K5 리그 우승 차지</h3>
-                    <span class="article-date">2024-07-20</span>
-                </div>
-                <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=K5+News+2" alt="기사 썸네일">
-                    <h3>서울 TNT FC, 다음 시즌 준비 돌입</h3>
-                    <span class="article-date">2024-07-19</span>
-                </div>
+            <div class="unified-grid">
+                <!-- Latest News Card -->
+                <a href="#" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3 class="card-title">최신 뉴스</h3>
+                        <h4>서울 벽산, K5 리그 우승 차지</h4>
+                        <p>디펜딩 챔피언의 저력을 보여주며 다시 한 번 정상에 올랐습니다.</p>
+                        <span class="card-meta">2024-07-20</span>
+                    </div>
+                </a>
+
+                <!-- Match Schedule Card -->
+                <a href="match.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3 class="card-title">경기 일정</h3>
+                        <p>다음 경기는 8월 3일 토요일에 열릴 예정입니다. 전체 일정은 매치 센터에서 확인하세요.</p>
+                        <span class="card-meta">2024-08-03 예정</span>
+                    </div>
+                </a>
+
+                <!-- Participating Teams Card -->
+                <a href="#" class="unified-card">
+                     <div class="unified-card-content">
+                        <h3 class="card-title">참가 팀</h3>
+                        <p>서울 벽산, TNT FC, FC 투게더, 중랑 FC 등 서울의 강호들이 참여합니다.</p>
+                        <span class="card-meta">총 12개 팀</span>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">문의하기</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>

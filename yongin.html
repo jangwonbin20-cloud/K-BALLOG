@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 용인</title>
+    <title>K-BALLOG - 용인 지역 리그</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -18,8 +17,17 @@
                     <i class="fas fa-futbol soccer-ball-icon logo-icon"></i>
                     <i class="fas fa-chart-line data-icon logo-icon"></i>
                 </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="match.html">경기</a></li>
+                    <li><a href="search.html">검색</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
                 <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
+                    <label for="location-select">지역 선택</label>
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
@@ -30,46 +38,36 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
-                    <li><a href="search.html">검색</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="main-content">
-            <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Yongin+Football" alt="대표 기사 이미지">
-                <div class="article-content">
-                    <span class="category">용인</span>
-                    <h2><i class="fas fa-futbol"></i> 용인 축구 소식</h2>
-                    <p>용인시의 다양한 아마추어 축구 리그 소식을 K-BALLOG에서 확인하세요.</p>
-                </div>
-            </div>
-        </div>
-
         <section class="category-section">
-            <h2><i class="fas fa-trophy"></i> 용인 리그</h2>
-            <div class="category-grid">
-                <a href="yongin-k5.html" class="category-card">용인 K5 리그</a>
-                <a href="yongin-k6.html" class="category-card">용인 K6 리그</a>
-                <a href="yongin-k7.html" class="category-card">용인 K7 리그</a>
-            </div>
-        </section>
-
-        <section class="latest-articles-section">
-            <h2><i class="far fa-newspaper"></i> 용인 최신 뉴스</h2>
-            <div class="articles-grid">
-                <!-- Placeholder for news -->
+            <h2 class="section-heading"><i class="fas fa-trophy"></i> 용인 아마추어 리그</h2>
+            <div class="unified-grid">
+                <!-- K5 League -->
+                <a href="yongin-k5.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>용인 K5 리그</h3>
+                        <p>용인 최상위 아마추어 리그의 순위와 경기 정보를 확인하세요.</p>
+                    </div>
+                </a>
+                <!-- K6 League -->
+                <a href="yongin-k6.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>용인 K6 리그</h3>
+                        <p>용인 K6 리그의 클럽별 소식과 경기 결과를 제공합니다.</p>
+                    </div>
+                </a>
+                <!-- K7 League -->
+                <a href="yongin-k7.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>용인 K7 리그</h3>
+                        <p>용인 전역에서 펼쳐지는 K7 리그의 생생한 소식을 전달합니다.</p>
+                    </div>
+                </a>
             </div>
         </section>
     </main>

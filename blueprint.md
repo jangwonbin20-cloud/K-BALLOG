@@ -1,52 +1,44 @@
+# K-BALLOG 프로젝트 청사진
 
-## **July 25, 2024**
+## 1. 프로젝트 개요
 
-**Style Update:** Adjust Location Selector Position
+K-BALLOG는 대한민국 아마추어 축구 리그의 소식을 통합 제공하는 웹 플랫폼입니다. 사용자는 지역별(서울, 수원, 인천, 용인 등) 리그의 경기 일정, 결과, 순위, 관련 뉴스 등 다양한 정보를 손쉽게 확인하고, 자신이 응원하는 팀과 선수들의 소식을 접할 수 있습니다.
 
-**Plan:**
-1.  **Modify CSS:** Increase the `margin-left` property of the `.location-selector` class in `style.css` to move the location dropdown menu to the right for better visual balance.
-2.  **Document Changes:** Update this `blueprint.md` file to reflect the style adjustment.
+## 2. 현재 애플리케이션 상태 및 기능
 
-**Changes Implemented:**
-*   **Modified `style.css`:** Changed `margin-left` for `.location-selector` from `5rem` to `6rem`.
+### 2.1. 디자인 및 스타일
 
----
+- **테마**: 전체적으로 어두운 테마(Dark Mode)를 적용하여 모던하고 집중도 높은 사용자 경험을 제공합니다.
+- **컬러 팔레트**: 주조색으로 `--dark-bg` (`#1a1c23`), 카드 배경색으로 `--card-bg` (`#24262e`), 그리고 강조색으로 강렬한 빨간색 계열의 `--primary-accent` (`#e4002b`)를 사용합니다.
+- **아이콘**: Font Awesome 아이콘을 활용하여 메뉴와 버튼의 시각적 이해를 돕습니다.
+- **반응형 디자인**: 모바일, 태블릿, 데스크톱 등 다양한 화면 크기에 대응하는 반응형 레이아웃을 갖추고 있습니다.
 
-## **July 25, 2024**
+### 2.2. 구현된 기능
 
-**Feature Update:** Add Yongin Region
+- **메인 페이지 (`index.html`)**: 대표 이미지와 함께 최신 리그 뉴스, 주요 경기 일정을 확인할 수 있는 사이드바가 배치되어 있습니다.
+- **지역별 페이지 (`seoul.html`, `suwon.html` 등)**: 각 지역의 대표 리그(K5, K6, K7 등)로 바로 이동할 수 있는 링크를 제공합니다.
+- **경기 정보 페이지 (`match.html`)**: 모든 리그의 경기 일정과 결과를 통합하여 보여주며, 팀 이름, 날짜, 리그별로 경기를 검색하고 필터링하는 기능을 제공합니다.
+- **전역 검색 페이지 (`search.html`)**: 사이트 내의 모든 콘텐츠(페이지, 뉴스, 팀, 선수 정보)를 키워드로 검색할 수 있습니다.
+- **헤더**: 주요 메뉴(홈, 경기, 검색)와 함께 사용자가 선호하는 지역을 선택할 수 있는 드롭다운 메뉴가 포함되어 있습니다.
 
-**Plan:**
-1.  **Create Yongin Region Page:** Create `yongin.html` based on `suwon.html` to establish the main page for the Yongin region.
-2.  **Create Yongin League Pages:** Create `yongin-k5.html`, `yongin-k6.html`, and `yongin-k7.html` based on the corresponding Suwon league pages.
-3.  **Update Content:** Modify the content of the new Yongin pages to be specific to the Yongin region, including titles, headings, news, and league data.
-4.  **Update Navigation:** Add "Yongin" to the location selector dropdown menu in all relevant HTML files to ensure seamless navigation.
-5.  **Document Changes:** Update this `blueprint.md` file to reflect the addition of the new region and its associated pages.
+## 3. 신규 요청: 심플하고 통일감 있는 디자인 개편
 
-**Changes Implemented:**
-*   **Created `yongin.html`:** A new region page for Yongin, including match center, news, and links to K5, K6, and K7 leagues.
-*   **Created `yongin-k5.html`, `yongin-k6.html`, `yongin-k7.html`:** New pages for Yongin's K5, K6, and K7 leagues with placeholder data.
-*   **Updated Navigation:** Added "Yongin" to the location selector dropdown in all existing HTML files, including `index.html`, `seoul.html`, `suwon.html`, `incheon.html`, and all their respective league pages.
-*   **Verified `main.js`:** Confirmed that the existing JavaScript for the location selector handles the new "Yongin" option correctly without modification.
+### 3.1. 목표
 
----
+현재 분산되어 있는 카테고리와 콘텐츠 표시 방식을 하나로 통일하여, 사용자가 어디서든 일관된 경험을 할 수 있도록 디자인을 개편합니다. 정보 구조를 단순화하고 시각적 통일성을 강화하여 더 직관적이고 세련된 사용자 인터페이스를 제공하는 것을 목표로 합니다.
 
-## **July 25, 2024**
+### 3.2. 실행 계획
 
-**Feature Update:** Consistent Naming Convention and Iconography
+1.  **통합 카드 컴포넌트 도입**
+    - 뉴스, 리그 바로가기, 검색 결과 등 다양한 콘텐츠를 표시하기 위한 단일 디자인의 '통합 카드' 스타일을 `style.css`에 정의합니다.
+    - 기존의 다양한 카드 및 링크 스타일(`news-card`, `category-card` 등)을 이 새로운 통합 카드로 점진적으로 교체하여 시각적 일관성을 확보합니다.
 
-**Plan:**
-1.  **Standardize Page Titles and Categories:** Update all league-specific HTML files to use a consistent "Region: League" format for titles and category labels (e.g., "서울: K5 리그").
-2.  **Enhance Headings with Icons:** Add relevant Font Awesome icons to section headings within the league pages to improve visual hierarchy and user experience.
-3.  **Update Navigation Links:** Ensure that all internal links pointing to these pages are updated to reflect the new naming convention.
+2.  **홈페이지(`index.html`) 구조 개편**
+    - 기존의 '최신 뉴스' 섹션과 '매치 센터' 사이드바를 '지역별 리그 바로가기'라는 단일 섹션으로 통합합니다.
+    - 이 새로운 섹션에서는 서울, 수원, 인천, 용인 등 주요 지역 리그 정보를 통합 카드를 사용한 그리드 레이아웃으로 표시하여 사용자가 원하는 지역의 정보에 빠르게 접근할 수 있도록 합니다.
 
-**Changes Implemented:**
-*   **League Pages:**
-    *   `seoul-k5.html`, `seoul-k6.html`, `seoul-k7.html`, `seoul-sssl.html`
-    *   `suwon-k5.html`, `suwon-k6.html`, `suwon-k7.html`
-    *   `incheon-k5.html`, `incheon-k6.html`, `incheon-k7.html`
-    *   Updated all titles, categories, and headings to the "Region: League" format.
-    *   Added Font Awesome icons for trophies, charts, maps, and newspapers.
-*   **Region Pages:**
-    *   `seoul.html`, `suwon.html`, `incheon.html`
-    *   Verified that all links to league pages reflect the new naming convention.
+3.  **지역별 페이지(`seoul.html` 등) 리팩토링**
+    - 각 지역 페이지에 나열된 하위 리그(예: 서울 K5, 서울 K6) 링크들을 기존의 `category-grid` 대신 새로운 통합 카드 디자인으로 교체하여 전체 사이트의 통일성을 유지합니다.
+
+4.  **전체 스타일 미세 조정**
+    - `style.css`에서 여백, 타이포그래피, 색상 사용을 전반적으로 재검토하고 미세 조정하여 시각적 균형과 가독성을 높입니다. 이를 통해 더욱 정돈되고 전문적인 느낌을 전달합니다.

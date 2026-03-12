@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 서울</title>
+    <title>K-BALLOG - 서울 지역 리그</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -28,7 +27,7 @@
             </nav>
             <div class="header-actions">
                 <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
+                    <label for="location-select">지역 선택</label>
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
@@ -45,71 +44,53 @@
     </header>
 
     <main class="container">
-        <div class="main-content">
-            <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seoul" alt="대표 기사 이미지">
-                <div class="article-content">
-                    <span class="category">서울</span>
-                    <h2>서울 지역 축구 소식</h2>
-                    <p>서울 지역의 최신 축구 소식을 확인하세요.</p>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                <div class="card match-center">
-                    <div class="card-header">
-                        <h3><i class="fas fa-calendar-alt"></i> 서울 지역 매치 센터</h3>
-                        <div class="tabs">
-                            <button class="tab-link active" data-tab="results">최근 결과</button>
-                            <button class="tab-link" data-tab="fixtures">예정된 경기</button>
-                        </div>
-                    </div>
-                    <div id="results" class="tab-content active">
-                        <div class="match-item"><span>성북구30대상비단</span> <span class="score">3 - 1</span> <span>FC Corea</span></div>
-                        <div class="match-item"><span>양지</span> <span class="score">2 - 2</span> <span>석관</span></div>
-                    </div>
-                    <div id="fixtures" class="tab-content">
-                        <div class="match-item"><span>FC Corea</span> <span class="time">18:00</span> <span>양지</span></div>
-                        <div class="match-item"><span>석관</span> <span class="time">20:00</span> <span>성북구30대상비단</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <section class="category-section">
-            <h2><i class="fas fa-trophy"></i> 아마추어 리그</h2>
-            <div class="category-grid">
-                <a href="seoul-k5.html" class="category-card">서울: K5 리그</a>
-                <a href="seoul-k6.html" class="category-card">서울: K6 리그</a>
-                <a href="seoul-k7.html" class="category-card">서울: K7 리그</a>
-                <a href="seoul-sssl.html" class="category-card">서울: SSSL</a>
-            </div>
-        </section>
-
-        <section class="latest-articles-section">
-            <h2><i class="far fa-newspaper"></i> 서울 지역 최신 뉴스</h2>
-            <div class="articles-grid">
-                <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Seoul+News+1" alt="기사 썸네일">
-                    <h3>FC 서울, 라이벌전 승리</h3>
-                    <span class="article-date">2024-07-22</span>
-                </div>
-                <div class="news-card">
-                    <img src="https://via.placeholder.com/400x225/1a1c23/f0f0f0?text=Seoul+News+2" alt="기사 썸네일">
-                    <h3>서울 이랜드, 유망주 영입</h3>
-                    <span class="article-date">2024-07-21</span>
-                </div>
+            <h2 class="section-heading"><i class="fas fa-trophy"></i> 서울 아마추어 리그</h2>
+            <div class="unified-grid">
+                <!-- K5 League -->
+                <a href="seoul-k5.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>서울 K5 리그</h3>
+                        <p>서울 최상위 아마추어 리그의 순위와 경기 정보를 확인하세요.</p>
+                    </div>
+                </a>
+                <!-- K6 League -->
+                <a href="seoul-k6.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>서울 K6 리그</h3>
+                        <p>서울 K6 리그의 클럽별 소식과 경기 결과를 제공합니다.</p>
+                    </div>
+                </a>
+                <!-- K7 League -->
+                <a href="seoul-k7.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>서울 K7 리그</h3>
+                        <p>서울 전역에서 펼쳐지는 K7 리그의 생생한 소식을 전달합니다.</p>
+                    </div>
+                </a>
+                <!-- SSSL -->
+                <a href="seoul-sssl.html" class="unified-card">
+                    <div class="unified-card-content">
+                        <h3>서울 직장인 리그 (SSSL)</h3>
+                        <p>서울시 직장인 축구 리그의 경기 일정과 팀 정보를 확인하세요.</p>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
 
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">문의하기</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
-    <script>
-        document.getElementById('location-select').addEventListener('change', function() {
-            if (this.value) {
-                window.location.href = this.value;
-            }
-        });
-    </script>
 </body>
 </html>

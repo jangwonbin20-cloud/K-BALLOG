@@ -1,27 +1,7 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const path = window.location.pathname;
 
     const initializeCommonListeners = () => {
-        const tabs = document.querySelectorAll('.tab-link');
-        tabs.forEach(tab => {
-            if (tab.dataset.listenerAttached) return;
-            tab.dataset.listenerAttached = 'true';
-            tab.addEventListener('click', () => {
-                const parentCard = tab.closest('.card');
-                if (!parentCard) return;
-
-                const targetId = tab.dataset.tab;
-                const target = parentCard.querySelector(`#${targetId}`);
-
-                parentCard.querySelectorAll('.tab-link').forEach(t => t.classList.remove('active'));
-                parentCard.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-                tab.classList.add('active');
-                if (target) target.classList.add('active');
-            });
-        });
-
         const hamburger = document.querySelector('.hamburger');
         const nav = document.querySelector('.main-nav');
 
@@ -35,20 +15,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const locationSelect = document.getElementById('location-select');
     if (locationSelect) {
+        const currentPage = path.split('/').pop();
+        if (currentPage) {
+            for (let i = 0; i < locationSelect.options.length; i++) {
+                if (locationSelect.options[i].value === currentPage) {
+                    locationSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
         locationSelect.addEventListener('change', function() {
             if (this.value) window.location.href = this.value;
         });
-
-        const mobileLocationLabel = document.querySelector('.mobile-location-label');
-        if (mobileLocationLabel) {
-            const selectedOption = locationSelect.options[locationSelect.selectedIndex];
-            mobileLocationLabel.textContent = `당신의 지역: ${selectedOption.text}`;
-
-            locationSelect.addEventListener('change', function() {
-                const selectedOption = this.options[this.selectedIndex];
-                mobileLocationLabel.textContent = `당신의 지역: ${selectedOption.text}`;
-            });
-        }
     }
 
     const handleMatchSearch = () => {
@@ -56,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const teamSearchInput = document.getElementById('team-search');
         const dateSearchInput = document.getElementById('date-search');
         const leagueSearchInput = document.getElementById('league-search');
-        const matchListContainer = document.getElementById('match-list-container');
         const noResultsMessage = document.getElementById('no-results-message');
 
         if (!searchButton) return;
@@ -109,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
             "seoul.html", "suwon.html", "incheon.html", "yongin.html",
             "district.html",
             "incheon-k5.html", "incheon-k6.html", "incheon-k7.html",
-            "seoul-k5.html", "seoul-k6.html", "seoul-k6-divA.html", "seoul-k6-divB.html",
-            "seoul-k7.html", "seoul-k7-seongbuk.html", "seoul-k7-seongbuk-ranking.html", "seoul-k7-seongbuk-schedule.html",
-            "seoul-sssl.html", "seoul-sssl-div1.html", "seoul-sssl-div2.html",
+            "seoul-k5.html", "seoul-k6-divA.html", "seoul-k6-divB.html", "seoul-k6.html",
+            "seoul-k7-seongbuk-ranking.html", "seoul-k7-seongbuk-schedule.html", "seoul-k7-seongbuk.html", "seoul-k7.html",
+            "seoul-sssl-div1.html", "seoul-sssl-div2.html", "seoul-sssl.html",
             "suwon-k5.html", "suwon-k6.html", "suwon-k7.html",
             "yongin-k5.html", "yongin-k6.html", "yongin-k7.html",
             "team-corea.html", "team-creo.html", "team-dice.html", "team-dream.html", "team-jeongneung-hornets.html",
@@ -170,11 +148,11 @@ document.addEventListener('DOMContentLoaded', function () {
             resultsContainer.innerHTML = uniqueResults.map(result => {
                 const highlightedContext = result.context.replace(new RegExp(query, 'gi'), (match) => `<span class="highlight">${match}</span>`);
                 return `
-                    <a href="${result.url}" class="news-card search-result-item">
-                        <div class="news-card-content">
-                            <h4>${result.title}</h4>
+                    <a href="${result.url}" class="unified-card">
+                        <div class="unified-card-content">
+                            <h3>${result.title}</h3>
                             <p>${highlightedContext}</p>
-                            <span class="article-date">${result.url}</span>
+                            <span class="card-meta">${result.url}</span>
                         </div>
                     </a>
                 `;
@@ -187,11 +165,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
-    if (path.endsWith('/match') || path.includes('match.html')) {
+    if (path.includes('match.html')) {
         handleMatchSearch();
     }
 
-    if (path.endsWith('/search') || path.includes('search.html')) {
+    if (path.includes('search.html')) {
         handleGlobalSearch();
     }
 
