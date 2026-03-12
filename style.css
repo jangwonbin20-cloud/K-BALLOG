@@ -113,9 +113,9 @@ ul {
 }
 
 .location-selector label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-medium);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
     margin-bottom: 5px;
     padding-left: 5px;
     transition: all 0.3s ease;
