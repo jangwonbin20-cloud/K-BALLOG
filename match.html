@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 경기</title>
+    <title>매치 센터 - K-BALLOG</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -23,7 +22,6 @@
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
-                            <option value="index.html">전국</option>
                             <option value="seoul.html">서울</option>
                             <option value="suwon.html">수원</option>
                             <option value="incheon.html">인천</option>
@@ -47,69 +45,111 @@
     </header>
 
     <main class="container">
+        <!-- Match List Section -->
         <section class="match-list-section">
-            <h2>전체 경기 일정</h2>
-    
+            <h2><i class="fas fa-calendar-alt"></i> 경기 일정 및 결과</h2>
+
             <div class="match-date-group">
-                <h3>2024년 7월 26일 (금)</h3>
-                <div class="match-list-item card">
+                <h3>2024년 7월 22일 (월)</h3>
+                <div class="card match-list-item">
                     <div class="match-info">
-                        <span class="team-name">서울 이랜드</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=SE" alt="서울 이랜드 엠블럼">
-                        <span class="score">20:00</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=FA" alt="FC 안양 엠블럼">
-                        <span class="team-name">FC 안양</span>
+                        <span>서울 중랑FC</span>
+                        <span class="score">2 - 1</span>
+                        <span>서울 강북FC</span>
                     </div>
                     <div class="match-details">
-                        <span>K리그2</span> | <span>서울올림픽주경기장</span>
+                        <span>경기종료</span> | <span>서울 K5리그</span>
                     </div>
                 </div>
             </div>
-    
+
             <div class="match-date-group">
-                <h3>2024년 7월 27일 (토)</h3>
-                <div class="match-list-item card">
+                <h3>2024년 7월 24일 (수)</h3>
+                <div class="card match-list-item">
                     <div class="match-info">
-                        <span class="team-name">수원 FC</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=SFC" alt="수원 FC 엠블럼">
-                        <span class="score">1 - 2</span>
-                         <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=JHM" alt="전북 현대 모터스 엠블럼">
-                        <span class="team-name">전북 현대 모터스</span>
+                        <span>수원 팔달팀</span>
+                        <span class="time">19:00</span>
+                        <span>수원 영통팀</span>
                     </div>
                     <div class="match-details">
-                        <span>K리그1</span> | <span>수원종합운동장</span>
+                        <span>예정</span> | <span>수원 K6리그</span>
                     </div>
                 </div>
-                 <div class="match-list-item card">
+                <div class="card match-list-item">
                     <div class="match-info">
-                        <span class="team-name">강원 FC</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=GFC" alt="강원 FC 엠블럼">
-                        <span class="score">3 - 1</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=SSB" alt="수원 삼성 블루윙즈 엠블럼">
-                        <span class="team-name">수원 삼성 블루윙즈</span>
+                        <span>인천 남동리그</span>
+                        <span class="time">20:00</span>
+                        <span>인천 서구리그</span>
                     </div>
                     <div class="match-details">
-                        <span>K리그1</span> | <span>춘천송암스포츠타운</span>
-                    </div>
-                </div>
-            </div>
-             <div class="match-date-group">
-                <h3>2024년 7월 28일 (일)</h3>
-                <div class="match-list-item card">
-                    <div class="match-info">
-                        <span class="team-name">포항 스틸러스</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=PS" alt="포항 스틸러스 엠블럼">
-                        <span class="score">vs</span>
-                        <img src="https://via.placeholder.com/40x40/1a1c23/ffffff?text=UHD" alt="울산 HD FC 엠블럼">
-                        <span class="team-name">울산 HD FC</span>
-                    </div>
-                    <div class="match-details">
-                        <span>K리그1</span> | <span>포항스틸야드</span>
+                        <span>예정</span> | <span>인천 K7리그</span>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- League Table Section -->
+        <section class="league-table-section card">
+            <div class="card-header">
+                <h3><i class="fas fa-trophy"></i> 서울 K5 리그 순위</h3>
+            </div>
+            <div class="league-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>팀</th>
+                            <th>경기</th>
+                            <th>승점</th>
+                            <th>득실차</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>서울 중랑FC</td>
+                            <td>10</td>
+                            <td>25</td>
+                            <td>+15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>서울 강북FC</td>
+                            <td>10</td>
+                            <td>22</td>
+                            <td>+10</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>서울 노원 UTD</td>
+                            <td>10</td>
+                            <td>18</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>서울 도봉FC</td>
+                            <td>10</td>
+                            <td>15</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">문의하기</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>
