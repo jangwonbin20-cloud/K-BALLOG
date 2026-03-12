@@ -91,13 +91,24 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!searchButton || !searchInput || !resultsContainer) return;
 
         const searchIndex = [
-            { url: 'index.html', type: 'page', title: '홈' },
-            { url: 'match.html', type: 'page', title: '경기' },
-            { url: 'seoul.html', type: 'page', title: '서울' },
-            { url: 'suwon.html', type: 'page', title: '수원' },
-            { url: 'incheon.html', type: 'page', title: '인천' },
-            { url: 'yongin.html', type: 'page', title: '용인' }
-        ];
+            "index.html", "match.html", "search.html",
+            "seoul.html", "suwon.html", "incheon.html", "yongin.html",
+            "district.html",
+            "incheon-k5.html", "incheon-k6.html", "incheon-k7.html",
+            "seoul-k5.html", "seoul-k6.html", "seoul-k6-divA.html", "seoul-k6-divB.html",
+            "seoul-k7.html", "seoul-k7-seongbuk.html", "seoul-k7-seongbuk-ranking.html", "seoul-k7-seongbuk-schedule.html",
+            "seoul-sssl.html", "seoul-sssl-div1.html", "seoul-sssl-div2.html",
+            "suwon-k5.html", "suwon-k6.html", "suwon-k7.html",
+            "yongin-k5.html", "yongin-k6.html", "yongin-k7.html",
+            "team-corea.html", "team-creo.html", "team-dice.html", "team-dream.html", "team-jeongneung-hornets.html",
+            "team-sangbidan.html", "team-sb-30s.html", "team-seongbuk-fc.html", "team-yangji.html",
+            "player-creo-fw1.html", "player-creo-mf1.html", "player-creo-df1.html", "player-creo-gk1.html",
+            "player-dream-fw1.html", "player-dream-mf1.html", "player-dream-df1.html", "player-dream-gk1.html",
+            "player-yangji-fw1.html", "player-yangji-mf1.html", "player-yangji-df1.html", "player-yangji-gk1.html",
+            "staff-creo-coach1.html", "staff-dream-coach1.html", "staff-yangji-coach1.html",
+            "profile-sangbidan-coach-1.html", "profile-sangbidan-coach-2.html", "profile-sangbidan-coach-3.html",
+            "profile-sangbidan-player-1.html", "profile-sangbidan-player-2.html", "profile-sangbidan-player-3.html", "profile-sangbidan-player-4.html"
+        ].map(url => ({ url, type: 'page' }));
 
         const executeSearch = async () => {
             const query = searchInput.value.toLowerCase().trim();
@@ -120,10 +131,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         results.push({ title: pageTitle, url: page.url, context: `페이지 제목: ${pageTitle}` });
                     }
 
-                    doc.querySelectorAll('h2, h3, p, span, td, a').forEach(el => {
+                    doc.querySelectorAll('h1, h2, h3, h4, h5, p, span, td, th, a, li').forEach(el => {
                         if (el.textContent.toLowerCase().includes(query)) {
-                            const context = el.textContent.substring(0, 150) + '...';
-                            results.push({ title: pageTitle, url: page.url, context: context });
+                            const context = el.closest('p, li, .card, .match-list-item, tr')?.textContent || el.textContent;
+                            results.push({ title: pageTitle, url: page.url, context: context.substring(0, 200) + '...' });
                         }
                     });
                 } catch (error) {

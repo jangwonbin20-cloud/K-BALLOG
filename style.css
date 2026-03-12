@@ -386,7 +386,7 @@ ul {
     flex-grow: 1;
 }
 
-.news-card h3 {
+.news-card h3, .news-card h4 {
     font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 0.75rem;
@@ -599,6 +599,26 @@ ul {
     margin-right: 0.75rem;
 }
 
+/* Search Results */
+.search-result-item {
+    border-left: 4px solid transparent;
+    transition: border-left-color 0.3s ease;
+}
+
+.search-result-item:hover {
+    border-left-color: var(--primary-accent);
+}
+
+.search-result-item .news-card-content h4 {
+    color: var(--primary-accent);
+}
+
+.search-result-item .highlight {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
 
 /* Active Nav Link for Search */
 .main-nav a[href="search.html"].active {
