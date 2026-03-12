@@ -1,3 +1,23 @@
+/* Team Photo Section */
+.team-photo-section {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.team-photo-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.photo-caption {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 15px;
+    font-style: italic;
+}
+
 /* Team Members Section */
 .team-members-section {
     margin-top: 40px;
