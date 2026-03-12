@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const locationSelect = document.getElementById('location-select');
+
+    if (locationSelect) {
+        // Set the current page's option as selected
+        const currentPage = window.location.pathname.split('/').pop();
+        if (currentPage) {
+            for (let option of locationSelect.options) {
+                if (option.value === currentPage) {
+                    option.selected = true;
+                    break;
+                }
+            }
+        }
+
+        locationSelect.addEventListener('change', (event) => {
+            const selectedUrl = event.target.value;
+            if (selectedUrl) {
+                window.location.href = selectedUrl;
+            }
+        });
+    }
+
     // Language translation functionality
     const translations = {
         en: {
