@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 아마추어 축구의 모든 것</title>
+    <title data-translate="pageTitle">K-BALLOG - 아마추어 축구의 모든 것</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -18,29 +18,41 @@
                     <i class="fas fa-chart-line data-icon logo-icon"></i>
                 </div>
                 <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
+                    <label for="location-select" data-translate="yourLocation">당신의 지역</label>
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
+                            <option value="seoul.html" data-translate="seoul">서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
                         </select>
                     </div>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
-                    <li><a href="search.html">검색</a></li>
-                    <li><a href="news.html">뉴스</a></li>
-                    <li><a href="community.html">커뮤니티</a></li>
+                    <li><a href="index.html" class="active" data-translate="navHome">홈</a></li>
+                    <li><a href="match.html" data-translate="navMatches">경기</a></li>
+                    <li><a href="search.html" data-translate="navSearch">검색</a></li>
+                    <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
+                <span class="mobile-location-label" data-translate="yourLocationMobile">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
@@ -50,21 +62,21 @@
         <!-- Hero Section -->
         <section class="card hero-section" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop') center/cover no-repeat;">
             <div class="hero-content">
-                <h1>우리 동네 축구 소식, K-BALLOG에서 전부 확인하세요!</h1>
-                <p>지역별 리그 순위, 경기 결과, 최신 뉴스를 한눈에. 당신의 팀을 응원하고 K-BALLOG와 함께하세요.</p>
+                <h1 data-translate="heroTitle">우리 동네 축구 소식, K-BALLOG에서 전부 확인하세요!</h1>
+                <p data-translate="heroSubtitle">지역별 리그 순위, 경기 결과, 최신 뉴스를 한눈에. 당신의 팀을 응원하고 K-BALLOG와 함께하세요.</p>
             </div>
         </section>
 
         <!-- Unified Section for Categories -->
         <section class="category-section">
-            <h2 class="section-heading"><i class="fas fa-map-marked-alt"></i> 지역별 리그 바로가기</h2>
+            <h2 class="section-heading" data-translate="regionalLeagues"><i class="fas fa-map-marked-alt"></i> 지역별 리그 바로가기</h2>
             <div class="unified-grid">
                 <!-- Seoul -->
                 <a href="seoul.html" class="unified-card">
                     <img src="https://images.unsplash.com/photo-1563283244-32a7686196a6?q=80&w=1974&auto=format&fit=crop" alt="서울 아마추어 리그">
                     <div class="unified-card-content">
-                        <h3>서울 아마추어 리그</h3>
-                        <p>서울 지역의 K5, K6, K7 및 SSSL 리그의 최신 정보를 확인하세요.</p>
+                        <h3 data-translate="seoulLeague">서울 아마추어 리그</h3>
+                        <p data-translate="seoulLeagueDesc">서울 지역의 K5, K6, K7 및 SSSL 리그의 최신 정보를 확인하세요.</p>
                         <span class="meta-info">K5 / K6 / K7 / SSSL</span>
                     </div>
                 </a>
@@ -72,8 +84,8 @@
                 <a href="suwon.html" class="unified-card">
                     <img src="https://images.unsplash.com/photo-1573806456223-3a478b2d1d4c?q=80&w=2070&auto=format&fit=crop" alt="수원 아마추어 리그">
                     <div class="unified-card-content">
-                        <h3>수원 아마추어 리그</h3>
-                        <p>수원시에서 진행되는 주말 리그와 클럽들의 소식을 만나보세요.</p>
+                        <h3 data-translate="suwonLeague">수원 아마추어 리그</h3>
+                        <p data-translate="suwonLeagueDesc">수원시에서 진행되는 주말 리그와 클럽들의 소식을 만나보세요.</p>
                         <span class="meta-info">K6 / K7</span>
                     </div>
                 </a>
@@ -81,8 +93,8 @@
                 <a href="incheon.html" class="unified-card">
                     <img src="https://images.unsplash.com/photo-1628892955519-216445a643c7?q=80&w=2070&auto=format&fit=crop" alt="인천 아마추어 리그">
                     <div class="unified-card-content">
-                        <h3>인천 아마추어 리그</h3>
-                        <p>인천 지역의 다양한 아마추어 리그 정보와 경기 결과를 확인하세요.</p>
+                        <h3 data-translate="incheonLeague">인천 아마추어 리그</h3>
+                        <p data-translate="incheonLeagueDesc">인천 지역의 다양한 아마추어 리그 정보와 경기 결과를 확인하세요.</p>
                         <span class="meta-info">K5 / K6 / K7</span>
                     </div>
                 </a>
@@ -90,8 +102,8 @@
                 <a href="yongin.html" class="unified-card">
                     <img src="https://images.unsplash.com/photo-1601662993882-75d8628b0f77?q=80&w=2070&auto=format&fit=crop" alt="용인 아마추어 리그">
                     <div class="unified-card-content">
-                        <h3>용인 아마추어 리그</h3>
-                        <p>용인시의 축구 클럽들과 리그의 최신 소식을 제공합니다.</p>
+                        <h3 data-translate="yonginLeague">용인 아마추어 리그</h3>
+                        <p data-translate="yonginLeagueDesc">용인시의 축구 클럽들과 리그의 최신 소식을 제공합니다.</p>
                         <span class="meta-info">K5 / K6 / K7</span>
                     </div>
                 </a>
@@ -102,12 +114,12 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#">회사 소개</a>
-                <a href="#">이용 약관</a>
-                <a href="#">개인정보 처리방침</a>
-                <a href="#">문의하기</a>
+                <a href="#" data-translate="footerAbout">회사 소개</a>
+                <a href="#" data-translate="footerTerms">이용 약관</a>
+                <a href="#" data-translate="footerPrivacy">개인정보 처리방침</a>
+                <a href="#" data-translate="footerContact">문의하기</a>
             </div>
-            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+            <p data-translate="footerRights">&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
 
