@@ -227,6 +227,76 @@ ul {
     font-size: 1.5rem;
 }
 
+/* Team Profile Header */
+.team-profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.team-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 5px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.team-info h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-accent);
+    margin-bottom: 0.75rem;
+}
+
+.team-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+.team-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+}
+
+.team-meta i {
+    margin-right: 0.5rem;
+    color: var(--primary-accent);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(228, 0, 43, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #c00024;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(228, 0, 43, 0.5);
+}
+
+.btn-primary i {
+    margin-right: 0.5rem;
+}
+
 /* League Title Section */
 .league-title-section {
     position: relative;
@@ -601,6 +671,15 @@ ul {
     font-weight: 600;
 }
 
+.league-table td a {
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.league-table td a:hover {
+    color: var(--primary-accent);
+}
+
 /* Stats Table Section */
 .stats-table-section h4 {
     font-size: 1.4rem;
@@ -767,7 +846,7 @@ ul {
     .unified-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    .league-title-content h1 {
+    .league-title-content h1, .team-info h1 {
         font-size: 2.2rem;
     }
 }
@@ -781,6 +860,13 @@ ul {
     }
     .logo .location-selector {
         display: none;
+    }
+
+    .team-profile-header {
+        padding: 1.5rem;
+    }
+    .team-info h1 {
+        font-size: 1.8rem;
     }
 
     .league-title-content {

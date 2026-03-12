@@ -1,36 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC Creo - K-BALLOG</title>
+    <title>Fc Creo - K-BALLOG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    '
     <header class="main-header">
         <div class="header-container">
-            <div class="logo">
-                <a href="index.html">K-BALLOG</a>
-                <div class="logo-icons">
-                    <i class="fas fa-futbol soccer-ball-icon logo-icon"></i>
-                    <i class="fas fa-chart-line data-icon logo-icon"></i>
-                </div>
-                <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
-                    <div class="location-select-wrapper">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+            <div class="logo"><a href="index.html">K-BALLOG</a></div>
             <nav class="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">홈</a></li>
@@ -39,95 +19,22 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-
     <main class="container">
-        <div class="team-header-container">
-            <div class="team-header-info">
-                <img src="https://via.placeholder.com/150/1a1c23/f0f0f0?text=CREO" alt="FC Creo" class="team-page-logo">
-                <div>
-                    <h1 class="team-page-name">FC Creo</h1>
-                    <p class="team-page-meta">서울특별시 성북구 | 창단 2023년</p>
+        <div class="team-profile-header card">
+            <img src="https://via.placeholder.com/150x150/007bff/ffffff?text=CR" alt="Fc Creo 로고" class="team-logo">
+            <div class="team-info">
+                <h1>Fc Creo</h1>
+                <p class="team-description">창의적인 플레이와 탄탄한 수비 조직력을 바탕으로 꾸준한 성적을 내고 있는 팀입니다. '창조'라는 팀 이름처럼 그라운드 위에서 예술적인 축구를 선보입니다.</p>
+                <div class="team-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> 연고지: 서울 성북구</span>
+                    <span><i class="fas fa-calendar-alt"></i> 창단: 2015년</span>
                 </div>
-            </div>
-        </div>
-
-        <div class="tabs">
-            <button class="tab-link active" onclick="openTab(event, 'players')">선수</button>
-            <button class="tab-link" onclick="openTab(event, 'staff')">코칭 스탭</button>
-            <button class="tab-link" onclick="openTab(event, 'info')">팀 정보</button>
-        </div>
-
-        <div id="players" class="tab-content active">
-            <div class="card-grid">
-                <!-- Players -->
-                <a href="player-creo-fw1.html" class="card-link">
-                    <div class="card player-card">
-                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=FW" alt="공격수" class="player-photo">
-                        <div class="player-info">
-                            <h3 class="player-name">공격수1</h3>
-                            <p class="player-position">공격수</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="player-creo-mf1.html" class="card-link">
-                    <div class="card player-card">
-                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=MF" alt="미드필더" class="player-photo">
-                        <div class="player-info">
-                            <h3 class="player-name">미드필더1</h3>
-                            <p class="player-position">미드필더</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="player-creo-df1.html" class="card-link">
-                    <div class="card player-card">
-                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=DF" alt="수비수" class="player-photo">
-                        <div class="player-info">
-                            <h3 class="player-name">수비수1</h3>
-                            <p class="player-position">수비수</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="player-creo-gk1.html" class="card-link">
-                    <div class="card player-card">
-                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=GK" alt="골키퍼" class="player-photo">
-                        <div class="player-info">
-                            <h3 class="player-name">골키퍼1</h3>
-                            <p class="player-position">골키퍼</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div id="staff" class="tab-content">
-            <div class="card-grid">
-                <!-- Coaching Staff -->
-                <a href="staff-creo-coach1.html" class="card-link">
-                    <div class="card player-card">
-                        <img src="https://via.placeholder.com/100/1a1c23/f0f0f0?text=Coach" alt="감독" class="player-photo">
-                        <div class="player-info">
-                            <h3 class="player-name">감독1</h3>
-                            <p class="player-position">감독</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div id="info" class="tab-content">
-            <div class="card">
-                <h3>팀 소개</h3>
-                <p>FC Creo는 2023년에 창단된 신생팀으로, K7리그 서울 성북권역에서 활동하고 있습니다. 젊은 패기를 바탕으로 좋은 성적을 기대하고 있습니다.</p>
-                <h3>주요 연혁</h3>
-                <ul>
-                    <li>2023년: 팀 창단</li>
-                </ul>
+                <a href="seoul-k7-seongbuk.html" class="btn-primary"><i class="fas fa-trophy"></i> 리그 정보 보기</a>
             </div>
         </div>
     </main>
@@ -135,10 +42,7 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#">회사소개</a>
-                <a href="#">서비스소개</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
+                <a href="#">회사소개</a> <a href="#">서비스소개</a> <a href="#">이용약관</a> <a href="#">개인정보처리방침</a>
             </div>
             <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
