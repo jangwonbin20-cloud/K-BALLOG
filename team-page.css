@@ -28,9 +28,16 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Added for smooth transition */
+}
+
+.member-summary {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .member-card:hover {
@@ -58,4 +65,42 @@
     font-size: 1rem;
     color: #777;
     margin: 5px 0 0;
+}
+
+.member-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    margin-top: 0;
+}
+
+.member-card.active .member-details {
+    max-height: 500px; /* Adjust as needed */
+    margin-top: 20px;
+}
+
+.member-details h4 {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.member-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.member-details li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.member-details li strong {
+    color: #333;
 }
