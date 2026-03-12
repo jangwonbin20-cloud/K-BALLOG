@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 검색</title>
+    <title>검색 - K-BALLOG</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -45,18 +45,34 @@
     </header>
 
     <main class="container">
-        <div class="search-container">
-            <h1>검색</h1>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="검색어를 입력하세요...">
-                <button id="searchButton"><i class="fas fa-search"></i></button>
+        <section class="search-section">
+            <h2><i class="fas fa-search"></i> K-BALLOG 통합 검색</h2>
+            <div class="global-search-wrapper card">
+                <input type="text" id="global-search-input" placeholder="뉴스, 리그, 팀, 선수 등 무엇이든 검색해보세요...">
+                <button id="global-search-button"><i class="fas fa-search"></i> 검색</button>
             </div>
-            <div id="filterContainer" class="filter-container"></div>
-            <div id="resultsContainer" class="articles-grid"></div>
-        </div>
+        </section>
+
+        <section class="search-results-section">
+            <h3>검색 결과</h3>
+            <div id="search-results-container" class="articles-grid">
+                <p>검색어를 입력하고 검색 버튼을 클릭하세요.</p>
+                </div>
+        </section>
     </main>
 
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">문의하기</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
-    <script src="search.js"></script>
 </body>
 </html>
