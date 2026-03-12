@@ -37,6 +37,10 @@ ul {
     padding: 1.5rem;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .card {
     background-color: var(--card-bg);
     border-radius: 8px;
@@ -231,6 +235,104 @@ ul {
     border: none;
     color: var(--text-light);
     font-size: 1.5rem;
+}
+
+/* Auth Actions */
+.auth-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn-auth {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: white;
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#user-greeting {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-top: 4px solid var(--primary-accent);
+}
+
+.modal-content h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-medium);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--text-light);
+}
+
+.modal-content .form-group input {
+    width: 100%;
+    padding: 0.9rem;
+    background: #2c2f38;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.modal-content .btn-primary {
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
 }
 
 /* Team Profile Header */
@@ -1080,7 +1182,7 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .main-nav, .header-actions .language-selector {
+    .main-nav, .header-actions .language-selector, .header-actions .auth-actions {
         display: none; 
     }
     .hamburger, .mobile-location-label {

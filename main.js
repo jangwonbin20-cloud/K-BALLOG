@@ -202,6 +202,100 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Auth functionality
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const loginModal = document.getElementById('login-modal');
+    const signupModal = document.getElementById('signup-modal');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const userInfo = document.getElementById('user-info');
+    const userGreeting = document.getElementById('user-greeting');
+
+    const openModal = (modal) => modal.classList.remove('hidden');
+    const closeModal = (modal) => modal.classList.add('hidden');
+
+    if (loginBtn) loginBtn.addEventListener('click', () => openModal(loginModal));
+    if (signupBtn) signupBtn.addEventListener('click', () => openModal(signupModal));
+
+    [loginModal, signupModal].forEach(modal => {
+        if (modal) {
+            modal.querySelector('.close-btn').addEventListener('click', () => closeModal(modal));
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal(modal);
+            });
+        }
+    });
+
+    const updateAuthState = (user) => {
+        if (user) {
+            loginBtn.classList.add('hidden');
+            signupBtn.classList.add('hidden');
+            userInfo.classList.remove('hidden');
+            userGreeting.textContent = `환영합니다, ${user.email}님!`;
+        } else {
+            loginBtn.classList.remove('hidden');
+            signupBtn.classList.remove('hidden');
+            userInfo.classList.add('hidden');
+        }
+    };
+
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const passwordConfirm = document.getElementById('signup-password-confirm').value;
+
+            if (password !== passwordConfirm) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.find(u => u.email === email)) {
+                alert('이미 가입된 이메일입니다.');
+                return;
+            }
+
+            users.push({ email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('회원가입이 완료되었습니다!');
+            closeModal(signupModal);
+        });
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                updateAuthState(user);
+                closeModal(loginModal);
+            } else {
+                alert('이메일 또는 비밀번호가 올바르지 않습니다.');
+            }
+        });
+    }
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            updateAuthState(null);
+        });
+    }
+    
+    // Check initial auth state
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    updateAuthState(currentUser);
+
     // Community post functionality
     const createPostForm = document.getElementById('create-post-form');
     const forumPostsContainer = document.querySelector('.forum-posts');
