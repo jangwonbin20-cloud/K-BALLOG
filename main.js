@@ -15,10 +15,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const locationSelect = document.getElementById('location-select');
     if (locationSelect) {
+        const savedRegion = localStorage.getItem('selectedRegion');
         const currentPage = path.split('/').pop();
-        if (currentPage) {
+
+        let selectedValue = null;
+
+        const regionPages = ['seoul.html', 'suwon.html', 'incheon.html', 'yongin.html'];
+        const isRegionPage = regionPages.includes(currentPage);
+
+        if (isRegionPage) {
+            selectedValue = currentPage;
+            localStorage.setItem('selectedRegion', currentPage);
+        } else if (savedRegion) {
+            selectedValue = savedRegion;
+        }
+
+        if (selectedValue) {
             for (let i = 0; i < locationSelect.options.length; i++) {
-                if (locationSelect.options[i].value === currentPage) {
+                if (locationSelect.options[i].value === selectedValue) {
                     locationSelect.selectedIndex = i;
                     break;
                 }
@@ -26,7 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         locationSelect.addEventListener('change', function() {
-            if (this.value) window.location.href = this.value;
+            if (this.value) {
+                localStorage.setItem('selectedRegion', this.value);
+                window.location.href = this.value;
+            }
         });
     }
 
