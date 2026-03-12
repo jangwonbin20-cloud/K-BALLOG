@@ -48,18 +48,8 @@
     </header>
 
     <main class="container">
-        <div class="search-container">
-            <h1>검색</h1>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="검색어를 입력하세요...">
-                <button id="searchButton"><i class="fas fa-search"></i></button>
-            </div>
-            <div id="filterContainer" class="filter-container"></div>
-            <div id="resultsContainer" class="articles-grid"></div>
-        </div>
-
         <section class="match-list-section">
-            <h2>경기</h2>
+            <h2>전체 경기 일정</h2>
     
             <div class="match-date-group">
                 <h3>2024년 7월 26일 (금)</h3>
@@ -123,7 +113,6 @@
     </main>
 
     <script src="main.js"></script>
-    <script src="search.js"></script>
     <script>
         document.getElementById('location-select').addEventListener('change', function() {
             if (this.value) {
