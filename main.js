@@ -173,11 +173,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
-    if (path.includes('match.html')) {
+    if (path.endsWith('/match') || path.includes('match.html')) {
         handleMatchSearch();
     }
 
-    if (path.includes('search.html')) {
+    if (path.endsWith('/search') || path.includes('search.html')) {
         handleGlobalSearch();
     }
 
