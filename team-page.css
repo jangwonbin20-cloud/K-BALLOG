@@ -18,6 +18,19 @@
     font-style: italic;
 }
 
+.photo-upload-container {
+    margin-top: 20px;
+}
+
+#photo-upload-input {
+    display: none;
+}
+
+.photo-upload-container .btn-primary {
+    cursor: pointer;
+    display: inline-block;
+}
+
 /* Team Members Section */
 .team-members-section {
     margin-top: 40px;
