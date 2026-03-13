@@ -97,25 +97,64 @@
         </div>
     </div>
 
-    <!-- Signup Modal -->
-    <div id="signup-modal" class="modal-overlay hidden">
+    <!-- Signup Role Choice Modal -->
+    <div id="signup-role-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <button class="close-btn">&times;</button>
-            <h2>회원가입</h2>
-            <form id="signup-form">
+            <h2>가입 유형을 선택하세요</h2>
+            <div class="role-selection">
+                <button id="player-signup-btn" class="btn-role"><i class="fas fa-user"></i> 선수로 가입</button>
+                <button id="admin-signup-btn" class="btn-role"><i class="fas fa-user-shield"></i> 관리자로 가입</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Signup Modal -->
+    <div id="player-signup-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>선수 회원가입</h2>
+            <form id="player-signup-form">
                 <div class="form-group">
-                    <label for="signup-email">이메일</label>
-                    <input type="email" id="signup-email" required>
+                    <label for="player-signup-email">이메일</label>
+                    <input type="email" id="player-signup-email" required>
                 </div>
                 <div class="form-group">
-                    <label for="signup-password">비밀번호</label>
-                    <input type="password" id="signup-password" required>
+                    <label for="player-signup-password">비밀번호</label>
+                    <input type="password" id="player-signup-password" required>
                 </div>
                  <div class="form-group">
-                    <label for="signup-password-confirm">비밀번호 확인</label>
-                    <input type="password" id="signup-password-confirm" required>
+                    <label for="player-signup-password-confirm">비밀번호 확인</label>
+                    <input type="password" id="player-signup-password-confirm" required>
                 </div>
-                <button type="submit" class="btn-primary">회원가입</button>
+                <button type="submit" class="btn-primary">가입하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Signup Modal -->
+    <div id="admin-signup-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>관리자 회원가입</h2>
+            <form id="admin-signup-form">
+                <div class="form-group">
+                    <label for="admin-signup-email">이메일</label>
+                    <input type="email" id="admin-signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-signup-password">비밀번호</label>
+                    <input type="password" id="admin-signup-password" required>
+                </div>
+                 <div class="form-group">
+                    <label for="admin-signup-password-confirm">비밀번호 확인</label>
+                    <input type="password" id="admin-signup-password-confirm" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-auth-code">관리자 인증 코드</label>
+                    <input type="text" id="admin-auth-code" required>
+                </div>
+                <button type="submit" class="btn-primary">가입하기</button>
             </form>
         </div>
     </div>
