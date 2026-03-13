@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문의하기 - K-BALLOG</title>
+    <title data-translate="transferTitle">이적 시장 - K-BALLOG</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -37,7 +37,7 @@
                     <li><a href="match.html" data-translate="navMatches">경기</a></li>
                     <li><a href="search.html" data-translate="navSearch">검색</a></li>
                     <li><a href="news.html" data-translate="navNews">뉴스</a></li>
-                    <li><a href="transfer.html" data-translate="navTransfer">이적</a></li>
+                    <li><a href="transfer.html" data-translate="navTransfer" class="active">이적</a></li>
                     <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
@@ -69,38 +69,85 @@
     </header>
 
     <main class="container">
-        <section class="contact-section">
-            <h2 class="section-heading"><i class="fas fa-envelope"></i> 문의하기</h2>
-            <div class="card">
-                <p>궁금한 점이 있으신가요? 언제든지 문의해주세요.</p>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" id="name" name="name" required>
+        <section class="transfer-section">
+            <h2 class="section-heading"><i class="fas fa-exchange-alt"></i> 이적 시장</h2>
+            <div class="unified-grid">
+                <div class="unified-card">
+                    <div class="unified-card-content">
+                        <h3 class="card-title">김서울, 성북 FC에서 양지 FC로 이적</h3>
+                        <p>성북 FC의 주전 공격수 김서울 선수가 양지 FC로 이적하며 새로운 도전을 시작합니다.</p>
+                        <span class="card-meta">2024-07-21</span>
                     </div>
-                    <div class="form-group">
-                        <label for="email">이메일</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                <div class="unified-card">
+                    <div class="unified-card-content">
+                        <h3 class="card-title">박수원, 수원 시티즌 떠나 인천 유나이티드로</h3>
+                        <p>수원의 미드필더 박수원 선수가 인천 유나이티드와 3년 계약을 체결했습니다.</p>
+                        <span class="card-meta">2024-07-20</span>
                     </div>
-                    <div class="form-group">
-                        <label for="message">메시지</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <div class="unified-card">
+                    <div class="unified-card-content">
+                        <h3 class="card-title">이인천, 용인 시민축구단으로 임대 이적</h3>
+                        <p>인천 유나이티드의 유망주 이인천 선수가 경험을 쌓기 위해 용인 시민축구단으로 임대 이적합니다.</p>
+                        <span class="card-meta">2024-07-19</span>
                     </div>
-                    <button type="submit" class="btn-primary">보내기</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>로그인</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">이메일</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">비밀번호</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn-primary">로그인</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>회원가입</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                 <div class="form-group">
+                    <label for="signup-password-confirm">비밀번호 확인</label>
+                    <input type="password" id="signup-password-confirm" required>
+                </div>
+                <button type="submit" class="btn-primary">회원가입</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#">회사 소개</a>
-                <a href="#">이용 약관</a>
-                <a href="#">개인정보 처리방침</a>
-                <a href="contact.html">문의하기</a>
+                <a href="#" data-translate="footerAbout">회사 소개</a>
+                <a href="#" data-translate="footerTerms">이용 약관</a>
+                <a href="#" data-translate="footerPrivacy">개인정보 처리방침</a>
+                <a href="contact.html" data-translate="footerContact">문의하기</a>
             </div>
-            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+            <p data-translate="footerRights">&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
 

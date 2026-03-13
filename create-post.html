@@ -13,17 +13,56 @@
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">K-BALLOG</a>
+                <div class="logo-icons">
+                    <i class="fas fa-futbol soccer-ball-icon logo-icon"></i>
+                    <i class="fas fa-chart-line data-icon logo-icon"></i>
+                </div>
+                <div class="location-selector">
+                    <label for="location-select" data-translate="yourLocation">당신의 지역</label>
+                    <div class="location-select-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="location-select">
+                            <option value="" data-translate="select">선택</option>
+                            <option value="seoul.html" data-translate="seoul">서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
-                    <li><a href="search.html">검색</a></li>
-                    <li><a href="news.html">뉴스</a></li>
-                    <li><a href="community.html" class="active">커뮤니티</a></li>
+                    <li><a href="index.html" data-translate="navHome">홈</a></li>
+                    <li><a href="match.html" data-translate="navMatches">경기</a></li>
+                    <li><a href="search.html" data-translate="navSearch">검색</a></li>
+                    <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="transfer.html" data-translate="navTransfer">이적</a></li>
+                    <li><a href="community.html" data-translate="navCommunity" class="active">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
+                <div class="auth-actions">
+                    <button id="login-btn" class="btn-auth">로그인</button>
+                    <button id="signup-btn" class="btn-auth">회원가입</button>
+                    <div id="user-info" class="hidden">
+                        <span id="user-greeting"></span>
+                        <button id="logout-btn" class="btn-auth">로그아웃</button>
+                    </div>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
+                <span class="mobile-location-label" data-translate="yourLocationMobile">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
