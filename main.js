@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             pageTitle: "K-BALLOG - All About Amateur Football",
             yourLocation: "Your Location",
+            select: "Select",
             seoul: "Seoul",
             suwon: "Suwon",
             incheon: "Incheon",
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         de: {
             pageTitle: "K-BALLOG - Alles über Amateurfußball",
             yourLocation: "Ihr Standort",
+            select: "Wählen",
             seoul: "Seoul",
             suwon: "Suwon",
             incheon: "Incheon",
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         es: {
             pageTitle: "K-BALLOG - Todo sobre el fútbol amateur",
             yourLocation: "Tu ubicación",
+            select: "Seleccione",
             seoul: "Seúl",
             suwon: "Suwon",
             incheon: "Incheon",
@@ -117,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ja: {
             pageTitle: "K-BALLOG - アマチュアサッカーのすべて",
             yourLocation: "あなたの地域",
+            select: "選択",
             seoul: "ソウル",
             suwon: "水原",
             incheon: "仁川",
@@ -147,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
          ko: {
             pageTitle: "K-BALLOG - 아마추어 축구의 모든 것",
             yourLocation: "당신의 지역",
+            select: "선택",
             seoul: "서울",
             suwon: "수원",
             incheon: "인천",
