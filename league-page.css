@@ -1,0 +1,78 @@
+/* league-page.css */
+
+.league-header {
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.league-header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.league-header p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.league-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.league-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.league-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.league-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.league-card-content {
+    padding: 1.5rem;
+}
+
+.league-card-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.league-card-content h3 i {
+    margin-right: 0.75rem;
+}
+
+.league-card-content p {
+    margin: 0;
+    color: var(--text-secondary-color);
+    font-size: 1rem;
+}
