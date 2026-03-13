@@ -23,10 +23,11 @@
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
+                            <option value="" data-translate="select">선택</option>
+                            <option value="seoul.html" data-translate="seoul">서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
                         </select>
                     </div>
                 </div>
@@ -48,141 +49,207 @@
     <main class="container">
         <div class="main-content">
             <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seoul+K7" alt="대표 기사 이미지">
+                <img src="https://images.unsplash.com/photo-1551957583-49031d3b5343?q=80&w=2070&auto=format&fit=crop" alt="서울 K7 리그 대표 이미지">
                 <div class="article-content">
                     <span class="category">서울: K7 리그</span>
-                    <h2><i class="fas fa-trophy"></i> 서울: K7 리그 소식</h2>
-                    <p>서울의 K7 리그 최신 소식을 확인하세요.</p>
+                    <h2><i class="fas fa-trophy"></i> 서울 K7 리그: 우리 동네 축구의 중심</h2>
+                    <p>서울의 심장부에서 펼쳐지는 K7 리그! 각 지역의 자존심을 건 치열한 승부를 K-BALLOG에서 만나보세요.</p>
                 </div>
             </div>
 
             <div class="sidebar">
                 <div class="card match-center">
                     <div class="card-header">
-                        <h3><i class="fas fa-chart-bar"></i> K7 리그 순위</h3>
+                        <h3><i class="fas fa-chart-bar"></i> K7 리그 실시간 순위</h3>
                     </div>
-                    <!-- Placeholder for league table -->
+                    <div class="league-table-placeholder">
+                        <p>순위 정보가 곧 업데이트됩니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <section class="category-section">
-            <h2 class="section-heading"><i class="fas fa-map-marked-alt"></i> 서울: K7 권역별 리그</h2>
+            <h2 class="section-heading"><i class="fas fa-map-marked-alt"></i> 서울 K7 리그: 권역별 리그 바로가기</h2>
             <div class="unified-grid">
-                <a href="district.html?region=seoul&name=성동구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=성동구" alt="성동구">
+                <a href="district.html?region=seoul&name=강남구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1593493489358-10657a15a07e?q=80&w=1974&auto=format&fit=crop" alt="강남구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 성동구</h3>
-                        <p>성동구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 강남구 리그</h3>
+                        <p>강남구 팀들의 최신 소식과 경기 결과를 확인하세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=강남구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=강남구" alt="강남구">
+                <a href="district.html?region=seoul&name=강동구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1563428468249-1a8a483c6592?q=80&w=2070&auto=format&fit=crop" alt="강동구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 강남구</h3>
-                        <p>강남구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 강동구 리그</h3>
+                        <p>강동구 아마추어 축구의 모든 것을 만나보세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=강북구 A" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=강북구 A" alt="강북구 A">
+                <a href="district.html?region=seoul&name=강북구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1623351659552-069f21183c5e?q=80&w=1964&auto=format&fit=crop" alt="강북구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 강북구 A</h3>
-                        <p>강북구 A의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 강북구 리그</h3>
+                        <p>강북구의 열정적인 K7 리그 현장으로 초대합니다.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=강북구 B" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=강북구 B" alt="강북구 B">
+                <a href="district.html?region=seoul&name=강서구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=2070&auto=format&fit=crop" alt="강서구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 강북구 B</h3>
-                        <p>강북구 B의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 강서구 리그</h3>
+                        <p>강서구 리그의 경기 일정과 순위를 확인하세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=중랑구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=중랑구" alt="중랑구">
+                <a href="district.html?region=seoul&name=관악구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1588791322795-02a83359c55b?q=80&w=2070&auto=format&fit=crop" alt="관악구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 중랑구</h3>
-                        <p>중랑구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 관악구 리그</h3>
+                        <p>관악구의 실력파 팀들을 응원해주세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=양천구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=양천구" alt="양천구">
+                <a href="district.html?region=seoul&name=광진구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1605371252893-0e8635b34e47?q=80&w=2070&auto=format&fit=crop" alt="광진구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 양천구</h3>
-                        <p>양천구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 광진구 리그</h3>
+                        <p>광진구 K7 리그의 생생한 경기 소식을 전합니다.</p>
                     </div>
                 </a>
-                 <a href="district.html?region=seoul&name=서초A" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=서초A" alt="서초A">
+                 <a href="district.html?region=seoul&name=구로구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1574629810365-e395593e157c?q=80&w=2070&auto=format&fit=crop" alt="구로구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 서초A</h3>
-                        <p>서초A의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 구로구 리그</h3>
+                        <p>구로구의 K7 리그, 그 뜨거운 열기를 느껴보세요.</p>
                     </div>
                 </a>
-                 <a href="district.html?region=seoul&name=서초B" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=서초B" alt="서초B">
+                <a href="district.html?region=seoul&name=금천구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e95fb63a4321?q=80&w=2070&auto=format&fit=crop" alt="금천구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 서초B</h3>
-                        <p>서초B의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 금천구 리그</h3>
+                        <p>금천구 팀들의 순위 경쟁을 K-BALLOG에서 확인하세요.</p>
                     </div>
                 </a>
-                 <a href="district.html?region=seoul&name=노원구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=노원구" alt="노원구">
+                <a href="district.html?region=seoul&name=노원구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=1907&auto=format&fit=crop" alt="노원구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 노원구</h3>
-                        <p>노원구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 노원구 리그</h3>
+                        <p>노원구의 K7 리그, 우리 동네 팀을 응원하세요.</p>
                     </div>
                 </a>
-                 <a href="district.html?region=seoul&name=동작구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=동작구" alt="동작구">
+                <a href="district.html?region=seoul&name=도봉구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1543351368-3d4a03de532c?q=80&w=2070&auto=format&fit=crop" alt="도봉구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 동작구</h3>
-                        <p>동작구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 도봉구 리그</h3>
+                        <p>도봉구의 숨은 축구 고수들을 만나보세요.</p>
                     </div>
                 </a>
-                 <a href="district.html?region=seoul&name=광진구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=광진구" alt="광진구">
+                <a href="district.html?region=seoul&name=동대문구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=2070&auto=format&fit=crop" alt="동대문구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 광진구</h3>
-                        <p>광진구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 동대문구 리그</h3>
+                        <p>동대문구 K7 리그의 모든 정보를 한눈에!</p>
                     </div>
                 </a>
-                 <a href="seoul-k7-seongbuk.html" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=성북구" alt="성북구">
+                <a href="district.html?region=seoul&name=동작구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1598448375971-bf0d6a2b8214?q=80&w=2070&auto=format&fit=crop" alt="동작구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 성북구</h3>
-                        <p>성북구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 동작구 리그</h3>
+                        <p>동작구의 축구 열기, K-BALLOG와 함께하세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=강서구" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=강서구" alt="강서구">
+                <a href="district.html?region=seoul&name=마포구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1560069818-24a40b9739a8?q=80&w=2070&auto=format&fit=crop" alt="마포구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 강서구</h3>
-                        <p>강서구의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 마포구 리그</h3>
+                        <p>마포구 팀들의 치열한 순위 경쟁을 응원하세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=강동구A" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=강동구A" alt="강동구A">
+                <a href="district.html?region=seoul&name=서대문구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1589487391732-7a2c65a6c761?q=80&w=2070&auto=format&fit=crop" alt="서대문구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 강동구A</h3>
-                        <p>강동구A의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 서대문구 리그</h3>
+                        <p>서대문구 K7 리그의 모든 경기 결과를 확인하세요.</p>
                     </div>
                 </a>
-                <a href="district.html?region=seoul&name=강동구B" class="unified-card">
-                    <img src="https://via.placeholder.com/300x200/2a2d35/f0f0f0?text=강동구B" alt="강동구B">
+                <a href="district.html?region=seoul&name=서초구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1599586120428-c8981f33a85b?q=80&w=2070&auto=format&fit=crop" alt="서초구">
                     <div class="unified-card-content">
-                        <h3>서울: K7 강동구B</h3>
-                        <p>강동구B의 K7 리그 소식을 확인하세요.</p>
+                        <h3><i class="fas fa-futbol"></i> 서초구 리그</h3>
+                        <p>서초구의 K7 리그, 그 생생한 현장을 전합니다.</p>
+                    </div>
+                </a>
+                 <a href="district.html?region=seoul&name=성동구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1579834417642-a1b32b3955a5?q=80&w=2070&auto=format&fit=crop" alt="성동구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 성동구 리그</h3>
+                        <p>성동구 K7 리그의 경기 일정과 결과를 확인하세요.</p>
+                    </div>
+                </a>
+                 <a href="seoul-k7-seongbuk.html" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1618897554955-a548bfd73676?q=80&w=2070&auto=format&fit=crop" alt="성북구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 성북구 리그</h3>
+                        <p>성북구의 K7 리그 소식을 가장 먼저 만나보세요.</p>
+                    </div>
+                </a>
+                <a href="district.html?region=seoul&name=송파구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1575361204480-aadea2503968?q=80&w=2071&auto=format&fit=crop" alt="송파구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 송파구 리그</h3>
+                        <p>송파구 K7 리그, 우리 동네 팀의 승리를 기원합니다.</p>
+                    </div>
+                </a>
+                 <a href="district.html?region=seoul&name=양천구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1606015523337-f8e6de5a19a4?q=80&w=2070&auto=format&fit=crop" alt="양천구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 양천구 리그</h3>
+                        <p>양천구의 K7 리그, 그 열정의 현장을 확인하세요.</p>
+                    </div>
+                </a>
+                <a href="district.html?region=seoul&name=영등포구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1540740211003-7f2832563a65?q=80&w=2070&auto=format&fit=crop" alt="영등포구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 영등포구 리그</h3>
+                        <p>영등포구 K7 리그의 최신 경기 결과를 확인하세요.</p>
+                    </div>
+                </a>
+                 <a href="district.html?region=seoul&name=용산구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1569383971966-20072e635c93?q=80&w=2070&auto=format&fit=crop" alt="용산구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 용산구 리그</h3>
+                        <p>용산구의 K7 리그, 그 뜨거운 열기를 함께하세요.</p>
+                    </div>
+                </a>
+                <a href="district.html?region=seoul&name=은평구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1518778642233-a602b18693a4?q=80&w=2070&auto=format&fit=crop" alt="은평구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 은평구 리그</h3>
+                        <p>은평구 팀들의 선전을 기원하며 K-BALLOG가 함께합니다.</p>
+                    </div>
+                </a>
+                 <a href="district.html?region=seoul&name=종로구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1562916113-5a7c2957361a?q=80&w=2070&auto=format&fit=crop" alt="종로구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 종로구 리그</h3>
+                        <p>종로구의 K7 리그, 그 열정의 현장을 확인하세요.</p>
+                    </div>
+                </a>
+                <a href="district.html?region=seoul&name=중구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1563299796-b729d0af54a5?q=80&w=2070&auto=format&fit=crop" alt="중구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 중구 리그</h3>
+                        <p>서울의 중심, 중구의 K7 리그 소식을 전합니다.</p>
+                    </div>
+                </a>
+                 <a href="district.html?region=seoul&name=중랑구" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1628266291696-a0058b5f36c4?q=80&w=2070&auto=format&fit=crop" alt="중랑구">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-futbol"></i> 중랑구 리그</h3>
+                        <p>중랑구 K7 리그의 모든 것을 K-BALLOG에서 만나보세요.</p>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section class="latest-articles-section">
-            <h2><i class="far fa-newspaper"></i> 서울: K7 리그 최신 뉴스</h2>
-            <div class="articles-grid">
-                <!-- Placeholder for news -->
-            </div>
-        </section>
     </main>
 
     <footer class="main-footer">
