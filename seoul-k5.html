@@ -1,15 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 서울 K5 리그</title>
+    <title data-translate="pageTitle">K-BALLOG - 서울 K5 리그</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    '
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -19,100 +19,156 @@
                     <i class="fas fa-chart-line data-icon logo-icon"></i>
                 </div>
                 <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
+                    <label for="location-select" data-translate="yourLocation">당신의 지역</label>
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
+                            <option value="" data-translate="select">선택</option>
+                            <option value="seoul.html" data-translate="seoul" selected>서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
                         </select>
                     </div>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
-                    <li><a href="search.html">검색</a></li>
-                    <li><a href="news.html">뉴스</a></li>
-                    <li><a href="community.html">커뮤니티</a></li>
+                    <li><a href="index.html" data-translate="navHome">홈</a></li>
+                    <li><a href="match.html" data-translate="navMatches">경기</a></li>
+                    <li><a href="search.html" data-translate="navSearch">검색</a></li>
+                    <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
+                <div class="auth-actions">
+                    <button id="login-btn" class="btn-auth">로그인</button>
+                    <button id="signup-btn" class="btn-auth">회원가입</button>
+                    <div id="user-info" class="hidden">
+                        <span id="user-greeting"></span>
+                        <button id="logout-btn" class="btn-auth">로그아웃</button>
+                    </div>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
+                <span class="mobile-location-label" data-translate="yourLocationMobile">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-
     <main class="container">
-        <section class="league-detail-section">
-            <h2 class="section-heading"><i class="fas fa-trophy"></i> 서울 K5 리그 정보</h2>
+        <section class="featured-article card">
+            <img src="https://images.unsplash.com/photo-1508098682722-e95fb63a4321?q=80&w=2070&auto=format&fit=crop" alt="서울 K5 리그 대표 이미지">
+            <div class="article-content">
+                <span class="category">서울 K5 리그</span>
+                <h2><i class="fas fa-trophy"></i> 서울 최상위 아마추어 리그, K5의 자존심</h2>
+                <p>서울 최고의 아마추어 팀들이 격돌하는 K5 리그! 실시간 순위와 경기 결과를 K-BALLOG에서 확인하세요.</p>
+            </div>
+        </section>
 
-            <!-- League Ranking Card -->
-            <div class="unified-card">
-                 <div class="unified-card-content">
-                    <h3 class="card-title">리그 순위</h3>
-                    <div class="league-table">
-                        <table>
-                            <thead>
-                                <tr><th>순위</th><th>팀</th><th>경기</th><th>승점</th><th>득실차</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1</td><td>서울 벽산 플레이어스 FC</td><td>10</td><td>28</td><td>+18</td></tr>
-                                <tr><td>2</td><td>서울 TNT FC</td><td>10</td><td>25</td><td>+15</td></tr>
-                                <tr><td>3</td><td>FC 투게더</td><td>10</td><td>20</td><td>+9</td></tr>
-                                <tr><td>4</td><td>중랑 FC</td><td>10</td><td>18</td><td>+5</td></tr>
-                            </tbody>
-                        </table>
+        <section class="category-section">
+            <h2 class="section-heading"><i class="fas fa-chart-line"></i> K5 리그 주요 정보</h2>
+            <div class="unified-grid">
+                <div class="unified-card">
+                     <div class="unified-card-content">
+                        <h3><i class="fas fa-chart-bar"></i> 리그 순위</h3>
+                        <div class="league-table">
+                            <table>
+                                <thead>
+                                    <tr><th>순위</th><th>팀</th><th>경기</th><th>승점</th><th>득실차</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>서울 벽산 플레이어스 FC</td><td>10</td><td>28</td><td>+18</td></tr>
+                                    <tr><td>2</td><td>서울 TNT FC</td><td>10</td><td>25</td><td>+15</td></tr>
+                                    <tr><td>3</td><td>FC 투게더</td><td>10</td><td>20</td><td>+9</td></tr>
+                                    <tr><td>4</td><td>중랑 FC</td><td>10</td><td>18</td><td>+5</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="unified-grid">
-                <!-- Latest News Card -->
-                <a href="#" class="unified-card">
+                <a href="#" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop" alt="뉴스 이미지">
                     <div class="unified-card-content">
-                        <h3 class="card-title">최신 뉴스</h3>
+                        <h3><i class="far fa-newspaper"></i> 최신 뉴스</h3>
                         <h4>서울 벽산, K5 리그 우승 차지</h4>
                         <p>디펜딩 챔피언의 저력을 보여주며 다시 한 번 정상에 올랐습니다.</p>
-                        <span class="card-meta">2024-07-20</span>
                     </div>
                 </a>
-
-                <!-- Match Schedule Card -->
-                <a href="match.html" class="unified-card">
+                <a href="match.html" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1518604707959-161081b0a1a5?q=80&w=2070&auto=format&fit=crop" alt="경기장 이미지">
                     <div class="unified-card-content">
-                        <h3 class="card-title">경기 일정</h3>
+                        <h3><i class="fas fa-calendar-alt"></i> 경기 일정</h3>
                         <p>다음 경기는 8월 3일 토요일에 열릴 예정입니다. 전체 일정은 매치 센터에서 확인하세요.</p>
-                        <span class="card-meta">2024-08-03 예정</span>
-                    </div>
-                </a>
-
-                <!-- Participating Teams Card -->
-                <a href="#" class="unified-card">
-                     <div class="unified-card-content">
-                        <h3 class="card-title">참가 팀</h3>
-                        <p>서울 벽산, TNT FC, FC 투게더, 중랑 FC 등 서울의 강호들이 참여합니다.</p>
-                        <span class="card-meta">총 12개 팀</span>
                     </div>
                 </a>
             </div>
         </section>
     </main>
 
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>로그인</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">이메일</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">비밀번호</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn-primary">로그인</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>회원가입</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                 <div class="form-group">
+                    <label for="signup-password-confirm">비밀번호 확인</label>
+                    <input type="password" id="signup-password-confirm" required>
+                </div>
+                <button type="submit" class="btn-primary">회원가입</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#">회사 소개</a>
-                <a href="#">이용 약관</a>
-                <a href="#">개인정보 처리방침</a>
-                <a href="#">문의하기</a>
+                <a href="#" data-translate="footerAbout">회사 소개</a>
+                <a href="#" data-translate="footerTerms">이용 약관</a>
+                <a href="#" data-translate="footerPrivacy">개인정보 처리방침</a>
+                <a href="contact.html" data-translate="footerContact">문의하기</a>
             </div>
-            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+            <p data-translate="footerRights">&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
 

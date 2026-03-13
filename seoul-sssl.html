@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-BALLOG - 서울: SSSL</title>
+    <title data-translate="pageTitle">K-BALLOG - 서울 SSSL</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    '
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -20,81 +19,137 @@
                     <i class="fas fa-chart-line data-icon logo-icon"></i>
                 </div>
                 <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
+                    <label for="location-select" data-translate="yourLocation">당신의 지역</label>
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
+                            <option value="" data-translate="select">선택</option>
+                            <option value="seoul.html" data-translate="seoul" selected>서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
                         </select>
                     </div>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
-                    <li><a href="search.html">검색</a></li>
-                    <li><a href="news.html">뉴스</a></li>
-                    <li><a href="community.html">커뮤니티</a></li>
+                    <li><a href="index.html" data-translate="navHome">홈</a></li>
+                    <li><a href="match.html" data-translate="navMatches">경기</a></li>
+                    <li><a href="search.html" data-translate="navSearch">검색</a></li>
+                    <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
+                <div class="auth-actions">
+                    <button id="login-btn" class="btn-auth">로그인</button>
+                    <button id="signup-btn" class="btn-auth">회원가입</button>
+                    <div id="user-info" class="hidden">
+                        <span id="user-greeting"></span>
+                        <button id="logout-btn" class="btn-auth">로그아웃</button>
+                    </div>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
+                <span class="mobile-location-label" data-translate="yourLocationMobile">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-
     <main class="container">
-        <div class="main-content">
-            <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seoul+SSSL" alt="대표 기사 이미지">
-                <div class="article-content">
-                    <span class="category">서울: SSSL</span>
-                    <h2><i class="fas fa-trophy"></i> 서울: SSSL 소식</h2>
-                    <p>서울의 SSSL 최신 소식을 확인하세요.</p>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                <div class="card match-center">
-                    <div class="card-header">
-                        <h3><i class="fas fa-chart-bar"></i> SSSL 순위</h3>
-                    </div>
-                    <!-- Placeholder for league table -->
-                </div>
-            </div>
-        </div>
-
-        <section class="category-section">
-            <h2><i class="fas fa-layer-group"></i> SSSL 디비전</h2>
-            <div class="category-grid">
-                <a href="seoul-sssl-div1.html" class="category-card">서울: SSSL 디비전 1</a>
-                <a href="seoul-sssl-div2.html" class="category-card">서울: SSSL 디비전 2</a>
+        <section class="featured-article card">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=2070&auto=format&fit=crop" alt="서울 주말 리그 대표 이미지">
+            <div class="article-content">
+                <span class="category">서울 주말 리그 (SSSL)</span>
+                <h2><i class="fas fa-sun"></i> 주말의 열정, SSSL에서 폭발하다!</h2>
+                <p>서울 주말 축구 리그(SSSL)는 디비전 1과 2로 구성되어, 주말마다 뜨거운 경쟁을 펼칩니다.</p>
             </div>
         </section>
 
-        <section class="latest-articles-section">
-            <h2><i class="far fa-newspaper"></i> SSSL 최신 뉴스</h2>
-            <div class="articles-grid">
-                <!-- Placeholder for news -->
+        <section class="category-section">
+            <h2 class="section-heading"><i class="fas fa-sitemap"></i> SSSL 디비전 바로가기</h2>
+            <div class="unified-grid">
+                <a href="seoul-sssl-div1.html" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1559024926-04d33a5ade8b?q=80&w=2070&auto=format&fit=crop" alt="디비전 1">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-star"></i> SSSL - 디비전 1</h3>
+                        <p>상위 팀들의 치열한 경쟁, 디비전 1의 소식을 확인하세요.</p>
+                    </div>
+                </a>
+                <a href="seoul-sssl-div2.html" class="unified-card card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1608229426912-9a3d7a8d2e8b?q=80&w=1932&auto=format&fit=crop" alt="디비전 2">
+                    <div class="unified-card-content">
+                        <h3><i class="fas fa-star-half-alt"></i> SSSL - 디비전 2</h3>
+                        <p>새로운 도전자들의 열정, 디비전 2의 소식을 확인하세요.</p>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
 
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>로그인</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">이메일</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">비밀번호</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn-primary">로그인</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>회원가입</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                 <div class="form-group">
+                    <label for="signup-password-confirm">비밀번호 확인</label>
+                    <input type="password" id="signup-password-confirm" required>
+                </div>
+                <button type="submit" class="btn-primary">회원가입</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#">회사 소개</a>
-                <a href="#">이용 약관</a>
-                <a href="#">개인정보 처리방침</a>
-                <a href="#">문의하기</a>
+                <a href="#" data-translate="footerAbout">회사 소개</a>
+                <a href="#" data-translate="footerTerms">이용 약관</a>
+                <a href="#" data-translate="footerPrivacy">개인정보 처리방침</a>
+                <a href="contact.html" data-translate="footerContact">문의하기</a>
             </div>
-            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+            <p data-translate="footerRights">&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
 
