@@ -67,6 +67,12 @@
     gap: 1rem;
 }
 
+.player-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Makes the entire area of the link clickable */
+}
+
 .player-card {
     display: flex;
     flex-direction: column;
