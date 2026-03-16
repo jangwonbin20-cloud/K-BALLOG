@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    '
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -20,27 +19,51 @@
                     <i class="fas fa-chart-line data-icon logo-icon"></i>
                 </div>
                 <div class="location-selector">
-                    <label for="location-select">당신의 지역</label>
+                    <label for="location-select" data-translate="yourLocation">당신의 지역</label>
                     <div class="location-select-wrapper">
                         <i class="fas fa-map-marker-alt"></i>
                         <select id="location-select">
-                            <option value="seoul.html">서울</option>
-                            <option value="suwon.html">수원</option>
-                            <option value="incheon.html">인천</option>
-                            <option value="yongin.html">용인</option>
+                            <option value="" data-translate="select">선택</option>
+                            <option value="seoul.html" data-translate="seoul" selected>서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
                         </select>
                     </div>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
-                    <li><a href="search.html">검색</a></li>
+                    <li><a href="index.html" data-translate="navHome">홈</a></li>
+                    <li><a href="match.html" data-translate="navMatches">경기</a></li>
+                    <li><a href="search.html" data-translate="navSearch">검색</a></li>
+                    <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="transfer.html" data-translate="navTransfer">이적</a></li>
+                    <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <span class="mobile-location-label">당신의 지역:</span>
+                <div class="auth-buttons">
+                    <a href="signup.html" class="btn btn-primary" id="signup-btn-main">회원가입</a>
+                    <a href="#" class="btn" id="login-btn-main">로그인</a>
+                </div>
+                <div class="user-info hidden">
+                    <span id="user-name-display"></span>
+                    <a href="#" class="btn" id="logout-btn">로그아웃</a>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
+                <span class="mobile-location-label" data-translate="yourLocationMobile">당신의 지역:</span>
                 <button class="hamburger"><i class="fas fa-bars"></i></button>
             </div>
         </div>
@@ -50,7 +73,7 @@
     <main class="container">
         <div class="main-content">
             <div class="featured-article card">
-                <img src="https://via.placeholder.com/800x450/1a1c23/f0f0f0?text=Seoul+SSSL+Div+1" alt="대표 기사 이미지">
+                <img src="https://images.unsplash.com/photo-1559024926-04d33a5ade8b?q=80&w=2070&auto=format&fit=crop" alt="대표 기사 이미지">
                 <div class="article-content">
                     <span class="category">서울 SSSL 디비전 1</span>
                     <h2>서울 SSSL 디비전 1 소식</h2>
@@ -58,14 +81,53 @@
                 </div>
             </div>
 
-            <div class="sidebar">
-                <div class="card match-center">
-                    <div class="card-header">
-                        <h3><i class="fas fa-trophy"></i> SSSL 디비전 1 순위</h3>
+            <section class="team-list-section card">
+                <h2 class="section-heading"><i class="fas fa-users"></i> 참가 팀 목록</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <a href="#" class="team-card-inner">
+                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=USFK+FC" alt="USFK FC 로고" class="team-logo">
+                            <h3 class="team-name">USFK FC</h3>
+                        </a>
                     </div>
-                    <!-- Placeholder for league table -->
+                    <div class="team-card">
+                        <a href="#" class="team-card-inner">
+                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Cosmos" alt="Seoul Cosmos 로고" class="team-logo">
+                            <h3 class="team-name">Seoul Cosmos</h3>
+                        </a>
+                    </div>
+                    <div class="team-card">
+                        <a href="team-creo.html" class="team-card-inner">
+                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=FC+CREO" alt="FC CREO 로고" class="team-logo">
+                            <h3 class="team-name">FC CREO</h3>
+                        </a>
+                    </div>
+                    <div class="team-card">
+                        <a href="#" class="team-card-inner">
+                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Villans" alt="Seoul Villans 로고" class="team-logo">
+                            <h3 class="team-name">Seoul Villans</h3>
+                        </a>
+                    </div>
+                    <div class="team-card">
+                        <a href="#" class="team-card-inner">
+                            <img src="https.via.placeholder.com/150x150/24262e/f0f0f0?text=Africa+United" alt="Africa United FC 로고" class="team-logo">
+                            <h3 class="team-name">Africa United FC</h3>
+                        </a>
+                    </div>
+                    <div class="team-card">
+                        <a href="#" class="team-card-inner">
+                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=HBC" alt="HBC 로고" class="team-logo">
+                            <h3 class="team-name">HBC</h3>
+                        </a>
+                    </div>
+                    <div class="team-card">
+                        <a href="#" class="team-card-inner">
+                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seohyeon+Celtic" alt="Seohyeon Celtic FC 로고" class="team-logo">
+                            <h3 class="team-name">Seohyeon Celtic FC</h3>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
 
         <section class="latest-articles-section">
