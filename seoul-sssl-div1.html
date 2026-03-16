@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="league-page.css">
 </head>
 <body>
     <header class="main-header">
@@ -69,71 +70,238 @@
         </div>
     </header>
 
-
     <main class="container">
-        <div class="main-content">
-            <div class="featured-article card">
-                <img src="https://images.unsplash.com/photo-1559024926-04d33a5ade8b?q=80&w=2070&auto=format&fit=crop" alt="대표 기사 이미지">
-                <div class="article-content">
-                    <span class="category">서울 SSSL 디비전 1</span>
-                    <h2>서울 SSSL 디비전 1 소식</h2>
-                    <p>서울 SSSL 디비전 1의 최신 소식을 확인하세요.</p>
+        <section class="league-title-section card">
+            <img src="https://images.unsplash.com/photo-1559024926-04d33a5ade8b?q=80&w=2070&auto=format&fit=crop" alt="SSSL Division 1 Cover" class="league-cover-image">
+            <div class="league-title-content">
+                <h1><i class="fas fa-star"></i> SSSL Division 1</h1>
+                <p>서울 최고의 외국인 아마추어 팀들이 격돌하는 최상위 리그</p>
+            </div>
+        </section>
+
+        <section class="card league-data-section">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="ranking"><i class="fas fa-trophy"></i> 리그 순위</button>
+                <button class="tab-btn" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 경기 일정/결과</button>
+                <button class="tab-btn" data-tab="stats"><i class="fas fa-chart-bar"></i> 개인 기록</button>
+                <button class="tab-btn" data-tab="news"><i class="far fa-newspaper"></i> 리그 뉴스</button>
+                <button class="tab-btn" data-tab="transfer"><i class="fas fa-exchange-alt"></i> 이적 현황</button>
+            </div>
+
+            <div id="ranking" class="tab-content active">
+                <div class="league-table-section">
+                    <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>팀</th>
+                                <th>경기</th>
+                                <th>승점</th>
+                                <th>승</th>
+                                <th>무</th>
+                                <th>패</th>
+                                <th>득실차</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 순위 데이터는 여기에 동적으로 추가됩니다 -->
+                            <tr>
+                                <td>1</td>
+                                <td><a href="#">USFK FC</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                             <tr>
+                                <td>2</td>
+                                <td><a href="#">Seoul Cosmos</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                             <tr>
+                                <td>3</td>
+                                <td><a href="team-creo.html">FC CREO</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                             <tr>
+                                <td>4</td>
+                                <td><a href="#">Seoul Villans</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><a href="#">Africa United FC</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><a href="#">HBC</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><a href="#">Seohyeon Celtic FC</a></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <section class="team-list-section card">
-                <h2 class="section-heading"><i class="fas fa-users"></i> 참가 팀 목록</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <a href="#" class="team-card-inner">
-                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=USFK+FC" alt="USFK FC 로고" class="team-logo">
-                            <h3 class="team-name">USFK FC</h3>
-                        </a>
-                    </div>
-                    <div class="team-card">
-                        <a href="#" class="team-card-inner">
-                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Cosmos" alt="Seoul Cosmos 로고" class="team-logo">
-                            <h3 class="team-name">Seoul Cosmos</h3>
-                        </a>
-                    </div>
-                    <div class="team-card">
-                        <a href="team-creo.html" class="team-card-inner">
-                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=FC+CREO" alt="FC CREO 로고" class="team-logo">
-                            <h3 class="team-name">FC CREO</h3>
-                        </a>
-                    </div>
-                    <div class="team-card">
-                        <a href="#" class="team-card-inner">
-                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Villans" alt="Seoul Villans 로고" class="team-logo">
-                            <h3 class="team-name">Seoul Villans</h3>
-                        </a>
-                    </div>
-                    <div class="team-card">
-                        <a href="#" class="team-card-inner">
-                            <img src="https.via.placeholder.com/150x150/24262e/f0f0f0?text=Africa+United" alt="Africa United FC 로고" class="team-logo">
-                            <h3 class="team-name">Africa United FC</h3>
-                        </a>
-                    </div>
-                    <div class="team-card">
-                        <a href="#" class="team-card-inner">
-                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=HBC" alt="HBC 로고" class="team-logo">
-                            <h3 class="team-name">HBC</h3>
-                        </a>
-                    </div>
-                    <div class="team-card">
-                        <a href="#" class="team-card-inner">
-                            <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seohyeon+Celtic" alt="Seohyeon Celtic FC 로고" class="team-logo">
-                            <h3 class="team-name">Seohyeon Celtic FC</h3>
-                        </a>
+            <div id="schedule" class="tab-content">
+                <div class="match-list-section">
+                    <div class="match-date-group">
+                        <h3>2024년 8월 17일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info">
+                                <span>USFK FC</span>
+                                <span class="score">? : ?</span>
+                                <span>Seoul Cosmos</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">14:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <section class="latest-articles-section">
-            <h2><i class="far fa-newspaper"></i> SSSL 디비전 1 최신 뉴스</h2>
-            <div class="articles-grid">
-                <!-- Placeholder for news -->
+            <div id="stats" class="tab-content">
+                <div class="stats-table-section">
+                    <h4><i class="fas fa-futbol"></i> 득점 순위</h4>
+                    <!-- 득점 순위 테이블 -->
+                     <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>선수</th>
+                                <th>팀</th>
+                                <th>골</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="mt-4"><i class="fas fa-hands-helping"></i> 도움 순위</h4>
+                    <!-- 도움 순위 테이블 -->
+                     <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>선수</th>
+                                <th>팀</th>
+                                <th>도움</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="news" class="tab-content">
+                <div class="unified-grid">
+                    <!-- 리그 뉴스 카드 -->
+                </div>
+            </div>
+
+            <div id="transfer" class="tab-content">
+                <div class="unified-grid">
+                    <!-- 이적 현황 카드 -->
+                </div>
+            </div>
+        </section>
+
+        <section class="team-list-section card">
+            <h2 class="section-heading"><i class="fas fa-users"></i> 참가 팀 목록</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=USFK+FC" alt="USFK FC 로고" class="team-logo">
+                        <h3 class="team-name">USFK FC</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Cosmos" alt="Seoul Cosmos 로고" class="team-logo">
+                        <h3 class="team-name">Seoul Cosmos</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="team-creo.html" class="team-card-inner">
+                        <img src="images/team-creo-logo.jpg" alt="FC CREO 로고" class="team-logo">
+                        <h3 class="team-name">FC CREO</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Villans" alt="Seoul Villans 로고" class="team-logo">
+                        <h3 class="team-name">Seoul Villans</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Africa+United" alt="Africa United FC 로고" class="team-logo">
+                        <h3 class="team-name">Africa United FC</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=HBC" alt="HBC 로고" class="team-logo">
+                        <h3 class="team-name">HBC</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seohyeon+Celtic" alt="Seohyeon Celtic FC 로고" class="team-logo">
+                        <h3 class="team-name">Seohyeon Celtic FC</h3>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -144,12 +312,34 @@
                 <a href="#">회사 소개</a>
                 <a href="#">이용 약관</a>
                 <a href="#">개인정보 처리방침</a>
-                <a href="#">문의하기</a>
+                <a href="contact.html">문의하기</a>
             </div>
             <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        // Tab functionality
+        const tabContainer = document.querySelector('.league-data-section');
+        if (tabContainer) {
+            const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+            const tabContents = tabContainer.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.dataset.tab;
+
+                    // Deactivate all buttons and content
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Activate the clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabName).classList.add('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
