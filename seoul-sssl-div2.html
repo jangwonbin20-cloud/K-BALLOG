@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="league-page.css">
+    <link rel="stylesheet" href="team-page.css"> <!-- team-page.css 추가 -->
 </head>
 <body>
     <header class="main-header">
@@ -337,49 +338,56 @@
 
         <section class="team-list-section card">
             <h2 class="section-heading"><i class="fas fa-users"></i> 참가 팀 목록</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <a href="team-inter-vamos.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/000000/ffffff?text=IV" alt="Inter Vamos 로고" class="team-logo">
-                        <h3 class="team-name">Inter Vamos</h3>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="team-project-ball.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/1E90FF/ffffff?text=PBFC" alt="Project Ball FC 로고" class="team-logo">
-                        <h3 class="team-name">Project Ball FC</h3>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="team-conq.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/800000/ffffff?text=CONQ" alt="CONQ 로고" class="team-logo">
-                        <h3 class="team-name">CONQ</h3>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="team-phoenix.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/FFC107/000000?text=PFC" alt="Phoenix FC 로고" class="team-logo">
-                        <h3 class="team-name">Phoenix FC</h3>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="team-fc-ints.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/4682B4/ffffff?text=FCINTS" alt="FC INTS 로고" class="team-logo">
-                        <h3 class="team-name">FC INTS</h3>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="team-soccer-camp.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/228B22/ffffff?text=SC" alt="Soccer Camp 로고" class="team-logo">
-                        <h3 class="team-name">Soccer Camp</h3>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="team-seoul-calcio.html" class="team-card-inner">
-                        <img src="https://via.placeholder.com/150x150/00008B/ffffff?text=SCFC" alt="Seoul Calcio F.C. 로고" class="team-logo">
-                        <h3 class="team-name">Seoul Calcio F.C.</h3>
-                    </a>
-                </div>
+            <div class="player-grid"> <!-- team-grid를 player-grid로 변경 -->
+                <a href="team-inter-vamos.html" class="player-card-link">
+                    <div class="player-card" style="background-image: url('https://raw.githubusercontent.com/jangwonbin20-cloud/K-BALLOG/main/images/team-inter-vamos-logo.png'); background-size: contain; background-color: #f0f0f0;">
+                        <div class="player-info-content">
+                            <span class="player-name">Inter Vamos</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-project-ball.html" class="player-card-link">
+                    <div class="player-card" style="background-image: url('https://via.placeholder.com/150x150/1E90FF/ffffff?text=PBFC');">
+                        <div class="player-info-content">
+                            <span class="player-name">Project Ball FC</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-conq.html" class="player-card-link">
+                    <div class="player-card" style="background-image: url('https://via.placeholder.com/150x150/800000/ffffff?text=CONQ');">
+                        <div class="player-info-content">
+                            <span class="player-name">CONQ</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-phoenix.html" class="player-card-link">
+                     <div class="player-card" style="background-image: url('https://raw.githubusercontent.com/jangwonbin20-cloud/K-BALLOG/main/images/team-phoenix-logo.png'); background-size: contain; background-color: #f0f0f0;">
+                        <div class="player-info-content">
+                            <span class="player-name">Phoenix FC</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-fc-ints.html" class="player-card-link">
+                    <div class="player-card" style="background-image: url('https://via.placeholder.com/150x150/4682B4/ffffff?text=FCINTS');">
+                        <div class="player-info-content">
+                            <span class="player-name">FC INTS</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-soccer-camp.html" class="player-card-link">
+                     <div class="player-card" style="background-image: url('https://raw.githubusercontent.com/jangwonbin20-cloud/K-BALLOG/main/images/team-soccer-camp-logo.png'); background-size: contain; background-color: #f0f0f0;">
+                        <div class="player-info-content">
+                            <span class="player-name">Soccer Camp</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="team-seoul-calcio.html" class="player-card-link">
+                     <div class="player-card" style="background-image: url('https://raw.githubusercontent.com/jangwonbin20-cloud/K-BALLOG/main/images/team-seoul-calcio-logo.png'); background-size: contain; background-color: #f0f0f0;">
+                        <div class="player-info-content">
+                            <span class="player-name">Seoul Calcio F.C.</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
@@ -421,4 +429,3 @@
     </script>
 </body>
 </html>
-<!-- Verified by Gemini -->
