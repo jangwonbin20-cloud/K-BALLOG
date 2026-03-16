@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-BALLOG - 회원가입</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">K-BALLOG</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="match.html">경기</a></li>
+                    <li><a href="news.html">뉴스</a></li>
+                    <li><a href="transfer.html">이적</a></li>
+                    <li><a href="community.html">커뮤니티</a></li>
+                    <li><a href="contact.html">문의</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="auth-buttons">
+                    <a href="signup.html" class="btn btn-primary" id="signup-btn-main">회원가입</a>
+                    <a href="#" class="btn" id="login-btn-main">로그인</a>
+                </div>
+                <div class="user-info hidden">
+                    <span id="user-name-display"></span>
+                    <a href="#" class="btn" id="logout-btn">로그아웃</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-page-container">
+        <div class="signup-form-container">
+            <h1>회원가입</h1>
+            <p>K-BALLOG에 오신 것을 환영합니다. 아래 정보를 입력해주세요.</p>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-role">가입 유형</label>
+                    <select id="signup-role">
+                        <option value="player">선수</option>
+                        <option value="admin">관리자</option>
+                    </select>
+                </div>
+                <div class="form-group hidden" id="admin-code-group">
+                    <label for="admin-code">관리자 인증 코드</label>
+                    <input type="password" id="admin-code">
+                </div>
+                <button type="submit" class="btn btn-primary">인증코드 받기</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

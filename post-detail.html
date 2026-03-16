@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>새 글 작성 - K-BALLOG</title>
+    <title>게시글 상세 - K-BALLOG</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -69,21 +69,42 @@
     </header>
 
     <main class="container">
-        <section class="create-post-section">
-            <h2 class="section-heading"><i class="fas fa-edit"></i> 새 글 작성</h2>
-            <form id="create-post-form" class="card">
+        <section class="post-detail-section">
+            <div class="post-header card">
+                <h2 class="post-title">서울 FC, 새로운 유니폼 공개!</h2>
+                <div class="post-meta">
+                    <span>작성자: 관리자</span>
+                    <span>작성일: 2024-07-22</span>
+                </div>
+            </div>
+            <div class="post-content card">
+                <p>서울 FC가 2024 시즌 후반기에 착용할 새로운 유니폼 디자인을 공개했습니다. 팬들의 반응이 뜨겁습니다.</p>
+                <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=1974&auto=format&fit=crop" alt="게시글 이미지" class="post-image">
+                <p>이번 유니폼은 서울의 전통적인 색상을 현대적으로 재해석하여 디자인되었습니다. 특히, 홈 유니폼은...</p>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <h3 class="section-heading"><i class="fas fa-comments"></i> 댓글</h3>
+            <div id="comments-container" class="card">
+                <!-- 댓글 목록 -->
+                <div class="comment">
+                    <div class="comment-author">축구팬1</div>
+                    <div class="comment-content">디자인 정말 멋지네요!</div>
+                    <div class="comment-date">2024-07-22</div>
+                </div>
+                <div class="comment">
+                    <div class="comment-author">이웃집개발자</div>
+                    <div class="comment-content">구매하고 싶어요!</div>
+                    <div class="comment-date">2024-07-22</div>
+                </div>
+            </div>
+            <form id="comment-form" class="card">
                 <div class="form-group">
-                    <label for="post-title">제목</label>
-                    <input type="text" id="post-title" name="post-title" required>
+                    <label for="comment-input">댓글 작성</label>
+                    <textarea id="comment-input" rows="3" placeholder="댓글을 입력하세요..."></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="post-content">내용</label>
-                    <textarea id="post-content" name="post-content" rows="10" required></textarea>
-                </div>
-                <div class="form-actions">
-                    <a href="community.html" class="btn-secondary">취소</a>
-                    <button type="submit" class="btn-primary">게시하기</button>
-                </div>
+                <button type="submit" class="btn-primary">등록</button>
             </form>
         </section>
     </main>

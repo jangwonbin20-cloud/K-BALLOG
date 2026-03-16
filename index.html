@@ -42,13 +42,13 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="auth-actions">
-                    <button id="login-btn" class="btn-auth">로그인</button>
-                    <button id="signup-btn" class="btn-auth">회원가입</button>
-                    <div id="user-info" class="hidden">
-                        <span id="user-greeting"></span>
-                        <button id="logout-btn" class="btn-auth">로그아웃</button>
-                    </div>
+                <div class="auth-buttons">
+                    <a href="signup.html" class="btn btn-primary" id="signup-btn-main">회원가입</a>
+                    <a href="#" class="btn" id="login-btn-main">로그인</a>
+                </div>
+                <div class="user-info hidden">
+                    <span id="user-name-display"></span>
+                    <a href="#" class="btn" id="logout-btn">로그아웃</a>
                 </div>
                 <div class="language-selector">
                     <div class="language-select-wrapper">
@@ -93,68 +93,6 @@
                     <input type="password" id="login-password" required>
                 </div>
                 <button type="submit" class="btn-primary">로그인</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Signup Role Choice Modal -->
-    <div id="signup-role-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button class="close-btn">&times;</button>
-            <h2>가입 유형을 선택하세요</h2>
-            <div class="role-selection">
-                <button id="player-signup-btn" class="btn-role"><i class="fas fa-user"></i> 선수로 가입</button>
-                <button id="admin-signup-btn" class="btn-role"><i class="fas fa-user-shield"></i> 관리자로 가입</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Player Signup Modal -->
-    <div id="player-signup-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button class="close-btn">&times;</button>
-            <h2>선수 회원가입</h2>
-            <form id="player-signup-form">
-                <div class="form-group">
-                    <label for="player-signup-email">이메일</label>
-                    <input type="email" id="player-signup-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="player-signup-password">비밀번호</label>
-                    <input type="password" id="player-signup-password" required>
-                </div>
-                 <div class="form-group">
-                    <label for="player-signup-password-confirm">비밀번호 확인</label>
-                    <input type="password" id="player-signup-password-confirm" required>
-                </div>
-                <button type="submit" class="btn-primary">가입하기</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Admin Signup Modal -->
-    <div id="admin-signup-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button class="close-btn">&times;</button>
-            <h2>관리자 회원가입</h2>
-            <form id="admin-signup-form">
-                <div class="form-group">
-                    <label for="admin-signup-email">이메일</label>
-                    <input type="email" id="admin-signup-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="admin-signup-password">비밀번호</label>
-                    <input type="password" id="admin-signup-password" required>
-                </div>
-                 <div class="form-group">
-                    <label for="admin-signup-password-confirm">비밀번호 확인</label>
-                    <input type="password" id="admin-signup-password-confirm" required>
-                </div>
-                <div class="form-group">
-                    <label for="admin-auth-code">관리자 인증 코드</label>
-                    <input type="text" id="admin-auth-code" required>
-                </div>
-                <button type="submit" class="btn-primary">가입하기</button>
             </form>
         </div>
     </div>
