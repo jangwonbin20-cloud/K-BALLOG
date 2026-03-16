@@ -82,8 +82,8 @@
         <section class="card league-data-section">
             <div class="tab-navigation">
                 <button class="tab-btn" data-tab="ranking"><i class="fas fa-trophy"></i> 리그 순위</button>
-                <button class="tab-btn active" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 경기 일정/결과</button>
-                <button class="tab-btn" data-tab="stats"><i class="fas fa-chart-bar"></i> 개인 기록</button>
+                <button class="tab-btn" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 경기 일정/결과</button>
+                <button class="tab-btn active" data-tab="stats"><i class="fas fa-chart-bar"></i> 개인 기록</button>
                 <button class="tab-btn" data-tab="news"><i class="far fa-newspaper"></i> 리그 뉴스</button>
                 <button class="tab-btn" data-tab="transfer"><i class="fas fa-exchange-alt"></i> 이적 현황</button>
             </div>
@@ -179,7 +179,7 @@
                 </div>
             </div>
 
-            <div id="schedule" class="tab-content active">
+            <div id="schedule" class="tab-content">
                 <div class="match-list-section">
                     <div class="match-date-group">
                         <h3>2024년 8월 17일</h3>
@@ -250,10 +250,9 @@
                 </div>
             </div>
 
-            <div id="stats" class="tab-content">
+            <div id="stats" class="tab-content active">
                 <div class="stats-table-section">
                     <h4><i class="fas fa-futbol"></i> 득점 순위</h4>
-                    <!-- 득점 순위 테이블 -->
                      <table class="league-table">
                         <thead>
                             <tr>
@@ -274,7 +273,6 @@
                     </table>
 
                     <h4 class="mt-4"><i class="fas fa-hands-helping"></i> 도움 순위</h4>
-                    <!-- 도움 순위 테이블 -->
                      <table class="league-table">
                         <thead>
                             <tr>
@@ -293,6 +291,31 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <h4 class="mt-4"><i class="fas fa-file-alt"></i> 경고 기록</h4>
+                    <div class="card-icons" style="margin-bottom: 10px;">
+                        <span class="yellow-card-icon" style="color: #FFC107; font-size: 1.2em; margin-right: 5px;"><i class="fas fa-square"></i></span> 경고
+                        <span class="red-card-icon" style="color: #DC3545; font-size: 1.2em; margin-left: 15px; margin-right: 5px;"><i class="fas fa-square"></i></span> 퇴장
+                    </div>
+                    <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>선수</th>
+                                <th>팀</th>
+                                <th><i class="fas fa-square" style="color: #FFC107;"></i></th>
+                                <th><i class="fas fa-square" style="color: #DC3545;"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <small class="text-muted">*현재 SSSL 공식 홈페이지에서 제공되지 않는 정보로, 업데이트 예정입니다.</small>
                 </div>
             </div>
 
