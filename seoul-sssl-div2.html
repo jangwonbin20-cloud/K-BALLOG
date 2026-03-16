@@ -9,36 +9,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="league-page.css">
-    <style>
-        .admin-controls {
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            text-align: right;
-        }
-        .edit-input {
-            width: 50px;
-            text-align: center;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">K-BALLOG</a>
+                <div class="logo-icons">
+                    <i class="fas fa-futbol soccer-ball-icon logo-icon"></i>
+                    <i class="fas fa-chart-line data-icon logo-icon"></i>
+                </div>
+                <div class="location-selector">
+                    <label for="location-select" data-translate="yourLocation">당신의 지역</label>
+                    <div class="location-select-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="location-select">
+                            <option value="" data-translate="select">선택</option>
+                            <option value="seoul.html" data-translate="seoul" selected>서울</option>
+                            <option value="suwon.html" data-translate="suwon">수원</option>
+                            <option value="incheon.html" data-translate="incheon">인천</option>
+                            <option value="yongin.html" data-translate="yongin">용인</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="match.html">경기</a></li>
+                    <li><a href="index.html" data-translate="navHome">홈</a></li>
+                    <li><a href="match.html" data-translate="navMatches">경기</a></li>
+                    <li><a href="search.html" data-translate="navSearch">검색</a></li>
+                    <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="transfer.html" data-translate="navTransfer">이적</a></li>
+                    <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <div class="auth-buttons">
+                    <a href="signup.html" class="btn btn-primary" id="signup-btn-main">회원가입</a>
+                    <a href="#" class="btn" id="login-btn-main">로그인</a>
+                </div>
+                <div class="user-info hidden">
+                    <span id="user-name-display"></span>
+                    <a href="#" class="btn" id="logout-btn">로그아웃</a>
+                </div>
+                <div class="language-selector">
+                    <div class="language-select-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                </div>
+                <span class="mobile-location-label" data-translate="yourLocationMobile">당신의 지역:</span>
+                <button class="hamburger"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </header>
 
@@ -51,31 +79,249 @@
             </div>
         </section>
 
-        <div class="admin-controls">
-            <button id="admin-mode-btn" class="btn">관리자 모드</button>
-            <button id="save-changes-btn" class="btn btn-primary hidden">저장</button>
-            <button id="cancel-changes-btn" class="btn hidden">취소</button>
-        </div>
-
         <section class="card league-data-section">
             <div class="tab-navigation">
-                <button class="tab-btn" data-tab="ranking">리그 순위</button>
-                <button class="tab-btn active" data-tab="schedule">경기 일정/결과</button>
-                <button class="tab-btn" data-tab="stats">개인 기록</button>
+                <button class="tab-btn" data-tab="ranking"><i class="fas fa-trophy"></i> 리그 순위</button>
+                <button class="tab-btn active" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 경기 일정/결과</button>
+                <button class="tab-btn" data-tab="stats"><i class="fas fa-chart-bar"></i> 개인 기록</button>
+                <button class="tab-btn" data-tab="news"><i class="far fa-newspaper"></i> 리그 뉴스</button>
+                <button class="tab-btn" data-tab="transfer"><i class="fas fa-exchange-alt"></i> 이적 현황</button>
             </div>
 
             <div id="ranking" class="tab-content">
-                 </div>
+                <div class="league-table-section">
+                    <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>팀</th>
+                                <th>경기</th>
+                                <th>승점</th>
+                                <th>승</th>
+                                <th>무</th>
+                                <th>패</th>
+                                <th>득실차</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><a href="#">Inter Vamos</a></td>
+                                <td>2</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>6</td>
+                            </tr>
+                             <tr>
+                                <td>2</td>
+                                <td><a href="#">Project Ball FC</a></td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>6</td>
+                            </tr>
+                             <tr>
+                                <td>3</td>
+                                <td><a href="#">CONQ</a></td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>5</td>
+                            </tr>
+                             <tr>
+                                <td>4</td>
+                                <td><a href="#">Phoenix FC</a></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><a href="#">FC INTS</a></td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><a href="#">Soccer Camp</a></td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><a href="#">Seoul Calcio F.C.</a></td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <div id="schedule" class="tab-content active">
                 <div class="match-list-section">
+                    <h3 class="match-section-heading">다가올 경기</h3>
+                    <div class="match-date-group">
+                        <h3>2024년 8월 31일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info">
+                                <span>FC INTS</span>
+                                <span class="score">vs</span>
+                                <span>Seoul Calcio F.C.</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">14:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Inter Vamos</span>
+                                <span class="score">vs</span>
+                                <span>CONQ</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">15:30</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Project Ball FC</span>
+                                <span class="score">vs</span>
+                                <span>Soccer Camp</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">17:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
                     </div>
+                     <div class="match-date-group">
+                        <h3>2024년 9월 7일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Phoenix FC</span>
+                                <span class="score">vs</span>
+                                <span>Inter Vamos</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">14:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>CONQ</span>
+                                <span class="score">vs</span>
+                                <span>Project Ball FC</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">15:30</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Soccer Camp</span>
+                                <span class="score">vs</span>
+                                <span>FC INTS</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">17:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="match-section-heading">지나간 경기</h3>
+                    <div class="match-date-group">
+                        <h3>2024년 8월 17일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Inter Vamos</span>
+                                <span class="score">4 : 0</span>
+                                <span>Seoul Calcio F.C.</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">14:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Phoenix FC</span>
+                                <span class="score">1 : 6</span>
+                                <span>CONQ</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">15:30</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Project Ball FC</span>
+                                <span class="score">8 : 1</span>
+                                <span>FC INTS</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">17:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+                    </div>
+					<div class="match-date-group">
+                        <h3>2024년 8월 24일</h3>
+                        <div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Soccer Camp</span>
+                                <span class="score">0 : 5</span>
+                                <span>Inter Vamos</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">14:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>Seoul Calcio F.C.</span>
+                                <span class="score">1 : 6</span>
+                                <span>Project Ball FC</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">15:30</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+						<div class="match-list-item card">
+                            <div class="match-info">
+                                <span>CONQ</span>
+                                <span class="score">3 : 2</span>
+                                <span>Phoenix FC</span>
+                            </div>
+                            <div class="match-details">
+                                <span class="time">17:00</span> | <span class="location">용산공원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="stats" class="tab-content">
                 <div class="stats-table-section">
                     <h4><i class="fas fa-futbol"></i> 득점 순위</h4>
-                    <table class="league-table" id="goals-table">
+                     <table class="league-table">
                         <thead>
                             <tr>
                                 <th>순위</th>
@@ -85,18 +331,59 @@
                             </tr>
                         </thead>
                         <tbody>
-                            </tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>K. CICIRKO</td>
+                                <td>Project Ball FC</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>B. GRUBE</td>
+                                <td>CONQ</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>C. FELIX</td>
+                                <td>Inter Vamos</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>S. RAMIREZ</td>
+                                <td>Project Ball FC</td>
+                                <td>3</td>
+                            </tr>
+                             <tr>
+                                <td>5</td>
+                                <td>A. MARTINEZ</td>
+                                <td>Inter Vamos</td>
+                                <td>2</td>
+                            </tr>
+                             <tr>
+                                <td>6</td>
+                                <td>J. HOFMAN</td>
+                                <td>Project Ball FC</td>
+                                <td>2</td>
+                            </tr>
+                             <tr>
+                                <td>7</td>
+                                <td>D. HONG</td>
+                                <td>Phoenix FC</td>
+                                <td>2</td>
+                            </tr>
+                             <tr>
+                                <td>8</td>
+                                <td>S. LEE</td>
+                                <td>CONQ</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <form id="add-goal-form" class="add-player-form hidden" style="margin-top: 15px;">
-                        <h5>신규 득점 기록 추가</h5>
-                        <input type="text" placeholder="선수 이름" required>
-                        <input type="text" placeholder="팀 이름" required>
-                        <input type="number" placeholder="골" required>
-                        <button type="submit" class="btn btn-sm">추가</button>
-                    </form>
 
                     <h4 class="mt-4"><i class="fas fa-hands-helping"></i> 도움 순위</h4>
-                    <table class="league-table" id="assists-table">
+                     <table class="league-table">
                         <thead>
                             <tr>
                                 <th>순위</th>
@@ -106,237 +393,162 @@
                             </tr>
                         </thead>
                         <tbody>
-                            </tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>J. HOFMAN</td>
+                                <td>Project Ball FC</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>L. BRITO</td>
+                                <td>CONQ</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>B. GRUBE</td>
+                                <td>CONQ</td>
+                                <td>2</td>
+                            </tr>
+                             <tr>
+                                <td>4</td>
+                                <td>A. MARTINEZ</td>
+                                <td>Inter Vamos</td>
+                                <td>2</td>
+                            </tr>
+                             <tr>
+                                <td>5</td>
+                                <td>S. RAMIREZ</td>
+                                <td>Project Ball FC</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <form id="add-assist-form" class="add-player-form hidden" style="margin-top: 15px;">
-                        <h5>신규 도움 기록 추가</h5>
-                        <input type="text" placeholder="선수 이름" required>
-                        <input type="text" placeholder="팀 이름" required>
-                        <input type="number" placeholder="도움" required>
-                        <button type="submit" class="btn btn-sm">추가</button>
-                    </form>
+
+                    <h4 class="mt-4"><i class="fas fa-file-alt"></i> 경고 기록</h4>
+                    <div class="card-icons" style="margin-bottom: 10px;">
+                        <span class="yellow-card-icon" style="color: #FFC107; font-size: 1.2em; margin-right: 5px;"><i class="fas fa-square"></i></span> 경고
+                        <span class="red-card-icon" style="color: #DC3545; font-size: 1.2em; margin-left: 15px; margin-right: 5px;"><i class="fas fa-square"></i></span> 퇴장
+                    </div>
+                    <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>선수</th>
+                                <th>팀</th>
+                                <th><i class="fas fa-square" style="color: #FFC107;"></i></th>
+                                <th><i class="fas fa-square" style="color: #DC3545;"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <small class="text-muted">*현재 SSSL 공식 홈페이지에서 제공되지 않는 정보로, 업데이트 예정입니다.</small>
+                </div>
+            </div>
+
+            <div id="news" class="tab-content">
+                <div class="unified-grid">
+                    <!-- 리그 뉴스 카드 -->
+                </div>
+            </div>
+
+            <div id="transfer" class="tab-content">
+                <div class="unified-grid">
+                    <!-- 이적 현황 카드 -->
+                </div>
+            </div>
+        </section>
+
+        <section class="team-list-section card">
+            <h2 class="section-heading"><i class="fas fa-users"></i> 참가 팀 목록</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Inter+Vamos" alt="Inter Vamos 로고" class="team-logo">
+                        <h3 class="team-name">Inter Vamos</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Project+Ball+FC" alt="Project Ball FC 로고" class="team-logo">
+                        <h3 class="team-name">Project Ball FC</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=CONQ" alt="CONQ 로고" class="team-logo">
+                        <h3 class="team-name">CONQ</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Phoenix+FC" alt="Phoenix FC 로고" class="team-logo">
+                        <h3 class="team-name">Phoenix FC</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=FC+INTS" alt="FC INTS 로고" class="team-logo">
+                        <h3 class="team-name">FC INTS</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Soccer+Camp" alt="Soccer Camp 로고" class="team-logo">
+                        <h3 class="team-name">Soccer Camp</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https://via.placeholder.com/150x150/24262e/f0f0f0?text=Seoul+Calcio+F.C." alt="Seoul Calcio F.C. 로고" class="team-logo">
+                        <h3 class="team-name">Seoul Calcio F.C.</h3>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="contact.html">문의하기</a>
+            </div>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script src="main.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const adminModeBtn = document.getElementById('admin-mode-btn');
-    const saveChangesBtn = document.getElementById('save-changes-btn');
-    const cancelChangesBtn = document.getElementById('cancel-changes-btn');
+        // Tab functionality
+        const tabContainer = document.querySelector('.league-data-section');
+        if (tabContainer) {
+            const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+            const tabContents = tabContainer.querySelectorAll('.tab-content');
 
-    const scheduleTab = document.getElementById('schedule');
-    const statsTab = document.getElementById('stats');
-    const addGoalForm = document.getElementById('add-goal-form');
-    const addAssistForm = document.getElementById('add-assist-form');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.dataset.tab;
 
-    let adminMode = false;
+                    // Deactivate all buttons and content
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
 
-    const initialData = {
-        matches: [
-            { date: '2024년 8월 31일', time: '14:00', location: '용산공원', home: 'FC INTS', away: 'Seoul Calcio F.C.', homeScore: 'vs', awayScore: '' },
-            { date: '2024년 9월 7일', time: '14:00', location: '용산공원', home: 'Phoenix FC', away: 'Inter Vamos', homeScore: 'vs', awayScore: '' },
-        ],
-        goals: [
-            { rank: 1, player: 'K. CICIRKO', team: 'Project Ball FC', goals: 6 },
-            { rank: 2, player: 'B. GRUBE', team: 'CONQ', goals: 4 },
-        ],
-        assists: [
-            { rank: 1, player: 'J. HOFMAN', team: 'Project Ball FC', assists: 4 },
-            { rank: 2, player: 'L. BRITO', team: 'CONQ', assists: 3 },
-        ]
-    };
-
-    function loadData() {
-        const matches = JSON.parse(localStorage.getItem('sssl_div2_matches')) || initialData.matches;
-        const goals = JSON.parse(localStorage.getItem('sssl_div2_goals')) || initialData.goals;
-        const assists = JSON.parse(localStorage.getItem('sssl_div2_assists')) || initialData.assists;
-
-        renderSchedule(matches);
-        renderStats(goals, 'goals');
-        renderStats(assists, 'assists');
-    }
-
-    function renderSchedule(matches) {
-        const scheduleSection = scheduleTab.querySelector('.match-list-section');
-        scheduleSection.innerHTML = '';
-        const groupedByDate = matches.reduce((acc, match) => {
-            if (!acc[match.date]) {
-                acc[match.date] = [];
-            }
-            acc[match.date].push(match);
-            return acc;
-        }, {});
-
-        for (const date in groupedByDate) {
-            const groupEl = document.createElement('div');
-            groupEl.className = 'match-date-group';
-            groupEl.innerHTML = `<h3>${date}</h3>`;
-            groupedByDate[date].forEach((match, index) => {
-                const matchId = `${date}-${index}`;
-                const scoreDisplay = match.homeScore === 'vs' ? 'vs' : `${match.homeScore} : ${match.awayScore}`;
-                groupEl.innerHTML += `
-                    <div class="match-list-item card" data-match-id="${matchId}">
-                        <div class="match-info">
-                            <span>${match.home}</span>
-                            <span class="score">${scoreDisplay}</span>
-                            <span>${match.away}</span>
-                        </div>
-                        <div class="match-details">
-                            <span class="time">${match.time}</span> | <span class="location">${match.location}</span>
-                        </div>
-                    </div>
-                `;
+                    // Activate the clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabName).classList.add('active');
+                });
             });
-            scheduleSection.appendChild(groupEl);
         }
-    }
-
-    function renderStats(stats, type) {
-        const tableBody = document.getElementById(`${type}-table`).querySelector('tbody');
-        tableBody.innerHTML = '';
-        stats.sort((a, b) => b[type.slice(0, -1)] - a[type.slice(0, -1)]).forEach((stat, index) => {
-            const rank = index + 1;
-            const row = document.createElement('tr');
-            row.setAttribute(`data-player-id`, `${type}-${rank}`);
-            row.innerHTML = `
-                <td>${rank}</td>
-                <td>${stat.player}</td>
-                <td>${stat.team}</td>
-                <td class="stat-value">${stat[type.slice(0, -1)]}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
-
-    function toggleAdminMode() {
-        adminMode = !adminMode;
-        adminModeBtn.textContent = adminMode ? '일반 모드' : '관리자 모드';
-        saveChangesBtn.classList.toggle('hidden');
-        cancelChangesBtn.classList.toggle('hidden');
-        addGoalForm.classList.toggle('hidden');
-        addAssistForm.classList.toggle('hidden');
-
-        if (adminMode) {
-            enableEditing();
-        } else {
-            disableEditing();
-        }
-    }
-
-    function enableEditing() {
-        // Edit scores
-        document.querySelectorAll('.match-list-item').forEach(item => {
-            const matchId = item.dataset.matchId;
-            const matches = JSON.parse(localStorage.getItem('sssl_div2_matches')) || initialData.matches;
-            const matchData = matches.find((m, i) => `${m.date}-${i}` === matchId);
-            
-            const scoreEl = item.querySelector('.score');
-            if (matchData) {
-                 const homeScore = matchData.homeScore === 'vs' ? '' : matchData.homeScore;
-                 const awayScore = matchData.awayScore === 'vs' ? '' : matchData.awayScore;
-                 scoreEl.innerHTML = `
-                    <input type="number" class="edit-input home-score" value="${homeScore}" placeholder="홈"> :
-                    <input type="number" class="edit-input away-score" value="${awayScore}" placeholder="원정">
-                `;
-            }
-        });
-
-        // Edit stats
-        document.querySelectorAll('#stats-table tbody tr, #assists-table tbody tr').forEach(row => {
-            const statValueEl = row.querySelector('.stat-value');
-            const currentValue = statValueEl.textContent;
-            statValueEl.innerHTML = `<input type="number" class="edit-input" value="${currentValue}">`;
-        });
-    }
-
-    function disableEditing() {
-        loadData(); // Re-render the original or saved data
-    }
-    
-    function saveChanges() {
-        // Save match scores
-        const newMatches = [];
-         document.querySelectorAll('.match-list-item').forEach(item => {
-            const matchId = item.dataset.matchId;
-            const matches = JSON.parse(localStorage.getItem('sssl_div2_matches')) || initialData.matches;
-            const matchIndex = matches.findIndex((m, i) => `${m.date}-${i}` === matchId);
-            if(matchIndex !== -1) {
-                const homeScore = item.querySelector('.home-score').value || 'vs';
-                const awayScore = item.querySelector('.away-score').value || '';
-                const originalMatch = matches[matchIndex];
-                newMatches.push({ ...originalMatch, homeScore: homeScore, awayScore: awayScore });
-            }
-        });
-        localStorage.setItem('sssl_div2_matches', JSON.stringify(newMatches));
-
-        // Save goal stats
-        const newGoals = [];
-        document.querySelectorAll('#goals-table tbody tr').forEach(row => {
-            const player = row.cells[1].textContent;
-            const team = row.cells[2].textContent;
-            const goals = row.querySelector('.edit-input').value;
-            newGoals.push({ player, team, goals: parseInt(goals) });
-        });
-        localStorage.setItem('sssl_div2_goals', JSON.stringify(newGoals));
-
-        // Save assist stats
-        const newAssists = [];
-        document.querySelectorAll('#assists-table tbody tr').forEach(row => {
-            const player = row.cells[1].textContent;
-            const team = row.cells[2].textContent;
-            const assists = row.querySelector('.edit-input').value;
-            newAssists.push({ player, team, assists: parseInt(assists) });
-        });
-        localStorage.setItem('sssl_div2_assists', JSON.stringify(newAssists));
-
-        toggleAdminMode();
-    }
-
-    addGoalForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const inputs = e.target.elements;
-        const goals = JSON.parse(localStorage.getItem('sssl_div2_goals')) || initialData.goals;
-        goals.push({
-            player: inputs[0].value,
-            team: inputs[1].value,
-            goals: parseInt(inputs[2].value)
-        });
-        localStorage.setItem('sssl_div2_goals', JSON.stringify(goals));
-        renderStats(goals, 'goals');
-        e.target.reset();
-    });
-
-    addAssistForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const inputs = e.target.elements;
-        const assists = JSON.parse(localStorage.getItem('sssl_div2_assists')) || initialData.assists;
-        assists.push({
-            player: inputs[0].value,
-            team: inputs[1].value,
-            assists: parseInt(inputs[2].value)
-        });
-        localStorage.setItem('sssl_div2_assists', JSON.stringify(assists));
-        renderStats(assists, 'assists');
-        e.target.reset();
-    });
-
-
-    adminModeBtn.addEventListener('click', toggleAdminMode);
-    saveChangesBtn.addEventListener('click', saveChanges);
-    cancelChangesBtn.addEventListener('click', () => {
-        toggleAdminMode();
-        loadData();
-    });
-    
-    // Initial Load
-    loadData();
-});
     </script>
 </body>
 </html>
