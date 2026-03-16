@@ -67,7 +67,7 @@
 
 .player-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1.5rem;
 }
 
@@ -89,7 +89,7 @@
 .player-card {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -123,13 +123,13 @@
 }
 
 .player-name {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
     margin: 0;
 }
 
 .player-position {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -147,7 +147,7 @@
     }
 
     .player-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
     .team-info h1 {
