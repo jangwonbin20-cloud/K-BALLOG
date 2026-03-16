@@ -1,179 +1,97 @@
-/* General Styles */
-.hidden {
-    display: none !important;
-}
-
-/* Team Photo Section */
-.team-photo-section {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-}
-
-.team-photo-container img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.photo-caption {
-    font-size: 1rem;
-    color: #555;
-    margin-top: 15px;
-    font-style: italic;
-}
-
-.photo-upload-container {
-    margin-top: 20px;
-}
-
-#photo-upload-input {
-    display: none;
-}
-
-.photo-upload-container .btn-primary {
-    cursor: pointer;
-    display: inline-block;
-}
-
-/* Team Members Section */
-.team-members-section {
-    margin-top: 40px;
-}
-
-.section-title {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-}
-
-.position-title {
-    font-size: 1.5rem;
-    color: #555;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.member-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Added for smooth transition */
-}
-
-.member-summary {
-    cursor: pointer;
+.team-profile-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 2rem;
+    padding: 2rem;
 }
 
-.member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.player-photo {
-    position: relative;
+.team-logo {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid var(--primary-accent);
-    overflow: hidden;
-}
-
-.player-photo img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    border: 3px solid #eee;
 }
 
-.photo-upload-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+.team-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.team-meta {
     display: flex;
-    justify-content: center;
+    gap: 1.5rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.team-meta span i {
+    margin-right: 0.5rem;
+}
+
+/* New Squad Grid Styles */
+.squad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.player-card {
+    display: flex;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.player-card.admin-view .player-photo:hover .photo-upload-overlay {
-    opacity: 1;
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
 }
 
-.photo-upload-overlay i {
+.player-number {
     font-size: 2rem;
-}
-
-.player-photo-input {
-    display: none;
-}
-
-.member-info .member-name {
-    font-size: 1.2rem;
     font-weight: 700;
-    color: #333;
-    margin: 0;
+    color: #e4002b;
+    margin-right: 1.5rem;
+    min-width: 40px;
+    text-align: center;
 }
 
-.member-info .member-position {
-    font-size: 1rem;
-    color: #777;
-    margin: 5px 0 0;
+.player-details {
+    display: flex;
+    flex-direction: column;
 }
 
-.member-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    margin-top: 0;
-}
-
-.member-card.active .member-details {
-    max-height: 500px; /* Adjust as needed */
-    margin-top: 20px;
-}
-
-.member-details h4 {
+.player-name {
     font-size: 1.1rem;
-    color: #007bff;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-}
-
-.member-details ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.member-details li {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.member-details li strong {
+    font-weight: 500;
     color: #333;
+}
+
+.player-position {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .team-profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .squad-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
