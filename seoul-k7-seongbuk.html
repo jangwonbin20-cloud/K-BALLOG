@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="k7LeagueSeongbukTitle">K7리그(성북) - K-BALLOG</title>
+    <title>K-BALLOG - 서울 K7리그 성북</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="league-page.css">
 </head>
 <body>
     <header class="main-header">
@@ -36,17 +38,18 @@
                     <li><a href="match.html" data-translate="navMatches">경기</a></li>
                     <li><a href="search.html" data-translate="navSearch">검색</a></li>
                     <li><a href="news.html" data-translate="navNews">뉴스</a></li>
+                    <li><a href="transfer.html" data-translate="navTransfer">이적</a></li>
                     <li><a href="community.html" data-translate="navCommunity">커뮤니티</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="auth-actions">
-                    <button id="login-btn" class="btn-auth">로그인</button>
-                    <button id="signup-btn" class="btn-auth">회원가입</button>
-                    <div id="user-info" class="hidden">
-                        <span id="user-greeting"></span>
-                        <button id="logout-btn" class="btn-auth">로그아웃</button>
-                    </div>
+                <div class="auth-buttons">
+                    <a href="signup.html" class="btn btn-primary" id="signup-btn-main">회원가입</a>
+                    <a href="#" class="btn" id="login-btn-main">로그인</a>
+                </div>
+                <div class="user-info hidden">
+                    <span id="user-name-display"></span>
+                    <a href="#" class="btn" id="logout-btn">로그아웃</a>
                 </div>
                 <div class="language-selector">
                     <div class="language-select-wrapper">
@@ -67,15 +70,15 @@
     </header>
 
     <main class="container">
-        <div class="league-title-section card">
-            <img src="https://via.placeholder.com/1200x300/1a1c23/f0f0f0?text=K7+League+-+Seongbuk" alt="성북 K7 리그 대표 이미지" class="league-cover-image">
+        <section class="league-title-section card">
+            <img src="https://images.unsplash.com/photo-1559024926-04d33a5ade8b?q=80&w=2070&auto=format&fit=crop" alt="K7 League Cover" class="league-cover-image">
             <div class="league-title-content">
-                <h1><i class="fas fa-trophy"></i> K7 리그 (성북)</h1>
-                <p>2024 시즌, 성북구 아마추어 축구의 열정을 함께하세요.</p>
+                <h1><i class="fas fa-trophy"></i> K7 League - Seongbuk</h1>
+                <p>성북구의 자존심을 건 치열한 승부</p>
             </div>
-        </div>
+        </section>
 
-        <div class="card league-data-section">
+        <section class="card league-data-section">
             <div class="tab-navigation">
                 <button class="tab-btn active" data-tab="ranking"><i class="fas fa-trophy"></i> 리그 순위</button>
                 <button class="tab-btn" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 경기 일정/결과</button>
@@ -84,198 +87,118 @@
 
             <div id="ranking" class="tab-content active">
                 <div class="league-table-section">
-                    <div class="league-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>순위</th><th>팀</th><th>경기</th><th>승점</th><th>승</th><th>무</th><th>패</th><th>득</th><th>실</th><th>득실</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1</td><td><a href="team-sangbidan.html">성북구30대상비단</a></td><td>5</td><td>15</td><td>5</td><td>0</td><td>0</td><td>15</td><td>2</td><td>+13</td></tr>
-                                <tr><td>2</td><td><a href="team-yangji.html">양지</a></td><td>5</td><td>12</td><td>4</td><td>0</td><td>1</td><td>10</td><td>4</td><td>+6</td></tr>
-                                <tr><td>3</td><td><a href="team-creo.html">Fc Creo</a></td><td>5</td><td>9</td><td>3</td><td>0</td><td>2</td><td>8</td><td>7</td><td>+1</td></tr>
-                                <tr><td>4</td><td><a href="team-dream.html">DREAM</a></td><td>5</td><td>6</td><td>2</td><td>0</td><td>3</td><td>6</td><td>9</td><td>-3</td></tr>
-                                <tr><td>5</td><td><a href="team-corea.html">Fc 꼬레아</a></td><td>5</td><td>3</td><td>1</td><td>0</td><td>4</td><td>5</td><td>12</td><td>-7</td></tr>
-                                <tr><td>6</td><td><a href="team-dice.html">서초구 Dice</a></td><td>5</td><td>0</td><td>0</td><td>0</td><td>5</td><td>2</td><td>12</td><td>-10</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>팀</th>
+                                <th>경기</th>
+                                <th>승점</th>
+                                <th>승</th>
+                                <th>무</th>
+                                <th>패</th>
+                                <th>득실차</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 순위 데이터는 여기에 동적으로 추가됩니다 -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <div id="schedule" class="tab-content">
                 <div class="match-list-section">
-                    <div class="match-date-group">
-                        <h3>2024년 10월 19일 (1라운드)</h3>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">성북구30대상비단</span> <span class="score">4 : 0</span> <span class="team-name">Fc 꼬레아</span></div>
-                            <div class="match-details"><span>10:00 - 성북종합운동장</span></div>
-                        </div>
-                         <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">양지</span> <span class="score">3 : 1</span> <span class="team-name">DREAM</span></div>
-                            <div class="match-details"><span>12:00 - 성북종합운동장</span></div>
-                        </div>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">Fc Creo</span> <span class="score">2 : 0</span> <span class="team-name">서초구 Dice</span></div>
-                            <div class="match-details"><span>14:00 - 성북종합운동장</span></div>
-                        </div>
-                    </div>
-                    <div class="match-date-group">
-                        <h3>2024년 10월 26일 (2라운드)</h3>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">성북구30대상비단</span> <span class="score">3 : 0</span> <span class="team-name">서초구 Dice</span></div>
-                            <div class="match-details"><span>10:00 - 성북종합운동장</span></div>
-                        </div>
-                         <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">양지</span> <span class="score">2 : 1</span> <span class="team-name">Fc 꼬레아</span></div>
-                            <div class="match-details"><span>12:00 - 성북종합운동장</span></div>
-                        </div>
-                    </div>
-                    <div class="match-date-group">
-                        <h3>2024년 11월 2일 (3라운드)</h3>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">Fc Creo</span> <span class="score">3 : 1</span> <span class="team-name">DREAM</span></div>
-                            <div class="match-details"><span>10:00 - 성북종합운동장</span></div>
-                        </div>
-                    </div>
-                     <div class="match-date-group">
-                        <h3>2024년 11월 9일 (4라운드)</h3>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">성북구30대상비단</span> <span class="time">10:00</span> <span class="team-name">양지</span></div>
-                            <div class="match-details"><span>성북종합운동장</span></div>
-                        </div>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">Fc Creo</span> <span class="time">12:00</span> <span class="team-name">Fc 꼬레아</span></div>
-                            <div class="match-details"><span>성북종합운동장</span></div>
-                        </div>
-                        <div class="match-list-item card">
-                            <div class="match-info"><span class="team-name">DREAM</span> <span class="time">14:00</span> <span class="team-name">서초구 Dice</span></div>
-                            <div class="match-details"><span>성북종합운동장</span></div>
-                        </div>
-                    </div>
+                     <!-- 경기 일정 데이터는 여기에 동적으로 추가됩니다 -->
                 </div>
             </div>
 
             <div id="stats" class="tab-content">
                 <div class="stats-table-section">
                     <h4><i class="fas fa-futbol"></i> 득점 순위</h4>
-                    <div class="league-table">
-                        <table>
-                            <thead><tr><th>순위</th><th>선수</th><th>팀</th><th>득점</th></tr></thead>
-                            <tbody>
-                                <tr><td>1</td><td>김성북</td><td>성북구30대상비단</td><td>7</td></tr>
-                                <tr><td>2</td><td>박양지</td><td>양지</td><td>5</td></tr>
-                                <tr><td>3</td><td>이끄레</td><td>Fc Creo</td><td>4</td></tr>
-                                <tr><td>4</td><td>최드림</td><td>DREAM</td><td>3</td></tr>
-                                <tr><td>5</td><td>정꼬레</td><td>Fc 꼬레아</td><td>2</td></tr>
-                                <tr><td>6</td><td>강다이</td><td>서초구 Dice</td><td>1</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <h4 class="mt-4"><i class="far fa-handshake"></i> 도움 순위</h4>
-                    <div class="league-table">
-                        <table>
-                            <thead><tr><th>순위</th><th>선수</th><th>팀</th><th>도움</th></tr></thead>
-                            <tbody>
-                                <tr><td>1</td><td>이助手 (이조수)</td><td>성북구30대상비단</td><td>5</td></tr>
-                                <tr><td>2</td><td>최드림</td><td>DREAM</td><td>4</td></tr>
-                                <tr><td>3</td><td>정꼬레</td><td>Fc 꼬레아</td><td>3</td></tr>
-                                <tr><td>4</td><td>강다이</td><td>서초구 Dice</td><td>2</td></tr>
-                                <tr><td>5</td><td>어시스트</td><td>양지</td><td>2</td></tr>
-                                <tr><td>6</td><td>도움왕</td><td>Fc Creo</td><td>1</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <!-- 득점 순위 테이블 -->
+                     <table class="league-table">
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>선수</th>
+                                <th>팀</th>
+                                <th>골</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 득점 순위 데이터 -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="card team-list-section">
-            <h2><i class="fas fa-users"></i> 참가 팀</h2>
+        <section class="team-list-section card">
+            <h2 class="section-heading"><i class="fas fa-users"></i> 참가 팀 목록</h2>
             <div class="team-grid">
-                <a href="team-sangbidan.html" class="team-card">
-                    <img src="https://via.placeholder.com/150/FF5733/FFFFFF?text=SB" alt="성북구30대상비단">
-                    <span>성북구30대상비단</span>
-                </a>
-                <a href="team-yangji.html" class="team-card">
-                    <img src="https://via.placeholder.com/150/33FF57/FFFFFF?text=YJ" alt="양지">
-                    <span>양지</span>
-                </a>
-                <a href="team-creo.html" class="team-card">
-                    <img src="https://via.placeholder.com/150/3357FF/FFFFFF?text=CR" alt="Fc Creo">
-                    <span>Fc Creo</span>
-                </a>
-                <a href="team-dream.html" class="team-card">
-                    <img src="https://via.placeholder.com/150/F3FF33/FFFFFF?text=DR" alt="DREAM">
-                    <span>DREAM</span>
-                </a>
-                <a href="team-corea.html" class="team-card">
-                    <img src="https://via.placeholder.com/150/FF33A1/FFFFFF?text=CO" alt="Fc 꼬레아">
-                    <span>Fc 꼬레아</span>
-                </a>
-                 <a href="team-dice.html" class="team-card">
-                    <img src="https://via.placeholder.com/150/33FFF6/FFFFFF?text=DI" alt="서초구 Dice">
-                    <span>서초구 Dice</span>
-                </a>
+                <div class="team-card">
+                    <a href="team-creo.html" class="team-card-inner">
+                        <img src="images/team-creo-logo.jpg" alt="FC CREO 로고" class="team-logo">
+                        <h3 class="team-name">FC CREO</h3>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https/via.placeholder.com/150x150/24262e/f0f0f0?text=FS.GG" alt="FS.GG 로고" class="team-logo">
+                        <h3 class="team-name">FS.GG</h3>
+                    </a>
+                </div>
+                 <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https/via.placeholder.com/150x150/24262e/f0f0f0?text=DF" alt="DF 로고" class="team-logo">
+                        <h3 class="team-name">DF</h3>
+                    </a>
+                </div>
+                 <div class="team-card">
+                    <a href="#" class="team-card-inner">
+                        <img src="https/via.placeholder.com/150x150/24262e/f0f0f0?text=석관FC" alt="석관FC 로고" class="team-logo">
+                        <h3 class="team-name">석관FC</h3>
+                    </a>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
-
-    <!-- Login Modal -->
-    <div id="login-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button class="close-btn">&times;</button>
-            <h2>로그인</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">이메일</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">비밀번호</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <button type="submit" class="btn-primary">로그인</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div id="signup-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button class="close-btn">&times;</button>
-            <h2>회원가입</h2>
-            <form id="signup-form">
-                <div class="form-group">
-                    <label for="signup-email">이메일</label>
-                    <input type="email" id="signup-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-password">비밀번호</label>
-                    <input type="password" id="signup-password" required>
-                </div>
-                 <div class="form-group">
-                    <label for="signup-password-confirm">비밀번호 확인</label>
-                    <input type="password" id="signup-password-confirm" required>
-                </div>
-                <button type="submit" class="btn-primary">회원가입</button>
-            </form>
-        </div>
-    </div>
 
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-links">
-                <a href="#" data-translate="footerAbout">회사 소개</a>
-                <a href="#" data-translate="footerTerms">이용 약관</a>
-                <a href="#" data-translate="footerPrivacy">개인정보 처리방침</a>
-                <a href="contact.html" data-translate="footerContact">문의하기</a>
+                <a href="#">회사 소개</a>
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="contact.html">문의하기</a>
             </div>
-            <p data-translate="footerRights">&copy; 2024 K-BALLOG. All rights reserved.</p>
+            <p>&copy; 2024 K-BALLOG. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        // Tab functionality
+        const tabContainer = document.querySelector('.league-data-section');
+        if (tabContainer) {
+            const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+            const tabContents = tabContainer.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.dataset.tab;
+
+                    // Deactivate all buttons and content
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Activate the clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabName).classList.add('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
